@@ -10,7 +10,7 @@ class Infobar: SKSpriteNode{
     }
     
     private let mainRootWidth: CGFloat = screenSize.width
-    private let mainRootHeight: CGFloat = 100
+    private let mainRootHeight: CGFloat = 95
     private var firstTemplate: SKSpriteNode!
     private var secondTemplate: SKSpriteNode!
     private var thirdTemplate: SKSpriteNode!
@@ -19,7 +19,7 @@ class Infobar: SKSpriteNode{
     
     convenience init(name n: String){
         self.init()
-        let rootItemSize:CGSize = CGSize(width: screenSize.width / 4, height: screenSize.height * 0.05)
+        let rootItemSize = CGSize(width: screenSize.width / 4, height: screenSize.height * 0.05)
         
         name = n
         color = .clear
@@ -42,18 +42,15 @@ class Infobar: SKSpriteNode{
         addChild(fifthTemplate)
     }
     
-    private func makeTemplateNode(width w:CGFloat, height h:CGFloat, dx:CGFloat, name n:String) -> SKSpriteNode{
-        
+    private func makeTemplateNode(width w:CGFloat, height h:CGFloat, dx:CGFloat, name n:String) -> SKSpriteNode {
         let node = SKSpriteNode()
         node.anchorPoint = CGPoint(x: 0, y: 0)
         node.color = .clear
         node.name = n
         node.size = CGSize(width: w, height: h)
         node.position = CGPoint(x: dx, y: self.size.height - h)
-        
         return node
     }
-    
     
     private func generateTemplate(templateStyle:Template,
                                   itemSize: CGSize, name n:String, barSprite: Global.Main?,
@@ -68,15 +65,15 @@ class Infobar: SKSpriteNode{
         // Filling the template -->
         
         // Bar Default Values
-        let barWidth:CGFloat = node.size.width*0.8
-        let barHeight:CGFloat = node.size.height*0.55
+        let barWidth:CGFloat = node.size.width * 0.8
+        let barHeight:CGFloat = node.size.height * 0.55
         let barXpos:CGFloat = node.size.width
         let barYpos:CGFloat = 0
         
         // Icon Default Values
         let icon = SKSpriteNode()
-        let iconWidth:CGFloat = node.size.height * 0.94
-        let iconHeight:CGFloat = node.size.height * 0.94
+        let iconWidth:CGFloat = node.size.height * 0.95
+        let iconHeight:CGFloat = node.size.height * 0.95
         let iconXpos:CGFloat = node.size.width -  barWidth
         let iconYpos:CGFloat = -3
         
@@ -90,19 +87,19 @@ class Infobar: SKSpriteNode{
         
         // icon position might be changed with the if condition below:
         if templateStyle == .First {
-            let newWidth:CGFloat = node.size.width*0.5
-            let newHeight:CGFloat = node.size.height*0.65
+            let newWidth:CGFloat = node.size.width * 0.5
+            let newHeight:CGFloat = node.size.height * 0.65
             
             let bar = SKSpriteNode()
             bar.anchorPoint = CGPoint(x: 1.0, y: 0)
             bar.name = "bar"
             bar.size = CGSize(width: newWidth, height: newHeight)
             bar.texture = global.getMainTexture(main: barSprite!)
-            bar.position = CGPoint(x: barXpos*0.8, y: barYpos)
+            bar.position = CGPoint(x: barXpos * 0.8, y: barYpos)
             node.addChild(bar)
             
             // Adjusting Icon
-            icon.position.x = node.size.width - newWidth - barXpos*0.2
+            icon.position.x = node.size.width - newWidth - barXpos * 0.2
             icon.position.y = 0
         }
         else if templateStyle == .Second || templateStyle == .Third {
@@ -127,13 +124,11 @@ class Infobar: SKSpriteNode{
                 label.text = "123"
                 label.fontColor = SKColor(red: 254/255, green: 189/255, blue: 62/255, alpha: 1)
                 bar.addChild(label.shadowNode(nodeName: "labelCoinEffect"))
-            }
-            else{
+            } else {
                 label.text = "0"
                 label.fontColor = .green
                 bar.addChild(label.shadowNode(nodeName: "labelTrophyEffect"))
             }
-            
         }
         else if templateStyle == .Fourth{
             // This place will be the settings. Still not available
@@ -152,15 +147,11 @@ class Infobar: SKSpriteNode{
         
         // gold
         let curr = Currency(type: .Coin)
-        let coinWidth:CGFloat = height*0.9
-        let coinHeight:CGFloat = height*0.9
-        let coinXpos:CGFloat = width - coinWidth/2
-        let coinYpos:CGFloat = coinHeight/2 //+ 100 // decrease 50 to show on screen
-        
-        let goldIcon = curr.createCoin(posX: coinXpos, posY: coinYpos,
-                                       width: coinWidth, height: coinHeight,
-                                       createPhysicalBody: false, animation: true)
-        
+        let coinWidth:CGFloat = height * 0.9
+        let coinHeight:CGFloat = height * 0.9
+        let coinXpos:CGFloat = width - coinWidth / 2
+        let coinYpos:CGFloat = coinHeight / 2 //+ 100 // decrease 50 to show on screen
+        let goldIcon = curr.createCoin(posX: coinXpos, posY: coinYpos, width: coinWidth, height: coinHeight, createPhysicalBody: false, animation: true)
         goldIcon.name = "top_coin_tracker"
         node.addChild(goldIcon)
         
@@ -176,11 +167,12 @@ class Infobar: SKSpriteNode{
         labelText.name = "coinText"
         node.addChild(labelText.shadowNode(nodeName: "coinLabelName"))
         
+        
         node.alpha = 0.0
         return node
     }
     
-    func updateGoldLabel(coinCount:Int) {
+     func updateGoldLabel(coinCount:Int) {
         guard let coinShadowLabel = fifthTemplate.childNode(withName: "coinLabelName") as? SKEffectNode else{
             print ("ERROR A01: Check updateGoldLabel method from Class Infobar")
             return
@@ -193,7 +185,7 @@ class Infobar: SKSpriteNode{
         coinLabel.text = numberToString(num: coinCount)
     }
     
-    func updateGoldBalnceLabel(balance:Int) {
+     func updateGoldBalnceLabel(balance:Int){
         guard let coinBarLabel = secondTemplate.childNode(withName: "bar") else{
             print ("ERROR A00: Check updateGoldLabel method from Class Infobar")
             return
@@ -206,7 +198,6 @@ class Infobar: SKSpriteNode{
             print ("ERROR A02: Check updateGoldLabel method from Class Infobar")
             return
         }
-        
         coinLabel.text = numberToString(num: balance)
     }
     

@@ -1,10 +1,11 @@
 import SpriteKit
 
 class MainScene: SKScene, SKPhysicsContactDelegate{
-    enum Scene{
+    enum Scene {
         case MainScene
         case EndScene
-        case Character_Menu
+        case CharacterMenuScene
+        case ScoreMenuScene
     }
     
     var gameinfo = GameInfo()
@@ -204,7 +205,7 @@ class MainScene: SKScene, SKPhysicsContactDelegate{
         let childs = self.nodes(at: pos)
         for c in childs{
             if c.name == "character_building_button"{
-                prepareToChangeScene(scene: .Character_Menu)
+                prepareToChangeScene(scene: .CharacterMenuScene)
             }
         }
     }
@@ -304,8 +305,7 @@ class MainScene: SKScene, SKPhysicsContactDelegate{
             
         else if l_node.name! == "toon" && h_node.name!.contains("Enemy"){
             contactType = .HitByEnemy
-        }
-        else if l_node.name!.contains("Enemy") && l_node.name!.contains("Attack") && h_node.name == "bullet"{
+        } else if l_node.name!.contains("Enemy") && l_node.name!.contains("Attack") && h_node.name == "bullet"{
             // Handle case where bullet hit enemy's attack
             return
         }
@@ -376,7 +376,7 @@ class MainScene: SKScene, SKPhysicsContactDelegate{
         sknode.removeFromParent()
     }
     
-    func prepareToChangeScene(scene:Scene){
+    func prepareToChangeScene(scene: Scene){
         // remove all gestures
         for gesture in (view?.gestureRecognizers)!{
             view?.removeGestureRecognizer(gesture)
@@ -396,7 +396,7 @@ class MainScene: SKScene, SKPhysicsContactDelegate{
                 self.view?.presentScene(scene)
                 }]))
             
-        case .Character_Menu:
+        case .CharacterMenuScene:
             self.gameinfo.prepareToChangeScene()
             self.recursiveRemovingSKActions(sknodes: self.children)
             self.removeAllChildren()

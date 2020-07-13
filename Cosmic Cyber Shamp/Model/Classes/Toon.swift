@@ -12,9 +12,6 @@ class Toon {
             return name
         }
     }
-    deinit {
-        print ("Toon class has been deinitiated.")
-    }
     
     private var size: CGSize
     private var node: SKSpriteNode
@@ -27,8 +24,7 @@ class Toon {
     // Initialize
     private var charType: Character
     
-    init(char:Character){
-        
+    init(char:Character) {
         var localMainTexture:SKTexture!
         var localWingTexture:SKTexture!
         var cw:CGFloat!

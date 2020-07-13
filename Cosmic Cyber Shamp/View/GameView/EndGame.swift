@@ -32,7 +32,7 @@ class EndGame: SKScene {
         
         
         let label = SKLabelNode(fontNamed: "Courier")
-        label.position = CGPoint(x: 100, y: 100)
+        label.position = CGPoint(x: 200, y: 200)
         label.color = .red
         label.fontSize = 30
         label.text = String(newCoinAmount)

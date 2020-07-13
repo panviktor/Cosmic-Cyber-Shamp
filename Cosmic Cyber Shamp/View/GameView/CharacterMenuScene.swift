@@ -49,6 +49,8 @@ class CharacterMenuScene: SKScene{
     
     private func loadBackground(){
         let bg = SKSpriteNode(texture: global.getMainTexture(main: .Character_Menu_Background))
+        bg.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        bg.size = CGSize(width: screenSize.width, height: screenSize.height)
         bg.zPosition = -10
         self.addChild(bg)
     }
@@ -59,7 +61,7 @@ class CharacterMenuScene: SKScene{
         if(!check.0){
             print("LOADING ERROR: ", check.1)
             return
-        }else{
+        } else {
             // Fix Inforbar Position
             let infobar = self.childNode(withName: "infobar")!
             infobar.position.y -= screenSize.size.height/2
@@ -344,7 +346,6 @@ class CharacterMenuScene: SKScene{
                 }
             }
         }
-        
     }
     
     private func doTask(gb:Global.Main){
@@ -421,7 +422,6 @@ class CharacterMenuScene: SKScene{
             updateUpgradeScene()
             updateToonUI(toon: toon!)
         }
-        
         greenButtonLabel.text = (gameinfo.requestToonBulletLevel(index: currToonIndex) >= 50) ? "MAX" : "UPDATE"
     }
     
@@ -491,11 +491,9 @@ class CharacterMenuScene: SKScene{
     
     private func prevArrow(currToon:CurrToon){
         currToonIndex = currToon.rawValue - 1
-        
-        if (currToonIndex < 0){
+        if (currToonIndex < 0) {
             currToonIndex = MAXTOONS - 1
         }
-        
         update(Case: .ToonChanged)
     }
     
@@ -540,7 +538,6 @@ class CharacterMenuScene: SKScene{
         effect5?.emissionAngle = CGFloat(Double.pi/180 * 80)
         effect5?.xAcceleration = -400
         addChild(effect5!)
-        
     }
     
     private func showUpgrade() -> Bool{

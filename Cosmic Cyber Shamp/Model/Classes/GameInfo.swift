@@ -45,7 +45,7 @@ class GameInfo: GameInfoDelegate {
         gamestate = .NoState
         timePerWave = 3.0 // 3.0 is default
         
-       infobar = Infobar(name: "infobar")
+        infobar = Infobar(name: "infobar")
         // delegates
         regularEnemies.delegate = self
         boss.delegate = self
@@ -65,7 +65,7 @@ class GameInfo: GameInfoDelegate {
         // update infobar
         infobar.updateGoldBalnceLabel(balance: account.getGoldBalance())
         addChild(infobar)
-
+        
         loadStatus = self.createWalls(leftXBound: 0, rightXBound:screenSize.width, width: 50, height: screenSize.height)
         return loadStatus
     }
@@ -162,7 +162,7 @@ class GameInfo: GameInfoDelegate {
             }
             
             // Running Actions
-          infobar.fadeAway()
+            infobar.fadeAway()
             
             mainscene.run(SKAction.sequence([SKAction.run(moveDownCloud, onChildWithName: Global.Main.StartCloud_1.rawValue + "0"), SKAction.wait(forDuration: 0.4), SKAction.run(moveDownCloud, onChildWithName: Global.Main.StartCloud_2.rawValue + "1"), SKAction.wait(forDuration: 0.4), SKAction.run(moveDownCloud, onChildWithName: Global.Main.StartCloud_1.rawValue + "2"), SKAction.wait(forDuration: 0.4), SKAction.run(moveDownCloud, onChildWithName: Global.Main.StartCloud_2.rawValue + "3")]))
             
@@ -247,7 +247,7 @@ class GameInfo: GameInfoDelegate {
         let (success, response) = self.account.upgradeBullet()
         
         if success {
-//            self.infobar.updateGoldBalnceLabel(balance: self.account.getGoldBalance())
+            //            self.infobar.updateGoldBalnceLabel(balance: self.account.getGoldBalance())
         }
         return (success, response)
     }
@@ -265,7 +265,7 @@ class GameInfo: GameInfoDelegate {
     // Enum CurrencyType: .Gold, .Diamond... etc
     func addCoin(amount:Int){
         currentGold += amount
-//        infobar.updateGoldLabel(coinCount: self.currentGold)
+        infobar.updateGoldLabel(coinCount: self.currentGold)
     }
     
     func getCurrentGold() -> Int{

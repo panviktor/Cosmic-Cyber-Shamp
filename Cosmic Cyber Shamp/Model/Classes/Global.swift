@@ -266,7 +266,6 @@ class Global {
         self.mainMenuPreload()
     }
     
-    
     private func mainMenuPreload(){
         let atlas = SKTextureAtlas(named: "mainmenu")
         atlas.preload {
@@ -414,7 +413,6 @@ class Global {
     }
     
     private func itemsPreload(){
-        
         let atlas = SKTextureAtlas(named: "Items")
         
         atlas.preload {
@@ -433,23 +431,18 @@ class Global {
     
     private func hudPreload(){
         let atlas = SKTextureAtlas(named: "HUD")
-        
         atlas.preload {
-            
             for texture in atlas.textureNames{
                 if texture.contains("hud_gold"){
                     self.gold_hud.append(atlas.textureNamed("hud_gold_\(self.gold_hud.count)"))
                 }
             }
-            
             self.checkmark()
-            
         }
     }
     
     private func characterScenePreload(){
         let atlas = SKTextureAtlas(named: "CharacterScene")
-        
         atlas.preload {
             for texture in atlas.textureNames{
                 if texture.contains("character_menu_"){
@@ -461,9 +454,7 @@ class Global {
     }
     
     private func checkmark(){
-        
         self.serialQueue.async {
-            
             let nc = NotificationCenter.default
             
             // Checkmark
@@ -488,12 +479,10 @@ class Global {
     }
     
     func getHUDTexture(hudType:HUD, text:String) -> SKTexture{
-        
         let num:Int!
         if text == ","{
             num = 10
-        }
-        else{
+        } else {
             num = Int(text)
         }
         switch hudType {
@@ -735,7 +724,6 @@ class Global {
             return classicBoss[.Bomber]![.attackTexture]![0]
         }
     }
-    
 }
 
 let global: Global = Global.sharedInstance // Using this Singleton to access all textures
