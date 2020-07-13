@@ -1,12 +1,12 @@
 
 import SpriteKit
 
-class Toon{
-    
-    enum Character:String{
+class Toon {
+    enum Character: String{
         case Alpha = "ALPHA"
         case Beta = "BETA"
         case Celta = "CELTA"
+        
         var string:String{
             let name = String(describing: self)
             return name
@@ -16,16 +16,16 @@ class Toon{
         print ("Toon class has been deinitiated.")
     }
     
-    private var size:CGSize
-    private var node:SKSpriteNode
-    private var bullet:Projectile?
-    private var description:[String] = []
-    private var experience:CGFloat = 0
-    private var title:String = "None"
-    private var level:Int = 1 // For future use
+    private var size: CGSize
+    private var node: SKSpriteNode
+    private var bullet: Projectile?
+    private var description: [String] = []
+    private var experience: CGFloat = 0
+    private var title: String = "None"
+    private var level: Int = 1 // For future use
     
     // Initialize
-    private var charType:Character
+    private var charType: Character
     
     init(char:Character){
         

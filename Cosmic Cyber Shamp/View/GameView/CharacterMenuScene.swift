@@ -8,13 +8,8 @@
 
 import SpriteKit
 
-class CharacterMenuScene:SKScene{
-    
-    deinit{
-        print("CharacterMenuScene deinitiated")
-    }
-    
-    private enum CurrToon:Int{
+class CharacterMenuScene: SKScene{
+    private enum CurrToon: Int{
         case Alpha = 0
         case Beta = 1
         case Celta = 2
@@ -37,7 +32,7 @@ class CharacterMenuScene:SKScene{
         case Upgrade
     }
     
-    let MAXTOONS:Int = 3
+    let MAXTOONS = 3
     
     fileprivate var charNode = SKSpriteNode()
     fileprivate var gameinfo = GameInfo()
@@ -80,7 +75,7 @@ class CharacterMenuScene:SKScene{
         title.size = CGSize(width: screenSize.width*0.6, height: screenSize.height*0.1)
         
         let titleLabel = SKLabelNode(fontNamed: "Family Guy")
-        titleLabel.text = "EVERWING ACADEMY"
+        titleLabel.text = "Cosmic Cyber Shamp"
         titleLabel.fontColor = SKColor(red: 254/255, green: 189/255, blue: 62/255, alpha: 1)
         titleLabel.fontSize = screenSize.width/28
         title.addChild(titleLabel.shadowNode(nodeName: "titleEffectNodeLabel"))
@@ -387,9 +382,7 @@ class CharacterMenuScene:SKScene{
         }
     }
     
-    
-    private func update(Case: Update){
-        
+    private func update(Case: Update) {
         let toon = CurrToon(rawValue: currToonIndex)
         let msgbox = self.childNode(withName: Global.Main.Character_Menu_MessageBox.rawValue)!
         let msgboxRightRoot = msgbox.childNode(withName: "character_menu_rightRoot")!
@@ -400,9 +393,7 @@ class CharacterMenuScene:SKScene{
         let greenButtonLabel = greenButton.childNode(withName: "label") as! SKLabelNode
         
         switch Case {
-            
         case .ToonChanged:
-            
             if toon!.rawValue != gameinfo.requestCurrentToonIndex(){
                 glowingEffect.isHidden = true
                 groundEffect.isHidden = true
@@ -716,15 +707,12 @@ class CharacterMenuScene:SKScene{
     }
     
     private func updateUpgradeScene(){
-        
         let toon = CurrToon(rawValue: currToonIndex)!
         let currLevelBullet = gameinfo.requestToonBulletLevel(index: currToonIndex)
         let nextLevelBullet = currLevelBullet + 1
         guard let currToon = Toon.Character(rawValue: toon.string),
             let blevel = BulletMaker.Level(rawValue: nextLevelBullet)
             else{return}
-        
-        
         
         let root = self.childNode(withName: "upgrade_rootView")!
         let contentRoot = root.childNode(withName: "upgrade_contentRoot")!
@@ -758,9 +746,8 @@ class CharacterMenuScene:SKScene{
         rightDmgLabel.text = "DMG: \(String(20 + (currLevelBullet+1)*5))"
         rightLabel.text = "LV \(String(nextLevelBullet))"
         buttonLabel.text = String(nextLevelBullet * 100)
-        
-        
     }
+    
     private func closeUpgrade(){
         let upgradeSceneRoot = self.childNode(withName: "upgrade_rootView")!
         let bground = upgradeSceneRoot.childNode(withName: "upgrade_background")!
@@ -774,5 +761,4 @@ class CharacterMenuScene:SKScene{
         upgradeSceneRoot.run(SKAction.sequence([SKAction.wait(forDuration: 0.15), SKAction.removeFromParent()]))
         state = .Select
     }
-    
 }

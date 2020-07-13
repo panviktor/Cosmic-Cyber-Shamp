@@ -1,21 +1,6 @@
-//
-//  MainScene.swift
-//  Angelica Fighti
-//
-//  Created by Guan Wong on 5/12/17.
-//  Copyright © 2017 Wong. All rights reserved.
-//
-
-import Foundation
 import SpriteKit
 
-
-class MainScene:SKScene, SKPhysicsContactDelegate{
-    
-    deinit{
-        print("MainScene is being deInitialized.");
-    }
-    
+class MainScene: SKScene, SKPhysicsContactDelegate{
     enum Scene{
         case MainScene
         case EndScene
@@ -26,11 +11,8 @@ class MainScene:SKScene, SKPhysicsContactDelegate{
     var isPlayerMoved:Bool = false
     
     override func didMove(to view: SKView) {
-        
         removeUIViews()
-        
         let gestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(self.handlePanFrom(recognizer:)))
-        
         self.view?.addGestureRecognizer(gestureRecognizer)
         
         // For Debug Use only
@@ -43,12 +25,9 @@ class MainScene:SKScene, SKPhysicsContactDelegate{
         self.anchorPoint = CGPoint(x: 0.0, y: 0.0)
         loadBackground()
         loadgameinfo()
-        
     }
     
     func loadBackground(){
-        print (screenSize)
-        
         let bg = SKSpriteNode()
         bg.texture = global.getMainTexture(main: .Main_Menu_Background_1)
         bg.position = CGPoint(x: screenSize.width/2, y: screenSize.height/2)
@@ -231,7 +210,6 @@ class MainScene:SKScene, SKPhysicsContactDelegate{
     }
     
     @objc func handlePanFrom(recognizer : UIPanGestureRecognizer) {
-        
         let toon = gameinfo.getCurrentToon()
         let player = gameinfo.getCurrentToonNode()
         
@@ -245,11 +223,7 @@ class MainScene:SKScene, SKPhysicsContactDelegate{
         } else if recognizer.state == .changed {
             let locomotion = recognizer.translation(in: recognizer.view)
             player.position.x = player.position.x + locomotion.x*2.0
-            // print(locomotion.x)
             
-            //ceil((locomotion.x * 1.8))
-            
-            //  print (toon.getNode().position)
             recognizer.setTranslation(CGPoint(x: 0,y: 0), in: self.view)
             if (player.position.x < 0 ){
                 player.position.x = 0
@@ -340,7 +314,7 @@ class MainScene:SKScene, SKPhysicsContactDelegate{
     }
     
     func contactUpdate(lowNode: SKSpriteNode, highNode: SKSpriteNode, contactType:ContactType){
-        let regular = gameinfo.regular_enemies
+        let regular = gameinfo.regularEnemies
         let boss = gameinfo.boss
         
         switch contactType{
@@ -391,7 +365,6 @@ class MainScene:SKScene, SKPhysicsContactDelegate{
             self.run(self.gameinfo.mainAudio.getAction(type: .Coin))
             self.gameinfo.addCoin(amount: 1)
             destroy(sknode: highNode)
-            
         case .None:
             break
         }
@@ -412,7 +385,6 @@ class MainScene:SKScene, SKPhysicsContactDelegate{
         switch scene {
         case .EndScene:
             self.physicsWorld.speed = 0.4
-            
             self.run(SKAction.sequence([SKAction.wait(forDuration: 4), SKAction.run {
                 self.gameinfo.prepareToChangeScene()
                 self.recursiveRemovingSKActions(sknodes: self.children)
@@ -423,22 +395,16 @@ class MainScene:SKScene, SKPhysicsContactDelegate{
                 scene.collectedCoins = self.gameinfo.getCurrentGold()
                 self.view?.presentScene(scene)
                 }]))
-        case .Character_Menu:
             
+        case .Character_Menu:
             self.gameinfo.prepareToChangeScene()
             self.recursiveRemovingSKActions(sknodes: self.children)
             self.removeAllChildren()
             self.removeAllActions()
-            
             let newScene = CharacterMenuScene(size: self.size)
             self.view?.presentScene(newScene)
         default:
             print("Should not reach here. PrepareToChangeScene from MainScene")
         }
-        // switch scene
-        
-        
     }
-    
-    
 }

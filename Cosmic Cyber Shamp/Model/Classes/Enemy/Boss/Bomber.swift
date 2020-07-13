@@ -8,8 +8,7 @@
 
 import SpriteKit
 
-class Bomber:Enemy{
-    
+class Bomber: Enemy {
     private var actionsStandBy:[SKTexture] = []
     private var actionsDead:[SKTexture] = []
     private var currency:Currency = Currency(type: .Coin)

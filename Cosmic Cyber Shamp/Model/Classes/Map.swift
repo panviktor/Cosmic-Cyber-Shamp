@@ -11,17 +11,17 @@ import SpriteKit
 class Map: NSObject{
     private var timer:Timer?
     
-    private var maptextures:[SKTexture]
+    private var maptextures: [SKTexture]
     private var bottomTexture:SKTexture
     private var midTexture:SKTexture
     private var topTexture:SKTexture
     private var currIndex:Int
     
-    let top:SKSpriteNode
-    let mid:SKSpriteNode
-    let bottom:SKSpriteNode
+    let top: SKSpriteNode
+    let mid: SKSpriteNode
+    let bottom: SKSpriteNode
     
-    init(maps:[SKTexture], scene:SKScene){
+    init(maps: [SKTexture], scene:SKScene){
         
         if maps.count < 3{
             fatalError("maps should have at least 3 textures.")
@@ -75,11 +75,9 @@ class Map: NSObject{
             currIndex = currIndex + 1
             return maptextures[currIndex]
         }
-        
     }
     
     func run(){
-        
         // Timer 
         timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(self.update), userInfo: nil, repeats: true);
         

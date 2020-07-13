@@ -9,12 +9,7 @@
 import SpriteKit
 import AVFoundation
 
-
 class Global {
-    deinit {
-        print ("Global is deinitiated")
-    }
-    
     static let sharedInstance = Global()
     
     enum Animation{
@@ -32,8 +27,7 @@ class Global {
         case Regular_Bluer_Sprites
     }
     
-    enum Main:String{
-        
+    enum Main: String{
         // Characters
         case Character_Alpha
         case Character_Alpha_Wing
@@ -134,8 +128,6 @@ class Global {
         case StartCloud_1 = "startcloud_1"
         case StartCloud_2 = "startcloud_2"
         case Fireball_Tracker
-        
-        
     }
     
     enum HUD{
@@ -276,7 +268,6 @@ class Global {
     
     
     private func mainMenuPreload(){
-        
         let atlas = SKTextureAtlas(named: "mainmenu")
         atlas.preload {
             self.purple_button = atlas.textureNamed("PurpleButton")
@@ -304,12 +295,10 @@ class Global {
                 else if texture.contains("start_cloud_"){
                     self.start_cloud.append(atlas.textureNamed("start_cloud_\(self.start_cloud.count + 1)"))
                 }
-                
             }
             
             self.checkmark()
         }
-        
     }
     
     private func mapPreload(){
@@ -749,6 +738,6 @@ class Global {
     
 }
 
-let global:Global = Global.sharedInstance // Using this Singleton to access all textures
+let global: Global = Global.sharedInstance // Using this Singleton to access all textures
 
 

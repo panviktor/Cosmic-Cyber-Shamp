@@ -1,29 +1,13 @@
-//
-//  GameInfo.swift
-//  Angelica Fighti
-//
-//  Created by Guan Wong on 6/2/17.
-//  Copyright © 2017 Wong. All rights reserved.
-//
-
 import SpriteKit
 
 protocol GameInfoDelegate{
-    var mainAudio:AVAudio {get}
+    var mainAudio:AVAudio { get }
     func addChild(_ sknode: SKNode)
     func changeGameState(_ state: GameState)
     func getCurrentToonNode() -> SKSpriteNode
 }
 
-class GameInfo: GameInfoDelegate{
-    
-    deinit {
-        print ("GameInfo Class deinitiated!")
-    }
-    
-    // Debug Variables
-    fileprivate var counter:Int = 0 // only for debug - no purpose
-    
+class GameInfo: GameInfoDelegate {
     // Main Variables
     weak fileprivate var mainScene:SKScene?
     fileprivate var account:AccountInfo
@@ -31,10 +15,10 @@ class GameInfo: GameInfoDelegate{
     fileprivate var currentGold:Int  // tracking local current in-game
     fileprivate var currentHighscore:Int
     fileprivate var timer:Timer?
-    fileprivate let infobar:Infobar
+    fileprivate let infobar: Infobar
     
     // Secondary Variables
-    fileprivate var wavesForNextLevel:Int = 10
+    fileprivate var wavesForNextLevel: Int = 10
     fileprivate var gamestate:GameState
     fileprivate var timePerWave:Double // time to call each wave
     
@@ -43,29 +27,29 @@ class GameInfo: GameInfoDelegate{
     private var accountGoldLabel:HUD?
     
     // Public Variables
-    var mainAudio:AVAudio
-    var regular_enemies:EnemyModel
-    var boss:EnemyModel
-    var fireball_enemy:EnemyModel
-    var map:Map?
+    var mainAudio: AVAudio
+    var regularEnemies: EnemyModel
+    var boss: EnemyModel
+    var fireballEnemy: EnemyModel
+    var map: Map?
     
-    init(){
+    init() {
         mainAudio = AVAudio()
         currentLevel = 0
         currentGold = 0
         currentHighscore = 0
         account = AccountInfo()
-        fireball_enemy = EnemyModel(type: .Fireball)
-        regular_enemies = EnemyModel(type: .Regular)
+        fireballEnemy = EnemyModel(type: .Fireball)
+        regularEnemies = EnemyModel(type: .Regular)
         boss = EnemyModel(type: .Boss)
         gamestate = .NoState
         timePerWave = 3.0 // 3.0 is default
-        infobar = Infobar(name: "infobar")
-        // delegates
-        regular_enemies.delegate = self
-        boss.delegate = self
-        fireball_enemy.delegate = self
         
+       infobar = Infobar(name: "infobar")
+        // delegates
+        regularEnemies.delegate = self
+        boss.delegate = self
+        fireballEnemy.delegate = self
     }
     
     func load(scene: SKScene) -> (Bool, String){
@@ -74,28 +58,27 @@ class GameInfo: GameInfoDelegate{
         
         // play background music
         mainAudio.play(type: .Background_Start)
-        if !account.load(){
+        if !account.load() {
             return (false, "account error")
         }
         
         // update infobar
         infobar.updateGoldBalnceLabel(balance: account.getGoldBalance())
         addChild(infobar)
-        
+
         loadStatus = self.createWalls(leftXBound: 0, rightXBound:screenSize.width, width: 50, height: screenSize.height)
-        
         return loadStatus
     }
     
-    private func createWalls(leftXBound:CGFloat, rightXBound:CGFloat, width:CGFloat, height:CGFloat) -> (Bool, String){
+    private func createWalls(leftXBound: CGFloat, rightXBound: CGFloat, width: CGFloat, height: CGFloat) -> (Bool, String) {
         guard let mainscene = mainScene else{
             return (false, "mainScene is nil")
         }
-        // create invisible wall
         
+        // create invisible wall
         let leftWall = SKSpriteNode()
         leftWall.name = "leftWall"
-        leftWall.physicsBody =  SKPhysicsBody(edgeFrom: CGPoint(x: leftXBound, y: 0), to: CGPoint(x: leftXBound, y: screenSize.height))
+        leftWall.physicsBody = SKPhysicsBody(edgeFrom: CGPoint(x: leftXBound, y: 0), to: CGPoint(x: leftXBound, y: screenSize.height))
         leftWall.physicsBody!.isDynamic = false
         leftWall.physicsBody!.categoryBitMask = PhysicsCategory.Wall
         
@@ -112,8 +95,7 @@ class GameInfo: GameInfoDelegate{
         return (true, "No errors")
     }
     
-    private func didFinishSpawningEnemy(){
-        
+    private func didFinishSpawningEnemy() {
         mainScene!.run(SKAction.sequence([SKAction.run {
             // update gamestate
             self.changeGameState(.BossEncounter)
@@ -127,14 +109,13 @@ class GameInfo: GameInfoDelegate{
     //  Only called when the gamestate is spawning. 
     //  This function is called every second.
     
-    @objc private func running(){
+    @objc private func running() {
         let random = randomInt(min: 0, max: 100)
         // Fireball
         if random < 10 {
             //  print("Fireball called with random: ", random)
-            fireball_enemy.spawn(scene: mainScene!)
+            fireballEnemy.spawn(scene: mainScene!)
         }
-        
     }
     
     private func updateGameState(){
@@ -169,8 +150,7 @@ class GameInfo: GameInfoDelegate{
                 if ( i % 2 == 0){
                     cloud.texture = global.getMainTexture(main: .StartCloud_1)
                     cloud.name = Global.Main.StartCloud_1.rawValue + String(i)
-                }
-                else{
+                } else {
                     cloud.texture = global.getMainTexture(main: .StartCloud_2)
                     cloud.name = Global.Main.StartCloud_2.rawValue + String(i)
                 }
@@ -182,7 +162,7 @@ class GameInfo: GameInfoDelegate{
             }
             
             // Running Actions
-            infobar.fadeAway()
+          infobar.fadeAway()
             
             mainscene.run(SKAction.sequence([SKAction.run(moveDownCloud, onChildWithName: Global.Main.StartCloud_1.rawValue + "0"), SKAction.wait(forDuration: 0.4), SKAction.run(moveDownCloud, onChildWithName: Global.Main.StartCloud_2.rawValue + "1"), SKAction.wait(forDuration: 0.4), SKAction.run(moveDownCloud, onChildWithName: Global.Main.StartCloud_1.rawValue + "2"), SKAction.wait(forDuration: 0.4), SKAction.run(moveDownCloud, onChildWithName: Global.Main.StartCloud_2.rawValue + "3")]))
             
@@ -192,19 +172,20 @@ class GameInfo: GameInfoDelegate{
                     self.addChild(self.account.getCurrentToon().getBullet().shoot())
                     }, SKAction.wait(forDuration: 0.06)])))
                 }]))
+            
         case .WaitingState:
-            regular_enemies.increaseDifficulty()
-            fireball_enemy.increaseDifficulty()
+            regularEnemies.increaseDifficulty()
+            fireballEnemy.increaseDifficulty()
             boss.increaseDifficulty()
             self.changeGameState(.Spawning)
+            
         case .Spawning:
             print("Spawning")
-            
             timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(running), userInfo: nil, repeats: true)
             wavesForNextLevel = randomInt(min: 5, max: 10)
             
             let action = SKAction.sequence([SKAction.run({
-                self.regular_enemies.spawn(scene: mainscene)
+                self.regularEnemies.spawn(scene: mainscene)
             }), SKAction.wait(forDuration: 3)])
             
             //totalWaves
@@ -266,15 +247,15 @@ class GameInfo: GameInfoDelegate{
         let (success, response) = self.account.upgradeBullet()
         
         if success {
-            self.infobar.updateGoldBalnceLabel(balance: self.account.getGoldBalance())
+//            self.infobar.updateGoldBalnceLabel(balance: self.account.getGoldBalance())
         }
         return (success, response)
     }
     
     func prepareToChangeScene(){
         boss.delegate = nil
-        regular_enemies.delegate = nil
-        fireball_enemy.delegate = nil
+        regularEnemies.delegate = nil
+        fireballEnemy.delegate = nil
         mainAudio.stop()
         map?.prepareToChangeScene()
         timer?.invalidate()
@@ -284,7 +265,7 @@ class GameInfo: GameInfoDelegate{
     // Enum CurrencyType: .Gold, .Diamond... etc
     func addCoin(amount:Int){
         currentGold += amount
-        infobar.updateGoldLabel(coinCount: self.currentGold)
+//        infobar.updateGoldLabel(coinCount: self.currentGold)
     }
     
     func getCurrentGold() -> Int{
@@ -304,5 +285,4 @@ class GameInfo: GameInfoDelegate{
         gamestate = state
         updateGameState()
     }
-    
 }

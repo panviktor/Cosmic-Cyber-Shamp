@@ -9,9 +9,8 @@
 import SpriteKit
 
 class Enemy: SKSpriteNode{
-    
-    var hp:CGFloat = 0
-    var maxHp:CGFloat = 0
+    var hp: CGFloat = 0
+    var maxHp: CGFloat = 0
     
     convenience init(hp: CGFloat){
         self.init()
@@ -19,10 +18,9 @@ class Enemy: SKSpriteNode{
         self.maxHp = hp
     }
     
-    
     func addHealthBar(){
-        let w:CGFloat = size.width * 0.9
-        let h:CGFloat = 10.0
+        let w: CGFloat = size.width * 0.9
+        let h: CGFloat = 10.0
         
         let shape = CGRect(x: 0, y: -5, width: w, height: h)
         let border = SKShapeNode(rect: shape, cornerRadius: 5)
@@ -50,6 +48,4 @@ class Enemy: SKSpriteNode{
         
         self.addChild(rootBar)
     }
-    
-    
 }

@@ -8,9 +8,8 @@
 
 import SpriteKit
 
-class Fireball:Enemy {
-    
-    private var currency:Currency = Currency(type: .Coin)
+class Fireball: Enemy {
+    private var currency: Currency = Currency(type: .Coin)
     private var velocity = CGVector.zero
     private var target:SKSpriteNode?
     
@@ -28,7 +27,6 @@ class Fireball:Enemy {
     }
     
     private func initialSetup(){
-        
         let auratextures = global.getTextures(textures: .Fireball_Aura)
         let facetextures = global.getTextures(textures: .Fireball_Face)
         let trackerTexture = global.getMainTexture(main: .Fireball_Tracker)
@@ -96,7 +94,6 @@ class Fireball:Enemy {
         line.run(lineaction)
         track.addChild(line)
         
-        
         // actual fireball
         let auranode = getAura()
         auranode.name = self.name  // the main node
@@ -140,7 +137,7 @@ class Fireball:Enemy {
         }
         
         let repeatAI = SKAction.repeat(SKAction.sequence([AIMove, SKAction.wait(forDuration: 0.01)]), count: 80)
-        
+    
         let AIAction = SKAction.sequence([SKAction.wait(forDuration: 0.2), AIMove, repeatAI, SKAction.wait(forDuration: 0.5)])
         
         position.x = target.position.x

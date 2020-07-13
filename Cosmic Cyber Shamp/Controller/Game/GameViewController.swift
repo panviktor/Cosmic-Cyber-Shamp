@@ -1,11 +1,8 @@
 import SpriteKit
 
-
 let screenSize: CGRect = UIScreen.main.bounds
 
 class GameViewController: UIViewController {
-    let screenSize = UIScreen.main.bounds
-    
     enum LoadStatus{
         case Normal
         case Warning
@@ -18,40 +15,45 @@ class GameViewController: UIViewController {
         case Backup
         case NoBackup
     }
+    
     struct Plist {
         private var Root = [String]()
         private var Toon = [String]()
         private var ToonModel = [String]()
         
-        func getRoot() -> [String]{
+        func getRoot() -> [String] {
             return Root
         }
-        func getToon() -> [String]{
+        
+        func getToon() -> [String] {
             return Toon
         }
-        func getModel() -> [String]{
+        
+        func getModel() -> [String] {
             return ToonModel
         }
-        mutating func addToRoot(str: String){
+        
+        mutating func addToRoot(str: String) {
             Root.append(str)
         }
-        mutating func addToToon(str: String){
+        
+        mutating func addToToon(str: String) {
             Toon.append(str)
         }
-        mutating func addToModelToon(str: String){
+        
+        mutating func addToModelToon(str: String) {
             ToonModel.append(str)
         }
     }
     
     // Loading Scene Variables
-    
-    let rootview:UIImageView = {
+    let rootView: UIImageView = {
         let view = UIImageView(image: UIImage(named: "initial_main_bg"))
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-    let bview:UIView = {
+    let bview: UIView = {
         let view = UIView()
         view.backgroundColor = .white
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -219,21 +221,15 @@ class GameViewController: UIViewController {
                                     return (false, false, "Report: Client Plist ModelToon Item: (\(modeltoon as! String)) - Not included in OriginalPlist")
                                 }
                             }
-                        }
-                        else{
+                        } else {
                             // modelToon is not a dictionary
                             return (false, false, "Report: Client Plist one or more ModelToon is not a dictionary. One or more Toons' key is not a dictionary")
                         }
-                        
-                        
                     }
-                }
-                else{
+                } else {
                     return (false, false, "Report: Client Plist Toons is not a dictionary")
                 }
-                
             }
-            
         }
         
         // Check for Root Sizes
@@ -255,13 +251,11 @@ class GameViewController: UIViewController {
             }
         }
         
-        
         // Passed all checkers. Client Plist can be loaded without errors.
         return (true, isBackupPossible, "Successfully Checked with no errors")
     }
     
     private func redirect(status st:LoadStatus, message msg:String){
-        
         switch st {
         case .Normal:
             print("Load Status: Normal")
@@ -293,7 +287,6 @@ class GameViewController: UIViewController {
     }
     
     private func preloadDone(notification:Notification){
-        
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
             let scene = MainScene(size: self.view.bounds.size)
             scene.scaleMode = .aspectFill
@@ -303,6 +296,7 @@ class GameViewController: UIViewController {
             skview.presentScene(scene)
         }
     }
+    
     private func hardReset(filepath: String){
         if !defaultPlist.write(toFile: filepath, atomically: false){
             redirect(status: .Critical, message: "FILE FAILED TO SAVE THE CHANGES ---- PLEASE FIX IT IN ViewController.hardReset")
@@ -337,17 +331,16 @@ class GameViewController: UIViewController {
     
     private func loadingScene(){
         // x, y, width, height
-        
-        view.addSubview(rootview)
+        view.addSubview(rootView)
         view.addSubview(bview)
         bview.addSubview(imgView)
         bview.addSubview(loadLabel)
         loadLabel.addSubview(labelNumber)
         
-        rootview.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        rootview.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        rootview.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
-        rootview.heightAnchor.constraint(equalTo: view.heightAnchor).isActive = true
+        rootView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        rootView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        rootView.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
+        rootView.heightAnchor.constraint(equalTo: view.heightAnchor).isActive = true
         
         bview.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         bview.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -5).isActive = true
@@ -371,23 +364,12 @@ class GameViewController: UIViewController {
         
     }
     
-    
     private func progressTrack(notification:Notification){
         let percentage = notification.userInfo?["Left"]
-        
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.15) {
             self.labelNumber.text =  String(percentage as! Int) + "%"
         }
     }
-    
-    
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    
 }
 
 

@@ -1,16 +1,6 @@
-//
-//  Infobar.swift
-//  Angelica Fighti
-//
-//  Created by Guan Wong on 6/30/17.
-//  Copyright © 2017 Wong. All rights reserved.
-//
 import SpriteKit
 
-class Infobar:SKSpriteNode{
-    deinit{
-        print("infobar deinit")
-    }
+class Infobar: SKSpriteNode{
     private enum Template{
         case First // Display Level&Exp
         case Second // Display account's money
@@ -19,26 +9,24 @@ class Infobar:SKSpriteNode{
         case Fifth // Above the 'Fourth' Label. Visible once game state == .Start
     }
     
-    private let enableDebug:Bool = false
-    private let mainRootWidth:CGFloat = screenSize.width
-    private let mainRootHeight:CGFloat = 100
-    private var firstTemplate:SKSpriteNode!
-    private var secondTemplate:SKSpriteNode!
-    private var thirdTemplate:SKSpriteNode!
-    private var fourthTemplate:SKSpriteNode!
-    private var fifthTemplate:SKSpriteNode!
+    private let mainRootWidth: CGFloat = screenSize.width
+    private let mainRootHeight: CGFloat = 100
+    private var firstTemplate: SKSpriteNode!
+    private var secondTemplate: SKSpriteNode!
+    private var thirdTemplate: SKSpriteNode!
+    private var fourthTemplate: SKSpriteNode!
+    private var fifthTemplate: SKSpriteNode!
     
-    convenience init(name n:String){
+    convenience init(name n: String){
         self.init()
-        
-        let rootItemSize:CGSize = CGSize(width: screenSize.width/4, height: screenSize.height*0.05)
+        let rootItemSize:CGSize = CGSize(width: screenSize.width / 4, height: screenSize.height * 0.05)
         
         name = n
         color = .clear
         
         size = CGSize(width: mainRootWidth, height: mainRootHeight)
-        anchorPoint = CGPoint(x: 0, y: 0)
-        position = CGPoint(x: 0, y: screenSize.height - mainRootHeight)
+        anchorPoint = CGPoint(x: 0.0, y: 0.0)
+        position = CGPoint(x: 0, y: screenSize.height * 0.85)
         // Main_Menu_Currency_Bar
         firstTemplate = generateTemplate(templateStyle: .First, itemSize: rootItemSize, name: "topbar_first_item", barSprite:.Main_Menu_Level_Bar, iconSprite: .Main_Menu_Level_Badge, previousPos: nil)
         secondTemplate = generateTemplate(templateStyle: .Second, itemSize: rootItemSize, name: "topbar_second_item", barSprite: nil, iconSprite: .Main_Menu_Coin, previousPos: firstTemplate.position)
@@ -52,12 +40,10 @@ class Infobar:SKSpriteNode{
         addChild(thirdTemplate)
         addChild(fourthTemplate)
         addChild(fifthTemplate)
-        
-        // Note: It will show debug view only if debug is enabled.
-        debug()
     }
     
-    private func makeTemplateNode(width w:CGFloat, height h:CGFloat, dx:CGFloat, name n:String) -> SKSpriteNode {
+    private func makeTemplateNode(width w:CGFloat, height h:CGFloat, dx:CGFloat, name n:String) -> SKSpriteNode{
+        
         let node = SKSpriteNode()
         node.anchorPoint = CGPoint(x: 0, y: 0)
         node.color = .clear
@@ -69,15 +55,19 @@ class Infobar:SKSpriteNode{
     }
     
     
-    private func generateTemplate(templateStyle:Template, itemSize: CGSize, name n:String, barSprite: Global.Main?, iconSprite: Global.Main, previousPos prev:CGPoint?) -> SKSpriteNode{
-        var px:CGFloat!
+    private func generateTemplate(templateStyle:Template,
+                                  itemSize: CGSize, name n:String, barSprite: Global.Main?,
+                                  iconSprite: Global.Main, previousPos prev:CGPoint?) -> SKSpriteNode{
         
+        var px: CGFloat!
         let (w, h) = (itemSize.width, itemSize.height)
         
         px = (prev == nil) ? 0.0 : prev!.x + w
+        
         let node = makeTemplateNode(width: w, height: h, dx: px,  name: n)
+        // Filling the template -->
         
-        
+        // Bar Default Values
         let barWidth:CGFloat = node.size.width*0.8
         let barHeight:CGFloat = node.size.height*0.55
         let barXpos:CGFloat = node.size.width
@@ -99,9 +89,7 @@ class Infobar:SKSpriteNode{
         node.addChild(icon)
         
         // icon position might be changed with the if condition below:
-        
-        if templateStyle == .First{
-            
+        if templateStyle == .First {
             let newWidth:CGFloat = node.size.width*0.5
             let newHeight:CGFloat = node.size.height*0.65
             
@@ -117,7 +105,7 @@ class Infobar:SKSpriteNode{
             icon.position.x = node.size.width - newWidth - barXpos*0.2
             icon.position.y = 0
         }
-        else if templateStyle == .Second || templateStyle == .Third{
+        else if templateStyle == .Second || templateStyle == .Third {
             let rect = CGRect(x: self.size.width*0.038, y: 0, width: barWidth, height: barHeight)
             let bar = SKShapeNode(rect: rect, cornerRadius: screenSize.height * 0.01)
             bar.alpha = 0.65
@@ -135,7 +123,7 @@ class Infobar:SKSpriteNode{
             label.position.y += barHeight/2.8
             label.name = "label"
             
-            if templateStyle == .Second{
+            if templateStyle == .Second {
                 label.text = "123"
                 label.fontColor = SKColor(red: 254/255, green: 189/255, blue: 62/255, alpha: 1)
                 bar.addChild(label.shadowNode(nodeName: "labelCoinEffect"))
@@ -157,7 +145,6 @@ class Infobar:SKSpriteNode{
     
     // fourth item
     private func customFifthLabel(itemSize:CGSize, prevNodePosition prev:CGPoint) -> SKSpriteNode{
-        
         let width = itemSize.width
         let height = itemSize.height
         let node = makeTemplateNode(width: width, height: height, dx: prev.x + itemSize.width, name: "topbar_right_corner")
@@ -170,9 +157,9 @@ class Infobar:SKSpriteNode{
         let coinXpos:CGFloat = width - coinWidth/2
         let coinYpos:CGFloat = coinHeight/2 //+ 100 // decrease 50 to show on screen
         
-        
-        let goldIcon = curr.createCoin(posX: coinXpos, posY: coinYpos, width: coinWidth, height: coinHeight, createPhysicalBody: false, animation: true)
-        
+        let goldIcon = curr.createCoin(posX: coinXpos, posY: coinYpos,
+                                       width: coinWidth, height: coinHeight,
+                                       createPhysicalBody: false, animation: true)
         
         goldIcon.name = "top_coin_tracker"
         node.addChild(goldIcon)
@@ -189,13 +176,11 @@ class Infobar:SKSpriteNode{
         labelText.name = "coinText"
         node.addChild(labelText.shadowNode(nodeName: "coinLabelName"))
         
-        
         node.alpha = 0.0
         return node
     }
     
-    
-    func updateGoldLabel(coinCount:Int){
+    func updateGoldLabel(coinCount:Int) {
         guard let coinShadowLabel = fifthTemplate.childNode(withName: "coinLabelName") as? SKEffectNode else{
             print ("ERROR A01: Check updateGoldLabel method from Class Infobar")
             return
@@ -208,9 +193,7 @@ class Infobar:SKSpriteNode{
         coinLabel.text = numberToString(num: coinCount)
     }
     
-    func updateGoldBalnceLabel(balance:Int){
-        
-        
+    func updateGoldBalnceLabel(balance:Int) {
         guard let coinBarLabel = secondTemplate.childNode(withName: "bar") else{
             print ("ERROR A00: Check updateGoldLabel method from Class Infobar")
             return
@@ -228,7 +211,6 @@ class Infobar:SKSpriteNode{
     }
     
     func fadeAway(){
-        
         let fadeAwayAction = SKAction.fadeAlpha(to: 0, duration: 0.2)
         
         let showCoinLabelAction = SKAction.group([SKAction.moveBy(x: 0, y: -100, duration: 0.3), SKAction.fadeAlpha(to: 1.0, duration: 0.3)])
@@ -246,18 +228,5 @@ class Infobar:SKSpriteNode{
         formatter.numberStyle = .decimal
         return formatter.string(from: num as NSNumber)!
     }
-    private func debug(){
-        if !enableDebug{
-            return
-        }
-        
-        self.color = .red
-        firstTemplate.color = .yellow
-        secondTemplate.color = .blue
-        thirdTemplate.color = .brown
-        fourthTemplate.color = .purple
-        fifthTemplate.color = .black
-        
-        return
-    }
 }
+

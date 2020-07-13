@@ -6,11 +6,9 @@
 //  Copyright © 2017 Guan Wong. All rights reserved.
 //
 
-import Foundation
 import SpriteKit
 
 class Pinky:Enemy{
-    
     enum PinkyType:String{
         case Original = "Pinky_Original"
         case Clone = "Pinky_Clone"
@@ -21,6 +19,7 @@ class Pinky:Enemy{
         case Right
         case Random
     }
+    
     // fileprivate
     fileprivate let body = Enemy()
     fileprivate let leftEar = Enemy()
@@ -56,7 +55,6 @@ class Pinky:Enemy{
     }
     
     private func setUp(){
-        
         // root.userData = NSMutableDictionary()
         root.alpha = 0
         root.zPosition = 2
@@ -151,11 +149,9 @@ class Pinky:Enemy{
         
         root.addHealthBar()
         setInitialAction()
-        
     }
     
     private func setInitialAction(){
-        
         let delay:Double = (self.name == "Pinky_Clone") ? 2.0 : 4.0
         
         root.run(SKAction.fadeIn(withDuration: delay))
@@ -170,7 +166,6 @@ class Pinky:Enemy{
     }
     
     private func setAnimation(){
-        
         // Wing Action
         let wingDefaultState = SKAction.rotate(toAngle: 0, duration: 0.25)
         let leftWingAction = SKAction.rotate(toAngle: 1.2, duration: 0.25)
@@ -259,7 +254,6 @@ class Pinky:Enemy{
         defaultState()
         
         // Set up Actions
-        
         leftEar.run(SKAction.rotate(toAngle: -0.4, duration: 0.25))
         rightEar.run(SKAction.rotate(toAngle: 0.4, duration: 0.25))
         
@@ -277,7 +271,6 @@ class Pinky:Enemy{
     
     func multiply(){
         root.physicsBody!.contactTestBitMask = PhysicsCategory.None
-        
         
         if self.life == 0 {
             self.root.removeFromParent()
@@ -324,7 +317,6 @@ class Pinky:Enemy{
     }
     
     private func defaultState(){
-        
         // Remove all actions and reset to defautl state
         leftWing.removeAllActions()
         rightWing.removeAllActions()
@@ -339,7 +331,5 @@ class Pinky:Enemy{
         leftWing.run(SKAction.rotate(toAngle: 0.0, duration: 0.25))
         rightWing.run(SKAction.rotate(toAngle: 0.0, duration: 0.25))
         root.physicsBody!.velocity = CGVector.zero
-        
     }
-    
 }

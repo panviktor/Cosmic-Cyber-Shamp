@@ -8,15 +8,13 @@
 
 import SpriteKit
 
-class RegularEnemy:Enemy{
-    private var currency:Currency = Currency(type: .Coin)
+class RegularEnemy: Enemy {
+    private var currency: Currency = Currency(type: .Coin)
     private var velocity = CGVector.zero
     
     private var actionsDead:[SKTexture] = []
     private var enemy_regular_node:Enemy?
-    
     private var remaining = 5
-    
     private let minionSize = CGSize(width: screenSize.width*0.95/5, height: screenSize.width*0.95/5)
     
     convenience init(baseHp:CGFloat, speed:CGVector){
@@ -29,7 +27,7 @@ class RegularEnemy:Enemy{
         userData = NSMutableDictionary()
         self.hp = baseHp
         self.maxHp = baseHp
-        
+
         self.run(SKAction.sequence([SKAction.wait(forDuration: 5), SKAction.removeFromParent()]))
         
         velocity = speed
@@ -63,8 +61,7 @@ class RegularEnemy:Enemy{
         enemy_regular_node.physicsBody!.fieldBitMask = GravityCategory.None // Not affect by magnetic
         enemy_regular_node.addHealthBar()
         
-        for i in 0..<3{
-            
+        for i in 0..<3 {
             if i == 0 {
                 let node = enemy_regular_node.copy() as! Enemy
                 self.addChild(node)
@@ -81,16 +78,13 @@ class RegularEnemy:Enemy{
         }
     }
     
-    
-    private func setMinions(){
-        
+    private func setMinions() {
         func modifyHP(sknode: Enemy, multiplier: CGFloat){
             sknode.hp = self.maxHp * multiplier
             sknode.maxHp = self.maxHp * multiplier
         }
         
         for enemy in self.children {
-            
             let x = randomInt(min: 1, max: 100)
             let enemySK = enemy as! Enemy
             
