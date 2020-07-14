@@ -12,7 +12,7 @@ import AVFoundation
 class Global {
     static let sharedInstance = Global()
     
-    enum Animation{
+    enum Animation {
         case Boss_1_Dead_Animation
         case Boss_1_Move_Animation
         case Puff_Animation
@@ -27,7 +27,7 @@ class Global {
         case Regular_Bluer_Sprites
     }
     
-    enum Main: String{
+    enum Main: String {
         // Characters
         case Character_Alpha
         case Character_Alpha_Wing
@@ -58,6 +58,19 @@ class Global {
         case Main_Menu_Background_1 = "main_background_1"
         case Main_Menu_Background_2 = "main_background_2"
         case Main_Menu_Background_3 = "main_background_3"
+        
+        ///EndGameScene
+        case EndGameScene_Background_1 = "main_background_4"
+        
+        ///WinLevelScene
+        case WinLevelScene_Background_1 = "main_background_5"
+        
+        ///TopScoreScene
+        case TopScoreScene_Background_1 = "main_background_6"
+        
+        ///GameSettingsScene
+        case GameSettingsScene_Background_1 = "main_background_7"
+        
         case Main_Menu_Building_1
         case Main_Menu_Building_2
         case Main_Menu_Building_3
@@ -97,7 +110,6 @@ class Global {
         
         // Bosses
         case Boss_1 = "boss_1"
-        
         case Boss_Pinky_Body
         case Boss_Pinky_Bone
         case Boss_Pinky_Skull
@@ -130,21 +142,27 @@ class Global {
         case Fireball_Tracker
     }
     
-    enum HUD{
+    enum HUD {
         case Gold
         case Trophy
     }
-    enum BossAttack{
+    
+    enum MapType {
+        case Ragnarok
+    }
+    
+    enum BossAttack {
         case Boss1_type_1
     }
     
-    private enum FireballType{
+    private enum FireballType {
         case Face
         case Aura
         case Smoke
         case Tracker
     }
-    private enum MainMenu{
+    
+    private enum MainMenu {
         case Waterfall
         case Building
         case Smoke
@@ -154,34 +172,30 @@ class Global {
         case Text
     }
     
-    private enum MapType{
-        case Ragnarok
-    }
-    
-    enum ClassicBoss{
+    private  enum ClassicBoss {
         case Bomber
     }
-    enum ClassicBossTexture{
+    private   enum ClassicBossTexture{
         case mainTexture
         case attackTexture
         case dieAnimation
         case moveAnimation
     }
     
-    enum Regular{
+    private enum Regular{
         case Redder
         case Grenner
         case Bluer
         case Purpler
     }
-    enum Boss{
+    private enum Boss{
         case Pinky
     }
     
     // Temporary variables to hold textures -> Find a better approach
-    private var gold_main:SKTexture!
-    private var gold_animation:[SKTexture] = []
-    private var bullet:SKTexture!
+    private var gold_main: SKTexture!
+    private var gold_animation: [SKTexture] = []
+    private var bullet :SKTexture!
     
     // Enemies
     private var boss = [Boss:[SKTexture]]()
@@ -193,6 +207,7 @@ class Global {
     
     // Scenes
     private var main_menu_collection = [MainMenu:[SKTexture]]() // All Sprites used in Main Menu
+    
     private var character_menu_collection = [SKTexture]() // Sprites used in Character Selection Scene
     private var start_cloud:[SKTexture] = []
     private var map = [MapType:[SKTexture]]()
@@ -247,7 +262,6 @@ class Global {
     }
     
     func prioirityLoad(){
-        
         if isSetUp {
             print("Warning: Loaded Previously.")
             return
@@ -271,8 +285,7 @@ class Global {
         atlas.preload {
             self.purple_button = atlas.textureNamed("PurpleButton")
             
-            for texture in atlas.textureNames{
-                
+            for texture in atlas.textureNames {
                 if texture.contains("main_menu_") && texture.contains("background"){
                     self.main_menu_collection[.Background]!.append(atlas.textureNamed("main_menu_background_\(self.main_menu_collection[.Background]!.count + 1)"))
                 }
@@ -296,6 +309,58 @@ class Global {
                 }
             }
             
+            self.checkmark()
+        }
+    }
+    
+    private func endGamePreload(){
+        let atlas = SKTextureAtlas(named: "Map")
+        atlas.preload {
+            for texture in atlas.textureNames{
+                if texture.contains("map1_"){
+                    self.map[.Ragnarok]!.append(atlas.textureNamed("map1_\(self.map[.Ragnarok]!.count + 1)"))
+                    print(texture)
+                }
+            }
+            self.checkmark()
+        }
+    }
+    
+    private func winGamePreload(){
+        let atlas = SKTextureAtlas(named: "Map")
+        atlas.preload {
+            for texture in atlas.textureNames{
+                if texture.contains("map1_"){
+                    self.map[.Ragnarok]!.append(atlas.textureNamed("map1_\(self.map[.Ragnarok]!.count + 1)"))
+                    print(texture)
+                }
+            }
+            self.checkmark()
+        }
+    }
+    
+    private func topScorePreload(){
+        let atlas = SKTextureAtlas(named: "Map")
+        atlas.preload {
+            for texture in atlas.textureNames{
+                if texture.contains("map1_"){
+                    self.map[.Ragnarok]!.append(atlas.textureNamed("map1_\(self.map[.Ragnarok]!.count + 1)"))
+                    print(texture)
+                }
+            }
+            self.checkmark()
+        }
+    }
+    
+    private func gameSettingsPreload(){
+        let atlas = SKTextureAtlas(named: "Map")
+        atlas.preload {
+            for texture in atlas.textureNames{
+                if texture.contains("map1_"){
+                    self.map[.Ragnarok]!.append(atlas.textureNamed("map1_\(self.map[.Ragnarok]!.count + 1)"))
+                    print(texture)
+                }
+            }
             self.checkmark()
         }
     }
@@ -414,7 +479,6 @@ class Global {
     
     private func itemsPreload(){
         let atlas = SKTextureAtlas(named: "Items")
-        
         atlas.preload {
             self.bullet = atlas.textureNamed("bulletLater")
             self.gold_main = atlas.textureNamed("gold_main")
@@ -426,7 +490,6 @@ class Global {
             }
             self.checkmark()
         }
-        
     }
     
     private func hudPreload(){
@@ -524,16 +587,29 @@ class Global {
         
     }
     
-    func getMainTexture(main: Main) -> SKTexture{
-        switch main{
-            
-        // Main Menu
+    func getMainTexture(main: Main) -> SKTexture {
+        switch main {
         case .Main_Menu_Background_1:
             return main_menu_collection[.Background]![0]
         case .Main_Menu_Background_2:
             return main_menu_collection[.Background]![1]
         case .Main_Menu_Background_3:
             return main_menu_collection[.Background]![2]
+            
+            
+        case .EndGameScene_Background_1:
+            return main_menu_collection[.Background]![3]
+            
+        case .WinLevelScene_Background_1:
+            return main_menu_collection[.Background]![4]
+            
+        case .TopScoreScene_Background_1:
+            return main_menu_collection[.Background]![5]
+            
+        case .GameSettingsScene_Background_1:
+            return main_menu_collection[.Background]![6]
+            
+            
         case .Main_Menu_Building_1:
             return main_menu_collection[.Building]![0]
         case .Main_Menu_Building_2:
@@ -560,6 +636,7 @@ class Global {
             return main_menu_collection[.Text]![0]
         case .Main_Menu_Arrow:
             return main_menu_collection[.Text]![1]
+            
             
         // Characters
         case .Character_Alpha:
@@ -608,7 +685,6 @@ class Global {
             return character_projectiles[2]![3]
         case .Character_Celta_Projectile_5:
             return character_projectiles[2]![4]
-            
             
         // Character Menu Scene
         case .Character_Menu_Alpha:
@@ -725,7 +801,3 @@ class Global {
         }
     }
 }
-
-let global: Global = Global.sharedInstance // Using this Singleton to access all textures
-
-

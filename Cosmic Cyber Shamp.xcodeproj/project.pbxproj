@@ -7,12 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1451C66324BD8F9C007B915F /* WinLevelScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1451C66224BD8F9C007B915F /* WinLevelScene.swift */; };
+		1451C66524BD902F007B915F /* TopScoreScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1451C66424BD902F007B915F /* TopScoreScene.swift */; };
+		1451C66724BD9070007B915F /* GameSettingsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1451C66624BD9070007B915F /* GameSettingsScene.swift */; };
 		146F01C224BC404900402CB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146F01C124BC404900402CB4 /* AppDelegate.swift */; };
 		146F01C624BC404900402CB4 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146F01C524BC404900402CB4 /* GameViewController.swift */; };
 		146F01CB24BC404A00402CB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 146F01CA24BC404A00402CB4 /* Assets.xcassets */; };
 		146F01CE24BC404A00402CB4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 146F01CC24BC404A00402CB4 /* LaunchScreen.storyboard */; };
 		146F01DC24BC623D00402CB4 /* Extensions+Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146F01DB24BC623D00402CB4 /* Extensions+Game.swift */; };
-		146F01E124BC63BB00402CB4 /* EndGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146F01DE24BC63BB00402CB4 /* EndGame.swift */; };
+		146F01E124BC63BB00402CB4 /* EndGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146F01DE24BC63BB00402CB4 /* EndGameScene.swift */; };
 		146F01E224BC63BB00402CB4 /* MainScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146F01DF24BC63BB00402CB4 /* MainScene.swift */; };
 		146F01E324BC63BB00402CB4 /* CharacterMenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146F01E024BC63BB00402CB4 /* CharacterMenuScene.swift */; };
 		146F020A24BC63E400402CB4 /* fx_4.png in Resources */ = {isa = PBXBuildFile; fileRef = 146F01E824BC63E400402CB4 /* fx_4.png */; };
@@ -65,6 +68,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1451C66224BD8F9C007B915F /* WinLevelScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinLevelScene.swift; sourceTree = "<group>"; };
+		1451C66424BD902F007B915F /* TopScoreScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopScoreScene.swift; sourceTree = "<group>"; };
+		1451C66624BD9070007B915F /* GameSettingsScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSettingsScene.swift; sourceTree = "<group>"; };
 		146F01BE24BC404900402CB4 /* Cosmic Cyber Shamp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cosmic Cyber Shamp.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		146F01C124BC404900402CB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		146F01C524BC404900402CB4 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -72,7 +78,7 @@
 		146F01CD24BC404A00402CB4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		146F01CF24BC404A00402CB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		146F01DB24BC623D00402CB4 /* Extensions+Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extensions+Game.swift"; sourceTree = "<group>"; };
-		146F01DE24BC63BB00402CB4 /* EndGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndGame.swift; sourceTree = "<group>"; };
+		146F01DE24BC63BB00402CB4 /* EndGameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndGameScene.swift; sourceTree = "<group>"; };
 		146F01DF24BC63BB00402CB4 /* MainScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainScene.swift; sourceTree = "<group>"; };
 		146F01E024BC63BB00402CB4 /* CharacterMenuScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterMenuScene.swift; sourceTree = "<group>"; };
 		146F01E824BC63E400402CB4 /* fx_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fx_4.png; sourceTree = "<group>"; };
@@ -220,9 +226,12 @@
 		146F01DD24BC63BB00402CB4 /* GameView */ = {
 			isa = PBXGroup;
 			children = (
-				146F01DE24BC63BB00402CB4 /* EndGame.swift */,
 				146F01DF24BC63BB00402CB4 /* MainScene.swift */,
 				146F01E024BC63BB00402CB4 /* CharacterMenuScene.swift */,
+				146F01DE24BC63BB00402CB4 /* EndGameScene.swift */,
+				1451C66224BD8F9C007B915F /* WinLevelScene.swift */,
+				1451C66424BD902F007B915F /* TopScoreScene.swift */,
+				1451C66624BD9070007B915F /* GameSettingsScene.swift */,
 			);
 			path = GameView;
 			sourceTree = "<group>";
@@ -481,16 +490,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1451C66324BD8F9C007B915F /* WinLevelScene.swift in Sources */,
 				146F01C624BC404900402CB4 /* GameViewController.swift in Sources */,
 				146F024224BC63F500402CB4 /* Projectile.swift in Sources */,
 				146F024B24BC63F500402CB4 /* Fireball.swift in Sources */,
 				146F024424BC63F500402CB4 /* Toon.swift in Sources */,
 				146F024C24BC63F500402CB4 /* RegularEnemy.swift in Sources */,
 				146F024F24BC63F500402CB4 /* AccountInfo.swift in Sources */,
+				1451C66524BD902F007B915F /* TopScoreScene.swift in Sources */,
+				1451C66724BD9070007B915F /* GameSettingsScene.swift in Sources */,
 				146F024124BC63F500402CB4 /* HUD.swift in Sources */,
 				146F023F24BC63F500402CB4 /* PhysicsCategory.swift in Sources */,
 				146F01E324BC63BB00402CB4 /* CharacterMenuScene.swift in Sources */,
-				146F01E124BC63BB00402CB4 /* EndGame.swift in Sources */,
+				146F01E124BC63BB00402CB4 /* EndGameScene.swift in Sources */,
 				146F024824BC63F500402CB4 /* Enemy.swift in Sources */,
 				146F024A24BC63F500402CB4 /* Bomber.swift in Sources */,
 				146F024524BC63F500402CB4 /* GameInfo.swift in Sources */,

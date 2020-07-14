@@ -9,7 +9,7 @@ protocol GameInfoDelegate{
 
 class GameInfo: GameInfoDelegate {
     // Main Variables
-    weak fileprivate var mainScene:SKScene?
+    weak fileprivate var mainScene: SKScene?
     fileprivate var account:AccountInfo
     fileprivate var currentLevel:Int
     fileprivate var currentGold:Int  // tracking local current in-game
@@ -127,7 +127,7 @@ class GameInfo: GameInfoDelegate {
         switch gamestate {
         case .Start:
             // Load Map
-            map = Map(maps: global.getTextures(textures: .Map_Ragnarok), scene: mainscene)
+            map = Map(maps: Global.sharedInstance.getTextures(textures: .Map_Ragnarok), scene: mainscene)
             
             // Cloud action
             let moveDownCloud = SKAction.moveTo(y: -screenSize.height*1.5, duration: 1)
@@ -148,10 +148,10 @@ class GameInfo: GameInfoDelegate {
             for i in 0...3{
                 let cloud = SKSpriteNode()
                 if ( i % 2 == 0){
-                    cloud.texture = global.getMainTexture(main: .StartCloud_1)
+                    cloud.texture = Global.sharedInstance.getMainTexture(main: .StartCloud_1)
                     cloud.name = Global.Main.StartCloud_1.rawValue + String(i)
                 } else {
-                    cloud.texture = global.getMainTexture(main: .StartCloud_2)
+                    cloud.texture = Global.sharedInstance.getMainTexture(main: .StartCloud_2)
                     cloud.name = Global.Main.StartCloud_2.rawValue + String(i)
                 }
                 cloud.size = CGSize(width: screenSize.width, height: screenSize.height*1.5)
@@ -209,6 +209,7 @@ class GameInfo: GameInfoDelegate {
     func getCurrentToon() -> Toon{
         return account.getCurrentToon()
     }
+    
     func getCurrentToonNode() -> SKSpriteNode{
         return account.getCurrentToon().getNode()
     }
@@ -224,9 +225,11 @@ class GameInfo: GameInfoDelegate {
     func getToonBulletEmmiterNode(x px:CGFloat, y py:CGFloat) -> SKEmitterNode{
         return account.getCurrentToon().getBullet().generateTouchedEnemyEmmiterNode(x: px, y: py)
     }
+    
     func requestChangeToon(index: Int){
         self.account.selectToonIndex(index: index)
     }
+    
     func requestToonDescription(index id:Int) -> [String]{
         return self.account.getToonDescriptionByIndex(index: id)
     }
@@ -247,7 +250,7 @@ class GameInfo: GameInfoDelegate {
         let (success, response) = self.account.upgradeBullet()
         
         if success {
-            //            self.infobar.updateGoldBalnceLabel(balance: self.account.getGoldBalance())
+            self.infobar.updateGoldBalnceLabel(balance: self.account.getGoldBalance())
         }
         return (success, response)
     }

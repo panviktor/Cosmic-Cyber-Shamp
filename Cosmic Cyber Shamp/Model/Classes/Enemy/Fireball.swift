@@ -27,9 +27,9 @@ class Fireball: Enemy {
     }
     
     private func initialSetup(){
-        let auratextures = global.getTextures(textures: .Fireball_Aura)
-        let facetextures = global.getTextures(textures: .Fireball_Face)
-        let trackerTexture = global.getMainTexture(main: .Fireball_Tracker)
+        let auratextures = Global.sharedInstance.getTextures(textures: .Fireball_Aura)
+        let facetextures = Global.sharedInstance.getTextures(textures: .Fireball_Face)
+        let trackerTexture = Global.sharedInstance.getMainTexture(main: .Fireball_Tracker)
         
         func getAura() -> SKSpriteNode{
             

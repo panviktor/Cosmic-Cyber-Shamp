@@ -1,14 +1,14 @@
 //
-//  CharacterMenuScene.swift
-//  Angelica Fighti
+//  GameSettingsScene.swift
+//  Cosmic Cyber Shamp
 //
-//  Created by Guan Wong on 6/2/17.
-//  Copyright © 2017 Wong. All rights reserved.
+//  Created by Viktor on 14.07.2020.
+//  Copyright © 2020 Viktor. All rights reserved.
 //
 
 import SpriteKit
 
-class CharacterMenuScene: SKScene{
+class GameSettingsScene: SKScene{
     private enum CurrToon: Int{
         case Alpha = 0
         case Beta = 1
@@ -47,7 +47,7 @@ class CharacterMenuScene: SKScene{
         load()
     }
     
-    private func loadBackground() {
+    private func loadBackground(){
         let bg = SKSpriteNode(texture: Global.sharedInstance.getMainTexture(main: .Character_Menu_Background))
         bg.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         bg.size = CGSize(width: screenSize.width, height: screenSize.height)
@@ -544,9 +544,9 @@ class CharacterMenuScene: SKScene{
         
         let toonLevel = gameinfo.requestToonBulletLevel(index: currToonIndex)
         let nextBulletLevel = gameinfo.requestToonBulletLevel(index: self.currToonIndex) + 1
-        let currCharStr = CharacterMenuScene.CurrToon(rawValue: self.currToonIndex)!.string
+        //let currCharStr = CharacterMenuScene.CurrToon(rawValue: self.currToonIndex)!.string
         
-        guard let currToon = Toon.Character(rawValue: currCharStr),
+        guard let currToon = Toon.Character(rawValue: ""),
             let blevel = BulletMaker.Level(rawValue: nextBulletLevel)
             else{
                 return false

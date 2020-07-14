@@ -12,7 +12,7 @@ struct Projectile {
     private var originX:CGFloat
     private var originY:CGFloat
     private var name = "bullet" // Do not change it.
-    private var bulletnode:SKSpriteNode
+    private var bulletnode: SKSpriteNode
     private var bulletLevel:Int
     private let bulletMaker = BulletMaker()
     
@@ -67,7 +67,7 @@ struct Projectile {
     }
     
     func getPowerValue() -> CGFloat{
-        return 25 + 5.0*CGFloat(bulletLevel)
+        return 25 + 5.0 * CGFloat(bulletLevel)
     }
     func getBulletLevel() -> Int{
         return bulletLevel

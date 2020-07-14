@@ -65,48 +65,48 @@ class Pinky:Enemy{
         root.position = CGPoint(x: screenSize.size.width/2, y: screenSize.size.height - size.height/2 - leftEar.size.height/2)
         self.addChild(root)
         
-        body.texture = global.getMainTexture(main: .Boss_Pinky_Body)
+        body.texture = Global.sharedInstance.getMainTexture(main: .Boss_Pinky_Body)
         body.name = Global.Main.Boss_Pinky_Body.rawValue
         body.size = CGSize(width: 157, height: 170)
         root.addChild(body)
         
-        leftEar.texture = global.getMainTexture(main: .Boss_Pinky_Left_Ear)
+        leftEar.texture = Global.sharedInstance.getMainTexture(main: .Boss_Pinky_Left_Ear)
         leftEar.name = Global.Main.Boss_Pinky_Left_Ear.rawValue
         leftEar.size = CGSize(width: 40, height: 48)
         root.addChild(leftEar)
         leftEar.anchorPoint = CGPoint(x: 1, y: 0)
         leftEar.position = CGPoint(x: -15, y: 50)
         
-        rightEar.texture = global.getMainTexture(main: .Boss_Pinky_Right_Ear)
+        rightEar.texture = Global.sharedInstance.getMainTexture(main: .Boss_Pinky_Right_Ear)
         rightEar.name = Global.Main.Boss_Pinky_Right_Ear.rawValue
         rightEar.size = CGSize(width: 40, height: 48)
         root.addChild(rightEar)
         rightEar.anchorPoint = CGPoint(x: 0, y: 0)
         rightEar.position = CGPoint(x: 15, y: 50)
         
-        leftEye.texture = global.getMainTexture(main: .Boss_Pinky_Left_Eye)
+        leftEye.texture = Global.sharedInstance.getMainTexture(main: .Boss_Pinky_Left_Eye)
         leftEye.name = Global.Main.Boss_Pinky_Left_Eye.rawValue
         leftEye.size = CGSize(width: 31, height: 29)
         leftEye.position = CGPoint(x: -30, y: 25)
         root.addChild(leftEye)
         
-        rightEye.texture = global.getMainTexture(main: .Boss_Pinky_Right_Eye)
+        rightEye.texture = Global.sharedInstance.getMainTexture(main: .Boss_Pinky_Right_Eye)
         rightEye.name = Global.Main.Boss_Pinky_Right_Eye.rawValue
         rightEye.size = CGSize(width: 31, height: 29)
         rightEye.position = CGPoint(x: 30, y: 25)
         root.addChild(rightEye)
         
-        leftEyebrow.texture = global.getMainTexture(main: .Boss_Pinky_Left_EyeBrow)
+        leftEyebrow.texture = Global.sharedInstance.getMainTexture(main: .Boss_Pinky_Left_EyeBrow)
         leftEyebrow.size = CGSize(width: 29, height: 24)
         leftEyebrow.position = CGPoint(x: -30, y: 35)
         root.addChild(leftEyebrow)
         
-        rightEyebrow.texture = global.getMainTexture(main: .Boss_Pinky_Right_EyeBrow)
+        rightEyebrow.texture = Global.sharedInstance.getMainTexture(main: .Boss_Pinky_Right_EyeBrow)
         rightEyebrow.size = CGSize(width: 29, height: 24)
         rightEyebrow.position = CGPoint(x: 28, y: 35)
         root.addChild(rightEyebrow)
         
-        leftWing.texture = global.getMainTexture(main: .Boss_Pinky_Left_Wing)
+        leftWing.texture = Global.sharedInstance.getMainTexture(main: .Boss_Pinky_Left_Wing)
         leftWing.name = Global.Main.Boss_Pinky_Left_Wing.rawValue
         leftWing.anchorPoint = CGPoint(x: 1, y: 0)
         leftWing.size = CGSize(width: 42, height: 39)
@@ -114,7 +114,7 @@ class Pinky:Enemy{
         leftWing.zPosition = 1
         root.addChild(leftWing)
         
-        rightWing.texture = global.getMainTexture(main: .Boss_Pinky_Right_Wing)
+        rightWing.texture = Global.sharedInstance.getMainTexture(main: .Boss_Pinky_Right_Wing)
         rightWing.name = Global.Main.Boss_Pinky_Right_Wing.rawValue
         rightWing.anchorPoint = CGPoint(x: 0, y: 0)
         rightWing.size = CGSize(width: 42, height: 39)
@@ -122,18 +122,18 @@ class Pinky:Enemy{
         rightWing.zPosition = 1
         root.addChild(rightWing)
         
-        leftWingText.append(global.getMainTexture(main: .Boss_Pinky_Left_Wing))
-        leftWingText.append(global.getMainTexture(main: .Boss_Pinky_Left_Middle_Wing))
-        leftWingText.append(global.getMainTexture(main: .Boss_Pinky_Left_Flipped_Wing))
-        leftWingText.append(global.getMainTexture(main: .Boss_Pinky_Left_Middle_Wing))
-        leftWingText.append(global.getMainTexture(main: .Boss_Pinky_Left_Wing))
+        leftWingText.append(Global.sharedInstance.getMainTexture(main: .Boss_Pinky_Left_Wing))
+        leftWingText.append(Global.sharedInstance.getMainTexture(main: .Boss_Pinky_Left_Middle_Wing))
+        leftWingText.append(Global.sharedInstance.getMainTexture(main: .Boss_Pinky_Left_Flipped_Wing))
+        leftWingText.append(Global.sharedInstance.getMainTexture(main: .Boss_Pinky_Left_Middle_Wing))
+        leftWingText.append(Global.sharedInstance.getMainTexture(main: .Boss_Pinky_Left_Wing))
         
         
-        rightWingText.append(global.getMainTexture(main: .Boss_Pinky_Right_Wing))
-        rightWingText.append(global.getMainTexture(main: .Boss_Pinky_Right_Middle_Wing))
-        rightWingText.append(global.getMainTexture(main: .Boss_Pinky_Right_Flipped_Wing))
-        rightWingText.append(global.getMainTexture(main: .Boss_Pinky_Right_Middle_Wing))
-        rightWingText.append(global.getMainTexture(main: .Boss_Pinky_Right_Wing))
+        rightWingText.append(Global.sharedInstance.getMainTexture(main: .Boss_Pinky_Right_Wing))
+        rightWingText.append(Global.sharedInstance.getMainTexture(main: .Boss_Pinky_Right_Middle_Wing))
+        rightWingText.append(Global.sharedInstance.getMainTexture(main: .Boss_Pinky_Right_Flipped_Wing))
+        rightWingText.append(Global.sharedInstance.getMainTexture(main: .Boss_Pinky_Right_Middle_Wing))
+        rightWingText.append(Global.sharedInstance.getMainTexture(main: .Boss_Pinky_Right_Wing))
         
         
         root.physicsBody = SKPhysicsBody(circleOfRadius: body.size.width/2)
@@ -259,8 +259,8 @@ class Pinky:Enemy{
         
         leftWing.run(SKAction.rotate(toAngle: -0.3, duration: 0.25))
         rightWing.run(SKAction.rotate(toAngle: 0.3, duration: 0.25))
-        leftWing.texture = global.getMainTexture(main: .Boss_Pinky_Left_Wing)
-        rightWing.texture = global.getMainTexture(main: .Boss_Pinky_Right_Wing)
+        leftWing.texture = Global.sharedInstance.getMainTexture(main: .Boss_Pinky_Left_Wing)
+        rightWing.texture = Global.sharedInstance.getMainTexture(main: .Boss_Pinky_Right_Wing)
         let moveDown = SKAction.moveTo(y: self.root.size.height/2 - self.position.y, duration: 2.5)
         let moveUp = SKAction.moveTo(y: screenSize.height - self.root.size.height/2 - self.leftEar.size.height/2 - self.position.y, duration: 2)
         let groupAction = SKAction.group([moveUp, SKAction.run(setAnimation)])
@@ -302,8 +302,8 @@ class Pinky:Enemy{
         
         let leye = root.childNode(withName: Global.Main.Boss_Pinky_Left_Eye.rawValue) as! SKSpriteNode
         let reye = root.childNode(withName: Global.Main.Boss_Pinky_Right_Eye.rawValue) as! SKSpriteNode
-        leye.texture = global.getMainTexture(main: .Boss_Pinky_Left_Damaged_Eye)
-        reye.texture = global.getMainTexture(main: .Boss_Pinky_Right_Damaged_Eye)
+        leye.texture = Global.sharedInstance.getMainTexture(main: .Boss_Pinky_Left_Damaged_Eye)
+        reye.texture = Global.sharedInstance.getMainTexture(main: .Boss_Pinky_Right_Damaged_Eye)
         
         
         // THIS FUNCTION IS NEEDED

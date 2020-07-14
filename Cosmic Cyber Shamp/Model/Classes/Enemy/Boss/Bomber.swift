@@ -17,7 +17,7 @@ class Bomber: Enemy {
         self.init()
         
         name = "Enemy_Boss"
-        texture = global.getMainTexture(main: .Boss_1)
+        texture = Global.sharedInstance.getMainTexture(main: .Boss_1)
         size = CGSize(width: 180, height: 130)
         position.x = screenSize.width/2
         position.y = screenSize.height * (1 - 1/8)
@@ -28,8 +28,8 @@ class Bomber: Enemy {
         
         currency  = Currency(type: .Coin)
         
-        actionsStandBy = global.getTextures(textures: .Boss_1_Move_Animation)
-        actionsDead = global.getTextures(textures: .Boss_1_Dead_Animation)
+        actionsStandBy = Global.sharedInstance.getTextures(textures: .Boss_1_Move_Animation)
+        actionsDead = Global.sharedInstance.getTextures(textures: .Boss_1_Dead_Animation)
         
         initialSetup()
     }
@@ -41,7 +41,7 @@ class Bomber: Enemy {
         // Set up Animation of Boss
         self.run(SKAction.repeatForever(SKAction.animate(with: actionsStandBy, timePerFrame: 0.77)))
         // Set initial alpha
-        self.physicsBody = SKPhysicsBody(texture: global.getMainTexture(main: .Boss_1), size: self.size)
+        self.physicsBody = SKPhysicsBody(texture: Global.sharedInstance.getMainTexture(main: .Boss_1), size: self.size)
         self.physicsBody!.isDynamic = true // allow physic simulation to move it
         self.physicsBody!.categoryBitMask = PhysicsCategory.Imune // None at beginning
         self.physicsBody!.affectedByGravity = false
@@ -61,7 +61,7 @@ class Bomber: Enemy {
         self.run(SKAction.repeatForever(SKAction.sequence([SKAction.wait(forDuration: 0.5), SKAction.run {
             let random = randomInt(min: 0, max: 100)
             if (random > 80){
-                let att = SKSpriteNode(texture: global.getAttackTexture(attack: .Boss1_type_1))
+                let att = SKSpriteNode(texture: Global.sharedInstance.getAttackTexture(attack: .Boss1_type_1))
                 att.size = CGSize(width: 30, height: 30)
                 att.name = "Enemy_Boss_1_Attack"
                 att.physicsBody = SKPhysicsBody(circleOfRadius: 15)

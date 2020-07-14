@@ -19,14 +19,14 @@ struct Currency{
     init(type: CurrencyType){
         switch type{
         case .Coin:
-            actions = global.getTextures(textures: .Gold_Animation)
+            actions = Global.sharedInstance.getTextures(textures: .Gold_Animation)
         default:
             actions = []
         }
     }
     
     func createCoin(posX:CGFloat, posY:CGFloat, width w: CGFloat, height h: CGFloat, createPhysicalBody:Bool, animation: Bool) -> SKSpriteNode{
-        let c = SKSpriteNode(texture: global.getMainTexture(main: .Gold))
+        let c = SKSpriteNode(texture: Global.sharedInstance.getMainTexture(main: .Gold))
         c.size = CGSize(width: w, height: h)
         c.position = CGPoint(x: posX, y: posY)
         c.name = "coin"

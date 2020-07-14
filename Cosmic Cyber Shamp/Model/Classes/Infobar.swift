@@ -82,7 +82,7 @@ class Infobar: SKSpriteNode{
         icon.name = iconSprite.rawValue
         icon.size = CGSize(width: iconWidth, height: iconHeight)
         icon.position = CGPoint(x: iconXpos, y: iconYpos)
-        icon.texture = global.getMainTexture(main: iconSprite)
+        icon.texture = Global.sharedInstance.getMainTexture(main: iconSprite)
         node.addChild(icon)
         
         // icon position might be changed with the if condition below:
@@ -94,7 +94,7 @@ class Infobar: SKSpriteNode{
             bar.anchorPoint = CGPoint(x: 1.0, y: 0)
             bar.name = "bar"
             bar.size = CGSize(width: newWidth, height: newHeight)
-            bar.texture = global.getMainTexture(main: barSprite!)
+            bar.texture = Global.sharedInstance.getMainTexture(main: barSprite!)
             bar.position = CGPoint(x: barXpos * 0.8, y: barYpos)
             node.addChild(bar)
             

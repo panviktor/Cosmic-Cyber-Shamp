@@ -76,7 +76,7 @@ struct HUD{
     private func getTextures(_ text:String) -> [SKTexture]{
         var pack:[SKTexture] = []
         for c in text.reversed(){
-            pack.append(global.getHUDTexture(hudType: .Gold, text: String(c)))
+            pack.append(Global.sharedInstance.getHUDTexture(hudType: .Gold, text: String(c)))
         }
         return pack
     }

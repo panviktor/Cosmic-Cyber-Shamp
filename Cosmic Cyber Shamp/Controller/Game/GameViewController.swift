@@ -283,7 +283,7 @@ class GameViewController: UIViewController {
     
     private func mainmenu(){
         print ("Client Plist Data: ", clientData)
-        global.prioirityLoad()
+        Global.sharedInstance.prioirityLoad()
     }
     
     private func preloadDone(notification:Notification){

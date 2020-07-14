@@ -30,7 +30,7 @@ class MainScene: SKScene, SKPhysicsContactDelegate{
     
     func loadBackground(){
         let bg = SKSpriteNode()
-        bg.texture = global.getMainTexture(main: .Main_Menu_Background_1)
+        bg.texture = Global.sharedInstance.getMainTexture(main: .Main_Menu_Background_1)
         bg.position = CGPoint(x: screenSize.width/2, y: screenSize.height/2)
         bg.size = CGSize(width: screenSize.width, height: screenSize.height)
         bg.zPosition = -10
@@ -38,7 +38,7 @@ class MainScene: SKScene, SKPhysicsContactDelegate{
         self.addChild(bg)
         
         let cloud = SKSpriteNode()
-        cloud.texture = global.getMainTexture(main: .Main_Menu_Background_2)
+        cloud.texture = Global.sharedInstance.getMainTexture(main: .Main_Menu_Background_2)
         cloud.position = CGPoint(x: screenSize.width/2, y: screenSize.height*0.40)
         cloud.size = CGSize(width: screenSize.width, height: screenSize.height*3/4)
         cloud.zPosition = -9
@@ -46,7 +46,7 @@ class MainScene: SKScene, SKPhysicsContactDelegate{
         self.addChild(cloud)
         
         let cloud2 = SKSpriteNode()
-        cloud2.texture = global.getMainTexture(main: .Main_Menu_Background_3)
+        cloud2.texture = Global.sharedInstance.getMainTexture(main: .Main_Menu_Background_3)
         cloud2.position = CGPoint(x: -20 + screenSize.width/2, y: 0)
         cloud2.size = CGSize(width: screenSize.width + 100, height: screenSize.height/2)
         cloud2.zPosition = -8
@@ -64,7 +64,7 @@ class MainScene: SKScene, SKPhysicsContactDelegate{
         
         let bd_one = SKSpriteNode()
         bd_one.anchorPoint = CGPoint(x: 0.5, y: 1)
-        bd_one.texture = global.getMainTexture(main: .Main_Menu_Building_1)
+        bd_one.texture = Global.sharedInstance.getMainTexture(main: .Main_Menu_Building_1)
         bd_one.position = CGPoint(x: 0, y: root.size.height/2)
         bd_one.size = CGSize(width: screenSize.width/2, height: screenSize.height/2)
         bd_one.name = "main_menu_building_1"
@@ -72,7 +72,7 @@ class MainScene: SKScene, SKPhysicsContactDelegate{
         
         let bd_one_shade = SKSpriteNode()
         bd_one_shade.anchorPoint = CGPoint(x: 0.5, y: 1)
-        bd_one_shade.texture = global.getMainTexture(main: .Main_Menu_Building_1_Additional)
+        bd_one_shade.texture = Global.sharedInstance.getMainTexture(main: .Main_Menu_Building_1_Additional)
         bd_one_shade.position = CGPoint(x: 0, y: -25)
         bd_one_shade.size = CGSize(width: screenSize.width/2, height: screenSize.height/2)
         bd_one_shade.name = "main_menu_building_1_Additional"
@@ -80,7 +80,7 @@ class MainScene: SKScene, SKPhysicsContactDelegate{
         
         let bd_two = SKSpriteNode()
         bd_two.anchorPoint = CGPoint(x: 0.5, y: 1)
-        bd_two.texture = global.getMainTexture(main: .Main_Menu_Building_2)
+        bd_two.texture = Global.sharedInstance.getMainTexture(main: .Main_Menu_Building_2)
         bd_two.position = CGPoint(x: bd_one.size.width/3, y: bd_one.position.y - bd_one.size.height/2)
         bd_two.size = CGSize(width: screenSize.width/3, height: screenSize.height/3)
         bd_two.name = "main_menu_building_2"
@@ -88,7 +88,7 @@ class MainScene: SKScene, SKPhysicsContactDelegate{
         
         let bd_three = SKSpriteNode()
         bd_three.anchorPoint = CGPoint(x: 0.5, y: 1)
-        bd_three.texture = global.getMainTexture(main: .Main_Menu_Building_3)
+        bd_three.texture = Global.sharedInstance.getMainTexture(main: .Main_Menu_Building_3)
         bd_three.position = CGPoint(x: -bd_one.size.width/3, y: bd_one.position.y - bd_one.size.height/2)
         bd_three.size = CGSize(width: screenSize.width/3, height: screenSize.height/3.5)
         bd_three.name = "main_menu_building_3"
@@ -132,7 +132,7 @@ class MainScene: SKScene, SKPhysicsContactDelegate{
         let dragtomove = SKSpriteNode()
         dragtomove.size = CGSize(width: screenSize.width/2, height: screenSize.height/32)
         dragtomove.position = CGPoint(x: 0, y: -screenSize.height/4)
-        dragtomove.texture = global.getMainTexture(main: .Main_Menu_Drag_To_Start)
+        dragtomove.texture = Global.sharedInstance.getMainTexture(main: .Main_Menu_Drag_To_Start)
         dragtomove.name = "drag_to_move"
         root.addChild(dragtomove)
         
@@ -140,7 +140,7 @@ class MainScene: SKScene, SKPhysicsContactDelegate{
         let arrowLeft = SKSpriteNode()
         arrowLeft.size = CGSize(width: dragtomove.size.height, height: dragtomove.size.height*1.2)
         arrowLeft.position = CGPoint(x: dragtomove.position.x - dragtomove.size.width/2 - 20, y: dragtomove.position.y)
-        arrowLeft.texture = global.getMainTexture(main: .Main_Menu_Arrow)
+        arrowLeft.texture = Global.sharedInstance.getMainTexture(main: .Main_Menu_Arrow)
         arrowLeft.name = "main_menu_arrow_left"
         arrowLeft.zRotation = CGFloat(Double.pi)
         root.addChild(arrowLeft)
@@ -149,7 +149,7 @@ class MainScene: SKScene, SKPhysicsContactDelegate{
         let arrowRight = SKSpriteNode()
         arrowRight.size = CGSize(width: dragtomove.size.height, height: dragtomove.size.height*1.2)
         arrowRight.position = CGPoint(x: dragtomove.position.x + dragtomove.size.width/2 + 20, y: dragtomove.position.y)
-        arrowRight.texture = global.getMainTexture(main: .Main_Menu_Arrow)
+        arrowRight.texture = Global.sharedInstance.getMainTexture(main: .Main_Menu_Arrow)
         arrowRight.name = "main_menu_arrow_right"
         root.addChild(arrowRight)
         
@@ -185,7 +185,7 @@ class MainScene: SKScene, SKPhysicsContactDelegate{
     private func createUIButton(bname: String, offsetPosX dx:CGFloat, offsetPosY dy:CGFloat) -> SKSpriteNode{
         let button = SKSpriteNode()
         button.anchorPoint = CGPoint(x: 0.5, y: 1)
-        button.texture = global.getMainTexture(main: .PurpleButton)
+        button.texture = Global.sharedInstance.getMainTexture(main: .PurpleButton)
         button.position = CGPoint(x: dx, y: dy)
         button.size = CGSize(width: screenSize.width/4, height: screenSize.height/16)
         button.name = bname
@@ -342,7 +342,7 @@ class MainScene: SKScene, SKPhysicsContactDelegate{
             // particle effect testing
             
             let hitparticle = SKEmitterNode()
-            hitparticle.particleTexture = global.getMainTexture(main: .Gold)
+            hitparticle.particleTexture = Global.sharedInstance.getMainTexture(main: .Gold)
             hitparticle.position = lowNode.position
             hitparticle.particleLifetime = 1
             hitparticle.particleBirthRate = 10
@@ -391,7 +391,7 @@ class MainScene: SKScene, SKPhysicsContactDelegate{
                 self.removeAllChildren()
                 self.removeAllActions()
                 
-                let scene = EndGame(size: self.size)
+                let scene = EndGameScene(size: self.size)
                 scene.collectedCoins = self.gameinfo.getCurrentGold()
                 self.view?.presentScene(scene)
                 }]))

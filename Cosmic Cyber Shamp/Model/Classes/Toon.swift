@@ -37,22 +37,22 @@ class Toon {
             ch = screenSize.height * 0.177
             ww = screenSize.width * 0.186
             wh = screenSize.height * 0.081
-            localMainTexture = global.getMainTexture(main: .Character_Alpha)
-            localWingTexture = global.getMainTexture(main: .Character_Alpha_Wing)
+            localMainTexture = Global.sharedInstance.getMainTexture(main: .Character_Alpha)
+            localWingTexture = Global.sharedInstance.getMainTexture(main: .Character_Alpha_Wing)
         case .Beta:
             cw = screenSize.width * 0.1135
             ch = screenSize.height * 0.175
             ww = screenSize.width * 0.191
             wh = screenSize.height * 0.083
-            localMainTexture = global.getMainTexture(main: .Character_Beta)
-            localWingTexture = global.getMainTexture(main: .Character_Beta_Wing)
+            localMainTexture = Global.sharedInstance.getMainTexture(main: .Character_Beta)
+            localWingTexture = Global.sharedInstance.getMainTexture(main: .Character_Beta_Wing)
         case .Celta:
             cw = screenSize.width * 0.135
             ch = screenSize.height * 0.163
             ww = screenSize.width * 0.179
             wh = screenSize.height * 0.091
-            localMainTexture = global.getMainTexture(main: .Character_Celta)
-            localWingTexture = global.getMainTexture(main: .Character_Celta_Wing)
+            localMainTexture = Global.sharedInstance.getMainTexture(main: .Character_Celta)
+            localWingTexture = Global.sharedInstance.getMainTexture(main: .Character_Celta_Wing)
         }
         
         self.charType = char
@@ -68,7 +68,7 @@ class Toon {
         l_wing.texture = localWingTexture
         l_wing.size = CGSize(width: ww, height: wh)
         l_wing.anchorPoint = CGPoint(x: 1.0, y: 0.5)
-        l_wing.position = CGPoint(x: -2.0, y: 20.0)
+        l_wing.position = CGPoint(x: -3.0, y: -75.0)
         l_wing.run(SKAction.repeatForever(SKAction.sequence([SKAction.resize(toWidth: screenSize.width * 0.097, duration: 0.3), SKAction.resize(toWidth: screenSize.height * 0.105, duration: 0.15)])))
         
         node.addChild(l_wing)
@@ -77,14 +77,14 @@ class Toon {
         r_wing.texture = localWingTexture
         r_wing.size = CGSize(width: ww, height: wh)
         r_wing.anchorPoint = CGPoint(x: 1.0, y: 0.5)
-        r_wing.position = CGPoint(x:2.0, y: 20.0)
+        r_wing.position = CGPoint(x:4.0, y: -75.0)
         r_wing.xScale = -1.0
         r_wing.run(SKAction.repeatForever(SKAction.sequence([SKAction.resize(toWidth: screenSize.width * 0.097, duration: 0.3), SKAction.resize(toWidth: screenSize.height * 0.105, duration: 0.15)])))
         
         node.addChild(r_wing)
     }
     
-    func load(infoDict:NSDictionary){
+    func load(infoDict:NSDictionary) {
         //Level lv: Int, Experience exp: CGFloat, Description description:[String]
         self.level = infoDict.value(forKey: "Level") as! Int
         self.experience = infoDict.value(forKey: "Experience") as! CGFloat

@@ -38,9 +38,7 @@ class EnemyModel: NSObject{
     private var BossBaseHP:CGFloat = 1500.0
     private var RegularBaseHP:CGFloat = 100.0
     
-    
     private var velocity:CGVector = CGVector(dx: 0, dy: -350)
-    
     
     // Boss Variables - Implement later
     private let PinkyPercentage:Int = 100
@@ -58,13 +56,12 @@ class EnemyModel: NSObject{
     }
     
     func spawn(scene :SKScene){
-        
         switch enemyType {
         case .Regular:
             enemyModel = RegularEnemy(baseHp: RegularBaseHP, speed: velocity)
         case .Boss:
             let chance = randomInt(min: 0, max: 100)
-            if chance < 50{
+            if chance < 50 {
                 bossType = .Bomber
                 enemyModel = Bomber(hp: BossBaseHP)
             }
@@ -97,9 +94,7 @@ class EnemyModel: NSObject{
         }
     }
     
-    func decreaseHP(ofTarget: SKSpriteNode, hitBy: SKSpriteNode){
-        
-        
+    func decreaseHP(ofTarget: SKSpriteNode, hitBy: SKSpriteNode) {
         guard let rootBar = ofTarget.childNode(withName: "rootBar") as? SKSpriteNode,
             let enemyHpBar = rootBar.childNode(withName: "hpBar")
             else {return}
@@ -127,7 +122,6 @@ class EnemyModel: NSObject{
                 }
             }
         }
-        
     }
     
     func update(sknode: SKSpriteNode, hpBar: SKNode){
@@ -157,18 +151,14 @@ class EnemyModel: NSObject{
         }
         
         for _ in 0..<rewardCount{
-            
             let reward = currency?.createCoin(posX: posX, posY: posY, width: 30, height: 30, createPhysicalBody: true, animation: true)
-            
             let impulse = CGVector(dx: random(min: -25, max: 25), dy: random(min:10, max:35))
             
             reward?.run(SKAction.sequence([SKAction.applyForce(impulse , duration: 0.2), SKAction.wait(forDuration: 2), SKAction.removeFromParent()]))
             
             if let r = reward{
                 delegate?.addChild(r)
-            }
-            else{
-                
+            } else{
                 print("ERROR ON CLASS ENEMY. Check Method Explosion. ")
             }
         }
@@ -178,12 +168,10 @@ class EnemyModel: NSObject{
         switch (enemyType){
         case .Boss:
             if bossType == .Bomber{
-                
                 let mainBoss = enemyModel as! Bomber
                 mainBoss.defeated()
                 self.delegate?.changeGameState(.WaitingState)
-            }
-            else if bossType == .Pinky{
+            } else if bossType == .Pinky{
                 let minion = sknode.parent! as! Pinky
                 minion.multiply()
                 
@@ -193,7 +181,6 @@ class EnemyModel: NSObject{
                     self.delegate?.changeGameState(.WaitingState)
                 }
             }
-            
         case .Regular:
             let mainReg = enemyModel as! RegularEnemy
             mainReg.defeated(sknode: sknode)
@@ -207,8 +194,4 @@ class EnemyModel: NSObject{
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    
-    
-    
 }

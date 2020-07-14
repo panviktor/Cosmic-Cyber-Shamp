@@ -33,7 +33,7 @@ struct AVAudio {
         bground_1_player = bground_1
     }
     
-    func play(type: BgroundSoundType){
+    func play(type: BgroundSoundType) {
         switch type{
         case .Background_Start:
             bground_1_player.numberOfLoops = -1

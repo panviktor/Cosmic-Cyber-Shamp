@@ -1,7 +1,6 @@
 import SpriteKit
 
 class AccountInfo {
-    
     private struct Data{
         private let documentDir:NSString
         let fullPath:String
@@ -26,7 +25,6 @@ class AccountInfo {
     private let data:Data
     
     init(){
-        //inventory = Bag()
         level = 0
         currentToonIndex = 0
         gold = 0
@@ -72,7 +70,7 @@ class AccountInfo {
         }
     }
     
-    func upgradeBullet() -> (Bool, String){
+    func upgradeBullet() -> (Bool, String) {
         let level = characters[currentToonIndex].getBulletLevel()
         let cost = (level + 1) * 100
         
@@ -83,7 +81,7 @@ class AccountInfo {
         gold -= cost
         data.plist.setValue(gold, forKey: "Coin")
         
-        if !data.plist.write(toFile: data.fullPath, atomically: false){
+        if !data.plist.write(toFile: data.fullPath, atomically: false) {
             return (false, "Saving error: AccountInfo.upgradeBullet[1]")
         }
         
