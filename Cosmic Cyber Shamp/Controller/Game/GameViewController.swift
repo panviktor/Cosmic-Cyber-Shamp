@@ -11,7 +11,7 @@ class GameViewController: UIViewController {
         case Backup
     }
     
-    enum State{
+    enum State {
         case Backup
         case NoBackup
     }
@@ -111,7 +111,6 @@ class GameViewController: UIViewController {
         nc.addObserver(forName: progressNotification, object: nil, queue: nil, using:progressTrack)
         
         loadingScene() // Progress Scene
-        
         load()
     }
     
@@ -195,7 +194,6 @@ class GameViewController: UIViewController {
     // .1 : Is backup Possible
     // .2 : Alert Message
     private func isChecked() -> (Bool, Bool, String){
-        
         let isBackupPossible:Bool = true
         
         // First Check: Check if Backup will be possible

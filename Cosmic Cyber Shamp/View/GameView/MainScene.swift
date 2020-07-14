@@ -5,7 +5,10 @@ class MainScene: SKScene, SKPhysicsContactDelegate{
         case MainScene
         case EndScene
         case CharacterMenuScene
-        case ScoreMenuScene
+        case EndGameScene
+        case WinLevelScene
+        case TopScoreScene
+        case GameSettingsScene
     }
     
     var gameinfo = GameInfo()
@@ -403,6 +406,7 @@ class MainScene: SKScene, SKPhysicsContactDelegate{
             self.removeAllActions()
             let newScene = CharacterMenuScene(size: self.size)
             self.view?.presentScene(newScene)
+            
         default:
             print("Should not reach here. PrepareToChangeScene from MainScene")
         }
