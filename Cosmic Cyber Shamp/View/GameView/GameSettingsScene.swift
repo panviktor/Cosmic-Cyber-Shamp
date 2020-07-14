@@ -13,10 +13,12 @@ class GameSettingsScene: SKScene{
         case Select
     }
     
-    fileprivate var scoreNode = SKSpriteNode()
+    fileprivate var settingsNode = SKSpriteNode()
     fileprivate var gameinfo = GameInfo()
     private var state:State = .Select
+    
     weak var scoreManager = ScoreManager.shared
+    weak var audioVibroManager = AudioVibroManager.shared
     
     override func didMove(to view: SKView) {
         self.anchorPoint = CGPoint(x: 0.5, y: 0.5)
@@ -51,7 +53,7 @@ class GameSettingsScene: SKScene{
         title.size = CGSize(width: screenSize.width * 0.6, height: screenSize.height * 0.1)
         
         let titleLabel = SKLabelNode(fontNamed: "KohinoorTelugu-Medium")
-        titleLabel.text = "Your Best Score"
+        titleLabel.text = "Settings"
         titleLabel.fontColor = SKColor(red: 254/255, green: 189/255, blue: 62/255, alpha: 1)
         titleLabel.fontSize = screenSize.width / 15
         title.addChild(titleLabel.shadowNode(nodeName: "titleEffectNodeLabel"))
@@ -66,37 +68,20 @@ class GameSettingsScene: SKScene{
         backarrow.size = CGSize(width: screenSize.width/8, height: screenSize.height*0.06)
         self.addChild(backarrow)
         
-        // scoreNode
-        scoreNode.texture = Global.sharedInstance.getMainTexture(main: .TopScoreScene_Score_Background)
-        scoreNode.anchorPoint = CGPoint(x: 0.5, y: 0.1)
-        scoreNode.size = CGSize(width: screenSize.width/1.5, height: screenSize.height / 4)
-        scoreNode.run(SKAction.repeatForever(SKAction.sequence([SKAction.moveBy(x: 0, y: 20, duration: 1),
-                                                                SKAction.moveBy(x: 0, y: -20, duration: 1.2)])))
+        // settingsNode
+        settingsNode.texture = Global.sharedInstance.getMainTexture(main: .TopScoreScene_Score_Background)
+        settingsNode.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        settingsNode.size = CGSize(width: screenSize.width/1.25, height: screenSize.height / 3.8)
+        settingsNode.run(SKAction.repeatForever(SKAction.sequence([SKAction.moveBy(x: 0, y: 15, duration: 1),
+                                                                SKAction.moveBy(x: 0, y: -15, duration: 3)])))
         
-        let goldScore = SKLabelNode(fontNamed: "KohinoorDevanagari-Medium")
-        goldScore.position.y = scoreNode.size.height / 1.55
-        goldScore.text = "#1 \(scoreManager?.firstScore ?? 0)"
-        goldScore.fontColor = SKColor(red: 254/255, green: 189/255, blue: 62/255, alpha: 1)
-        goldScore.fontSize = screenSize.width / 15
-        scoreNode.addChild(goldScore.shadowNode(nodeName: "goldScoreLabel"))
+        //vibro button
         
         
-        let silverScore = SKLabelNode(fontNamed: "KohinoorDevanagari-Medium")
-        silverScore.position.y = scoreNode.size.height / 2.5
-        silverScore.text = "#2 \(scoreManager?.secondScore ?? 0)"
-        silverScore.fontColor = SKColor(red: 254/255, green: 189/255, blue: 62/255, alpha: 1)
-        silverScore.fontSize = screenSize.width / 17
-        scoreNode.addChild(silverScore.shadowNode(nodeName: "silverScoreLabel"))
+        //sound button
         
         
-        let bronzeScore = SKLabelNode(fontNamed: "KohinoorDevanagari-Medium")
-        bronzeScore.position.y = scoreNode.size.height / 8
-        bronzeScore.text = "#3 \(scoreManager?.thirdScore ?? 0)"
-        bronzeScore.fontColor = SKColor(red: 254/255, green: 189/255, blue: 62/255, alpha: 1)
-        bronzeScore.fontSize = screenSize.width / 17
-        scoreNode.addChild(bronzeScore.shadowNode(nodeName: "bronzeScoreLabel"))
-        
-        self.addChild(scoreNode)
+        self.addChild(settingsNode)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
