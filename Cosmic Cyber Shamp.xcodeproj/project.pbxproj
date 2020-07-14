@@ -10,6 +10,7 @@
 		1451C66324BD8F9C007B915F /* WinLevelScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1451C66224BD8F9C007B915F /* WinLevelScene.swift */; };
 		1451C66524BD902F007B915F /* TopScoreScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1451C66424BD902F007B915F /* TopScoreScene.swift */; };
 		1451C66724BD9070007B915F /* GameSettingsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1451C66624BD9070007B915F /* GameSettingsScene.swift */; };
+		145E7BC324BE053C00C0039A /* ScoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145E7BC224BE053C00C0039A /* ScoreManager.swift */; };
 		146F01C224BC404900402CB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146F01C124BC404900402CB4 /* AppDelegate.swift */; };
 		146F01C624BC404900402CB4 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146F01C524BC404900402CB4 /* GameViewController.swift */; };
 		146F01CB24BC404A00402CB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 146F01CA24BC404A00402CB4 /* Assets.xcassets */; };
@@ -70,6 +71,7 @@
 		1451C66224BD8F9C007B915F /* WinLevelScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinLevelScene.swift; sourceTree = "<group>"; };
 		1451C66424BD902F007B915F /* TopScoreScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopScoreScene.swift; sourceTree = "<group>"; };
 		1451C66624BD9070007B915F /* GameSettingsScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSettingsScene.swift; sourceTree = "<group>"; };
+		145E7BC224BE053C00C0039A /* ScoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreManager.swift; sourceTree = "<group>"; };
 		146F01BE24BC404900402CB4 /* Cosmic Cyber Shamp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cosmic Cyber Shamp.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		146F01C124BC404900402CB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		146F01C524BC404900402CB4 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -363,6 +365,7 @@
 				146F023A24BC63F500402CB4 /* BulletMaker.swift */,
 				146F023B24BC63F500402CB4 /* Map.swift */,
 				146F023C24BC63F500402CB4 /* AccountInfo.swift */,
+				145E7BC224BE053C00C0039A /* ScoreManager.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -506,6 +509,7 @@
 				146F01E224BC63BB00402CB4 /* MainScene.swift in Sources */,
 				146F024D24BC63F500402CB4 /* BulletMaker.swift in Sources */,
 				146F024724BC63F500402CB4 /* EnemyModel.swift in Sources */,
+				145E7BC324BE053C00C0039A /* ScoreManager.swift in Sources */,
 				146F024324BC63F500402CB4 /* Global.swift in Sources */,
 				146F024024BC63F500402CB4 /* AVAudio.swift in Sources */,
 				146F023E24BC63F500402CB4 /* Currency.swift in Sources */,

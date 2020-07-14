@@ -1,6 +1,7 @@
 import SpriteKit
 
 class EndGameScene: SKScene {
+    weak var scoreManager = ScoreManager.shared
     var collectedCoins: Int = 0
     
     override func didMove(to view: SKView) {
@@ -18,6 +19,7 @@ class EndGameScene: SKScene {
         }
         
         let newCoinAmount = collectedCoins + dataCoin
+        scoreManager?.appendNewScore(collectedCoins)
         virtualPlist.setValue(newCoinAmount, forKey: "Coin")
         
         if !virtualPlist.write(toFile: fullPath, atomically: false){

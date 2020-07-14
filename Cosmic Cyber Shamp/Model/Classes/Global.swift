@@ -67,7 +67,7 @@ class Global {
         
         ///TopScoreScene
         case TopScoreScene_Background_1 = "main_background_6"
-        
+        case TopScoreScene_Score_Background
         ///GameSettingsScene
         case GameSettingsScene_Background_1 = "main_background_7"
         
@@ -207,7 +207,6 @@ class Global {
     
     // Scenes
     private var main_menu_collection = [MainMenu:[SKTexture]]() // All Sprites used in Main Menu
-    
     private var character_menu_collection = [SKTexture]() // Sprites used in Character Selection Scene
     private var start_cloud:[SKTexture] = []
     private var map = [MapType:[SKTexture]]()
@@ -605,6 +604,8 @@ class Global {
             
         case .TopScoreScene_Background_1:
             return main_menu_collection[.Background]![5]
+        case .TopScoreScene_Score_Background:
+            return character_menu_collection[22]
             
         case .GameSettingsScene_Background_1:
             return main_menu_collection[.Background]![6]

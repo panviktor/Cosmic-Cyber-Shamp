@@ -15,8 +15,8 @@ class TopScoreScene: SKScene {
     
     fileprivate var scoreNode = SKSpriteNode()
     fileprivate var gameinfo = GameInfo()
-    fileprivate let bulletMaker = BulletMaker()
     private var state:State = .Select
+    weak var scoreManager = ScoreManager.shared
     
     override func didMove(to view: SKView) {
         self.anchorPoint = CGPoint(x: 0.5, y: 0.5)
@@ -25,7 +25,7 @@ class TopScoreScene: SKScene {
     }
     
     private func loadBackground() {
-        let bg = SKSpriteNode(texture: Global.sharedInstance.getMainTexture(main: .Character_Menu_Background))
+        let bg = SKSpriteNode(texture: Global.sharedInstance.getMainTexture(main: .TopScoreScene_Background_1))
         bg.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         bg.size = CGSize(width: screenSize.width, height: screenSize.height)
         bg.zPosition = -10
@@ -47,13 +47,13 @@ class TopScoreScene: SKScene {
         
         // Title
         let title = SKSpriteNode(texture: Global.sharedInstance.getMainTexture(main: .Character_Menu_TitleMenu))
-        title.position.y = screenSize.width/2*1.3
-        title.size = CGSize(width: screenSize.width*0.6, height: screenSize.height*0.1)
+        title.position.y = screenSize.width / 2 * 1.3
+        title.size = CGSize(width: screenSize.width * 0.6, height: screenSize.height * 0.1)
         
-        let titleLabel = SKLabelNode(fontNamed: "Family Guy")
-        titleLabel.text = "Your Top Score"
+        let titleLabel = SKLabelNode(fontNamed: "KohinoorTelugu-Medium")
+        titleLabel.text = "Your Best Score"
         titleLabel.fontColor = SKColor(red: 254/255, green: 189/255, blue: 62/255, alpha: 1)
-        titleLabel.fontSize = screenSize.width/28
+        titleLabel.fontSize = screenSize.width / 15
         title.addChild(titleLabel.shadowNode(nodeName: "titleEffectNodeLabel"))
         
         self.addChild(title)
@@ -66,36 +66,34 @@ class TopScoreScene: SKScene {
         backarrow.size = CGSize(width: screenSize.width/8, height: screenSize.height*0.06)
         self.addChild(backarrow)
         
-        
-        
         // scoreNode
-        scoreNode.texture = Global.sharedInstance.getMainTexture(main: .Character_Menu_TitleMenu)
+        scoreNode.texture = Global.sharedInstance.getMainTexture(main: .TopScoreScene_Score_Background)
         scoreNode.anchorPoint = CGPoint(x: 0.5, y: 0.1)
-        scoreNode.size = CGSize(width: screenSize.width/1.5, height: screenSize.height / 2.55)
+        scoreNode.size = CGSize(width: screenSize.width/1.5, height: screenSize.height / 4)
         scoreNode.run(SKAction.repeatForever(SKAction.sequence([SKAction.moveBy(x: 0, y: 20, duration: 1),
                                                                 SKAction.moveBy(x: 0, y: -20, duration: 1.2)])))
         
-        let goldScore = SKLabelNode(fontNamed: "Family Guy")
-        goldScore.position.y = scoreNode.size.height / 1.5
-        goldScore.text = "Your Top Score"
+        let goldScore = SKLabelNode(fontNamed: "KohinoorDevanagari-Medium")
+        goldScore.position.y = scoreNode.size.height / 1.55
+        goldScore.text = "#1 \(scoreManager?.firstScore ?? 0)"
         goldScore.fontColor = SKColor(red: 254/255, green: 189/255, blue: 62/255, alpha: 1)
-        goldScore.fontSize = screenSize.width / 30
+        goldScore.fontSize = screenSize.width / 15
         scoreNode.addChild(goldScore.shadowNode(nodeName: "goldScoreLabel"))
         
         
-        let silverScore = SKLabelNode(fontNamed: "Family Guy")
+        let silverScore = SKLabelNode(fontNamed: "KohinoorDevanagari-Medium")
         silverScore.position.y = scoreNode.size.height / 2.5
-        silverScore.text = "Your silver"
+        silverScore.text = "#2 \(scoreManager?.secondScore ?? 0)"
         silverScore.fontColor = SKColor(red: 254/255, green: 189/255, blue: 62/255, alpha: 1)
-        silverScore.fontSize = screenSize.width / 35
+        silverScore.fontSize = screenSize.width / 17
         scoreNode.addChild(silverScore.shadowNode(nodeName: "silverScoreLabel"))
         
         
-        let bronzeScore = SKLabelNode(fontNamed: "Family Guy")
+        let bronzeScore = SKLabelNode(fontNamed: "KohinoorDevanagari-Medium")
         bronzeScore.position.y = scoreNode.size.height / 8
-        bronzeScore.text = "Your bronze"
+        bronzeScore.text = "#3 \(scoreManager?.thirdScore ?? 0)"
         bronzeScore.fontColor = SKColor(red: 254/255, green: 189/255, blue: 62/255, alpha: 1)
-        bronzeScore.fontSize = screenSize.width / 35
+        bronzeScore.fontSize = screenSize.width / 17
         scoreNode.addChild(bronzeScore.shadowNode(nodeName: "bronzeScoreLabel"))
         
         self.addChild(scoreNode)
@@ -116,6 +114,7 @@ class TopScoreScene: SKScene {
             }
         }
     }
+    
     private func doTask(gb:Global.Main){
         switch gb {
         case .Character_Menu_BackArrow:
