@@ -184,7 +184,7 @@ class EnemyModel: NSObject{
         case .Regular:
             let mainReg = enemyModel as! RegularEnemy
             mainReg.defeated(sknode: sknode)
-            sknode.run((delegate?.mainAudio.getAction(type: .Puff))!)
+            sknode.run((delegate?.mainAudio.getAction(type: .puff))!)
         default:
             sknode.removeFromParent()
         }

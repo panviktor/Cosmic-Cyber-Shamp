@@ -49,7 +49,7 @@
 		146F023D24BC63F500402CB4 /* userinfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 146F022624BC63F500402CB4 /* userinfo.plist */; };
 		146F023E24BC63F500402CB4 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146F022824BC63F500402CB4 /* Currency.swift */; };
 		146F023F24BC63F500402CB4 /* PhysicsCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146F022924BC63F500402CB4 /* PhysicsCategory.swift */; };
-		146F024024BC63F500402CB4 /* AVAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146F022A24BC63F500402CB4 /* AVAudio.swift */; };
+		146F024024BC63F500402CB4 /* AudioVibroManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146F022A24BC63F500402CB4 /* AudioVibroManager.swift */; };
 		146F024124BC63F500402CB4 /* HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146F022B24BC63F500402CB4 /* HUD.swift */; };
 		146F024224BC63F500402CB4 /* Projectile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146F022C24BC63F500402CB4 /* Projectile.swift */; };
 		146F024324BC63F500402CB4 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146F022E24BC63F500402CB4 /* Global.swift */; };
@@ -112,7 +112,7 @@
 		146F022624BC63F500402CB4 /* userinfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = userinfo.plist; sourceTree = "<group>"; };
 		146F022824BC63F500402CB4 /* Currency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		146F022924BC63F500402CB4 /* PhysicsCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhysicsCategory.swift; sourceTree = "<group>"; };
-		146F022A24BC63F500402CB4 /* AVAudio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVAudio.swift; sourceTree = "<group>"; };
+		146F022A24BC63F500402CB4 /* AudioVibroManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioVibroManager.swift; sourceTree = "<group>"; };
 		146F022B24BC63F500402CB4 /* HUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HUD.swift; sourceTree = "<group>"; };
 		146F022C24BC63F500402CB4 /* Projectile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Projectile.swift; sourceTree = "<group>"; };
 		146F022E24BC63F500402CB4 /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
@@ -347,7 +347,6 @@
 			children = (
 				146F022824BC63F500402CB4 /* Currency.swift */,
 				146F022924BC63F500402CB4 /* PhysicsCategory.swift */,
-				146F022A24BC63F500402CB4 /* AVAudio.swift */,
 				146F022B24BC63F500402CB4 /* HUD.swift */,
 				146F022C24BC63F500402CB4 /* Projectile.swift */,
 			);
@@ -366,6 +365,7 @@
 				146F023B24BC63F500402CB4 /* Map.swift */,
 				146F023C24BC63F500402CB4 /* AccountInfo.swift */,
 				145E7BC224BE053C00C0039A /* ScoreManager.swift */,
+				146F022A24BC63F500402CB4 /* AudioVibroManager.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -511,7 +511,7 @@
 				146F024724BC63F500402CB4 /* EnemyModel.swift in Sources */,
 				145E7BC324BE053C00C0039A /* ScoreManager.swift in Sources */,
 				146F024324BC63F500402CB4 /* Global.swift in Sources */,
-				146F024024BC63F500402CB4 /* AVAudio.swift in Sources */,
+				146F024024BC63F500402CB4 /* AudioVibroManager.swift in Sources */,
 				146F023E24BC63F500402CB4 /* Currency.swift in Sources */,
 				146F024E24BC63F500402CB4 /* Map.swift in Sources */,
 				146F024924BC63F500402CB4 /* Pinky.swift in Sources */,

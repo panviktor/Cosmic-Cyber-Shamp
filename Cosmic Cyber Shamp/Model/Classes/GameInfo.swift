@@ -1,7 +1,7 @@
 import SpriteKit
 
 protocol GameInfoDelegate{
-    var mainAudio:AVAudio { get }
+    var mainAudio: AudioVibroManager { get }
     func addChild(_ sknode: SKNode)
     func changeGameState(_ state: GameState)
     func getCurrentToonNode() -> SKSpriteNode
@@ -27,14 +27,13 @@ class GameInfo: GameInfoDelegate {
     private var accountGoldLabel:HUD?
     
     // Public Variables
-    var mainAudio: AVAudio
+    let mainAudio = AudioVibroManager.shared
     var regularEnemies: EnemyModel
     var boss: EnemyModel
     var fireballEnemy: EnemyModel
     var map: Map?
     
     init() {
-        mainAudio = AVAudio()
         currentLevel = 0
         currentGold = 0
         currentHighscore = 0
@@ -57,7 +56,7 @@ class GameInfo: GameInfoDelegate {
         mainScene = scene
         
         // play background music
-        mainAudio.play(type: .Background_Start)
+        mainAudio.play(type: .backgroundStart)
         if !account.load() {
             return (false, "account error")
         }

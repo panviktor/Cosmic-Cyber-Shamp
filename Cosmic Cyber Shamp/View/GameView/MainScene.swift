@@ -107,11 +107,11 @@ class MainScene: SKScene, SKPhysicsContactDelegate{
         root.addChild(bd_three_button)
         
         
-        let LONGESTSTRCOUNT:CGFloat = 11
+        let LONGESTSTRCOUNT:CGFloat = 6
         // Button Labels
         let bd_one_label = SKLabelNode()
-        bd_one_label.text = "CHARACTERS"
-        bd_one_label.fontName = "GillSans-Bold"
+        bd_one_label.text = "Rockets!"
+        bd_one_label.fontName = "KohinoorTelugu-Regular"
         bd_one_label.fontSize = bd_one_button.size.width/LONGESTSTRCOUNT
         bd_one_label.position = CGPoint(x: 0, y: -5 - bd_one_button.size.height/2)
         bd_one_button.addChild(bd_one_label)
@@ -119,16 +119,16 @@ class MainScene: SKScene, SKPhysicsContactDelegate{
         
         // SIDEKICK
         let bd_two_label = SKLabelNode()
-        bd_two_label.text = "SIDEKICKS"
-        bd_two_label.fontName = "GillSans-Bold"
+        bd_two_label.text = "Top Score"
+        bd_two_label.fontName = "KohinoorTelugu-Regular"
         bd_two_label.fontSize =  bd_two_button.size.width/LONGESTSTRCOUNT
         bd_two_label.position = CGPoint(x: 0, y: -5 - bd_two_button.size.height/2)
         bd_two_button.addChild(bd_two_label)
         
         // LEADERBOARD
         let bd_three_label = SKLabelNode()
-        bd_three_label.text = "LEADERBOARD"
-        bd_three_label.fontName = "GillSans-Bold"
+        bd_three_label.text = "Settings"
+        bd_three_label.fontName = "KohinoorTelugu-Regular"
         bd_three_label.fontSize = bd_three_button.size.width/LONGESTSTRCOUNT
         bd_three_label.position = CGPoint(x: 0, y: -5 - bd_three_button.size.height/2)
         bd_three_button.addChild(bd_three_label)
@@ -366,7 +366,7 @@ class MainScene: SKScene, SKPhysicsContactDelegate{
         case .Immune:
             destroy(sknode: lowNode)
         case .PlayerGetCoin:
-            self.run(self.gameinfo.mainAudio.getAction(type: .Coin))
+            self.run(self.gameinfo.mainAudio.getAction(type: .coin))
             self.gameinfo.addCoin(amount: 1)
             destroy(sknode: highNode)
         case .None:
