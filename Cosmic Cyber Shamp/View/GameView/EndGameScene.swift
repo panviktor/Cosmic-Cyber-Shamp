@@ -5,6 +5,8 @@ class EndGameScene: SKScene {
     var collectedCoins: Int = 0
     
     override func didMove(to view: SKView) {
+        loadBackground()
+        
         let userPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString
         let fullPath = userPath.appendingPathComponent("userinfo.plist")
         
@@ -26,12 +28,20 @@ class EndGameScene: SKScene {
             print("Error002: FILE FAILED TO SAVE THE CHANGES ---- PLEASE FIX IT IN EndGame")
         }
         
-        let label = SKLabelNode(fontNamed: "Courier")
+        let label = SKLabelNode(fontNamed: "PingFangSC-Medium")
         label.position = CGPoint(x: self.size.width/2, y: self.size.height/2)
         label.text = String("Your score is \(collectedCoins)!")
-        label.fontSize = 35
-        label.fontColor = .red
+        label.fontSize = screenSize.width / 10
+        label.fontColor = .black
         self.addChild(label)
+    }
+    
+    private func loadBackground() {
+        let bg = SKSpriteNode(texture: Global.sharedInstance.getMainTexture(main: .EndGameScene_Background_1))
+        bg.anchorPoint = CGPoint(x: 0.0, y: 0.0)
+        bg.size = CGSize(width: screenSize.width, height: screenSize.height)
+        bg.zPosition = -10
+        self.addChild(bg)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

@@ -18,12 +18,26 @@ class AudioVibroManager {
     enum BackgroundSoundType{
         case backgroundStart
     }
+    private let defaults = UserDefaults.standard
+    private var musicStatus: Bool {
+        get {
+            return defaults.object(forKey: "musicStatus") as? Bool ?? true
+        } set (newValue) {
+            defaults.set(newValue, forKey: "musicStatus")
+        }
+    }
     
-    private var musicStatus = true
-    private var vibroStatus = true
+    private var vibroStatus: Bool {
+        get {
+            return defaults.object(forKey: "vibroStatus") as? Bool ?? true
+        } set (newValue) {
+            defaults.set(newValue, forKey: "vibroStatus")
+        }
+    }
+    
     static let shared = AudioVibroManager()
     
-    lazy var backgroundMusic: AVAudioPlayer? = {
+    var backgroundMusic: AVAudioPlayer? = {
         guard let url = Bundle.main.url(forResource: "begin", withExtension: "m4a") else {
             return nil
         }
@@ -48,15 +62,17 @@ class AudioVibroManager {
         musicStatus.toggle()
         musicStatus == true ? playMusic() : backgroundMusic?.stop()
     }
-
+    
     func vibroToggle() {
         vibroStatus.toggle()
     }
     
     func play(type: BackgroundSoundType) {
-        switch type{
+        switch type {
         case .backgroundStart:
-            playMusic()
+            if musicStatus {
+                playMusic()
+            }
         }
     }
     

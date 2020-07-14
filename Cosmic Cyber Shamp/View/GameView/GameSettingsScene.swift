@@ -17,8 +17,8 @@ class GameSettingsScene: SKScene{
     fileprivate var gameinfo = GameInfo()
     private var state:State = .Select
     
-    weak var scoreManager = ScoreManager.shared
-    weak var audioVibroManager = AudioVibroManager.shared
+    var scoreManager = ScoreManager.shared
+    var audioVibroManager = AudioVibroManager.shared
     
     override func didMove(to view: SKView) {
         self.anchorPoint = CGPoint(x: 0.5, y: 0.5)
@@ -70,16 +70,26 @@ class GameSettingsScene: SKScene{
         
         // settingsNode
         settingsNode.texture = Global.sharedInstance.getMainTexture(main: .TopScoreScene_Score_Background)
-        settingsNode.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        settingsNode.anchorPoint = CGPoint(x: 0.5, y: 0.1)
         settingsNode.size = CGSize(width: screenSize.width/1.25, height: screenSize.height / 3.8)
         settingsNode.run(SKAction.repeatForever(SKAction.sequence([SKAction.moveBy(x: 0, y: 15, duration: 1),
                                                                 SKAction.moveBy(x: 0, y: -15, duration: 3)])))
         
         //vibro button
+        let vibroButton = SKSpriteNode(texture: Global.sharedInstance.getMainTexture(main: .PurpleButton))
+        vibroButton.name = "vibroToggle"
+        vibroButton.anchorPoint = CGPoint(x: 0.5, y: -1.25)
         
+        vibroButton.size = CGSize(width: settingsNode.size.width / 2, height: settingsNode.size.height / 3)
+        settingsNode.addChild(vibroButton)
         
         //sound button
+        let musicButton = SKSpriteNode(texture: Global.sharedInstance.getMainTexture(main: .PurpleButton))
+        musicButton.name = "musicToogle"
+        musicButton.anchorPoint = CGPoint(x: 0.5, y: -0.25)
         
+        musicButton.size = CGSize(width: settingsNode.size.width / 2, height: settingsNode.size.height / 3)
+        settingsNode.addChild(musicButton)
         
         self.addChild(settingsNode)
     }
@@ -93,8 +103,12 @@ class GameSettingsScene: SKScene{
         switch state {
         case .Select:
             for c in nodes(at: pos){
-                if c.name == Global.Main.Character_Menu_BackArrow.rawValue{
+                if c.name == Global.Main.Character_Menu_BackArrow.rawValue {
                     doTask(gb: .Character_Menu_BackArrow)
+                } else if c.name == "vibroToggle" {
+                    audioVibroManager.vibroToggle()
+                } else if c.name == "musicToogle" {
+                    audioVibroManager.musicToggle()
                 }
             }
         }
