@@ -15,7 +15,7 @@ class GameSettingsScene: SKScene{
     }
     
     private func loadBackground(){
-        let bg = SKSpriteNode(texture: Global.sharedInstance.getMainTexture(main: .Character_Menu_Background))
+        let bg = SKSpriteNode(texture: Global.sharedInstance.getMainTexture(main: .GameSettingsScene_Background_1))
         bg.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         bg.size = CGSize(width: screenSize.width, height: screenSize.height)
         bg.zPosition = -10

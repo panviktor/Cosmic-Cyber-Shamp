@@ -99,8 +99,10 @@ class MainScene: SKScene, SKPhysicsContactDelegate{
         
         let bd_one_button = createUIButton(bname: "character_building_button", offsetPosX: bd_one.position.x, offsetPosY: bd_one.position.y - bd_one.size.height/2 + 10)
         root.addChild(bd_one_button)
+        
         let bd_two_button = createUIButton(bname: "building_2_button", offsetPosX: bd_two.position.x, offsetPosY: bd_two.position.y - bd_two.size.height/2 - 15)
         root.addChild(bd_two_button)
+        
         let bd_three_button = createUIButton(bname: "building_3_button", offsetPosX: bd_three.position.x, offsetPosY: bd_three.position.y - bd_three.size.height/2 - 50)
         root.addChild(bd_three_button)
         
@@ -206,9 +208,13 @@ class MainScene: SKScene, SKPhysicsContactDelegate{
             return
         }
         let childs = self.nodes(at: pos)
-        for c in childs{
+        for c in childs {
             if c.name == "character_building_button"{
                 prepareToChangeScene(scene: .CharacterMenuScene)
+            } else if c.name == "building_2_button" {
+                prepareToChangeScene(scene: .TopScoreScene)
+            } else if c.name == "building_3_button" {
+                prepareToChangeScene(scene: .GameSettingsScene)
             }
         }
     }
@@ -223,10 +229,9 @@ class MainScene: SKScene, SKPhysicsContactDelegate{
         }
         
         if recognizer.state == .began {
-            
         } else if recognizer.state == .changed {
             let locomotion = recognizer.translation(in: recognizer.view)
-            player.position.x = player.position.x + locomotion.x*2.0
+            player.position.x = player.position.x + locomotion.x * 2.0
             
             recognizer.setTranslation(CGPoint(x: 0,y: 0), in: self.view)
             if (player.position.x < 0 ){
@@ -340,10 +345,7 @@ class MainScene: SKScene, SKPhysicsContactDelegate{
                 print("WARNING: Should not reach here. Check contactUpdate in StartGame.swift")
             }
             
-            
         case .HitByEnemy:
-            // particle effect testing
-            
             let hitparticle = SKEmitterNode()
             hitparticle.particleTexture = Global.sharedInstance.getMainTexture(main: .Gold)
             hitparticle.position = lowNode.position
@@ -363,7 +365,6 @@ class MainScene: SKScene, SKPhysicsContactDelegate{
             
         case .Immune:
             destroy(sknode: lowNode)
-            
         case .PlayerGetCoin:
             self.run(self.gameinfo.mainAudio.getAction(type: .Coin))
             self.gameinfo.addCoin(amount: 1)
@@ -407,8 +408,26 @@ class MainScene: SKScene, SKPhysicsContactDelegate{
             let newScene = CharacterMenuScene(size: self.size)
             self.view?.presentScene(newScene)
             
+        case .EndGameScene:
+            print(#line, #function, scene)
+        case .WinLevelScene:
+            print(#line, #function, scene)
+        case .TopScoreScene:
+            self.gameinfo.prepareToChangeScene()
+            self.recursiveRemovingSKActions(sknodes: self.children)
+            self.removeAllChildren()
+            self.removeAllActions()
+            let newScene = TopScoreScene(size: self.size)
+            self.view?.presentScene(newScene)
+        case .GameSettingsScene:
+            self.gameinfo.prepareToChangeScene()
+            self.recursiveRemovingSKActions(sknodes: self.children)
+            self.removeAllChildren()
+            self.removeAllActions()
+            let newScene = GameSettingsScene(size: self.size)
+            self.view?.presentScene(newScene)
         default:
-            print("Should not reach here. PrepareToChangeScene from MainScene")
+            print("Error?")
         }
     }
 }

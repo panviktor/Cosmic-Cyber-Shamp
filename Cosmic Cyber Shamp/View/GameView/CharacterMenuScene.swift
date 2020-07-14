@@ -20,14 +20,14 @@ class CharacterMenuScene: SKScene{
         }
     }
     
-    private enum Update{
+    private enum Update {
         case ToonSelected
         case ToonChanged
         case UpdateTexture
         case UpgradedBullet
     }
     
-    private enum State{
+    private enum State {
         case Select
         case Upgrade
     }
@@ -541,7 +541,6 @@ class CharacterMenuScene: SKScene{
     }
     
     private func showUpgrade() -> Bool{
-        
         let toonLevel = gameinfo.requestToonBulletLevel(index: currToonIndex)
         let nextBulletLevel = gameinfo.requestToonBulletLevel(index: self.currToonIndex) + 1
         let currCharStr = CharacterMenuScene.CurrToon(rawValue: self.currToonIndex)!.string
