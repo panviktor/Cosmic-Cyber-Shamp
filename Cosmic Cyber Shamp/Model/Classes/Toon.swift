@@ -60,26 +60,46 @@ class Toon {
         
         node = SKSpriteNode(texture: localMainTexture)
         node.name = "toon"
-        node.position = CGPoint(x: screenSize.width/2, y: 100)
+        node.position = CGPoint(x: screenSize.width/2, y: 120)
         node.size = self.size
         node.run(SKAction.scale(to: 0.7, duration: 0.0))
         
         let l_wing = SKSpriteNode()
         l_wing.texture = localWingTexture
-        l_wing.size = CGSize(width: ww, height: wh)
-        l_wing.anchorPoint = CGPoint(x: 1.0, y: 0.5)
-        l_wing.position = CGPoint(x: -3.0, y: -75.0)
-        l_wing.run(SKAction.repeatForever(SKAction.sequence([SKAction.resize(toWidth: screenSize.width * 0.097, duration: 0.3), SKAction.resize(toWidth: screenSize.height * 0.105, duration: 0.15)])))
+        l_wing.size = CGSize(width: ww / 3, height: wh)
+        l_wing.anchorPoint = CGPoint(x: 0, y: 0.9)
+        l_wing.position = CGPoint(x: 0.0, y: -80.0)
+        l_wing.xScale = +1.0
+        l_wing.run(SKAction.repeatForever(SKAction.sequence([
+            SKAction.resize(toWidth: screenSize.width * 0.035,
+                            height: screenSize.height * 0.058, duration: 0.25),
+            SKAction.resize(toWidth: screenSize.width * 0.045,
+                            height: screenSize.height * 0.021, duration: 0.3),
+            SKAction.resize(toWidth: screenSize.width * 0.035,
+                            height: screenSize.height * 0.021, duration: 0.25),
+            SKAction.resize(toWidth: screenSize.width * 0.045,
+                            height: screenSize.height * 0.058, duration: 0.3),
+        ])))
         
         node.addChild(l_wing)
         
         let r_wing = SKSpriteNode()
         r_wing.texture = localWingTexture
-        r_wing.size = CGSize(width: ww, height: wh)
-        r_wing.anchorPoint = CGPoint(x: 1.0, y: 0.5)
-        r_wing.position = CGPoint(x:4.0, y: -75.0)
+        r_wing.size = CGSize(width: ww / 3, height: wh)
+        r_wing.anchorPoint = CGPoint(x: 0, y: 0.9)
+        r_wing.position = CGPoint(x:0.0, y: -80.0)
         r_wing.xScale = -1.0
-        r_wing.run(SKAction.repeatForever(SKAction.sequence([SKAction.resize(toWidth: screenSize.width * 0.097, duration: 0.3), SKAction.resize(toWidth: screenSize.height * 0.105, duration: 0.15)])))
+        r_wing.run(SKAction.repeatForever(SKAction.sequence([
+            SKAction.resize(toWidth: screenSize.width * 0.035,
+                            height: screenSize.height * 0.021, duration: 0.25),
+            SKAction.resize(toWidth: screenSize.width * 0.045,
+                            height: screenSize.height * 0.058, duration: 0.3),
+            SKAction.resize(toWidth: screenSize.width * 0.035,
+                            height: screenSize.height * 0.058, duration: 0.25),
+            SKAction.resize(toWidth: screenSize.width * 0.045,
+                            height: screenSize.height * 0.021, duration: 0.3),
+
+        ])))
         
         node.addChild(r_wing)
     }
