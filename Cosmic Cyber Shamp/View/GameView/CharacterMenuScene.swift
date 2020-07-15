@@ -34,6 +34,8 @@ class CharacterMenuScene: SKScene{
     
     let MAXTOONS = 3
     
+    let sceneManager = SceneManager.shared
+    
     fileprivate var charNode = SKSpriteNode()
     fileprivate var gameinfo = GameInfo()
     fileprivate var currToonIndex = 0
@@ -356,6 +358,7 @@ class CharacterMenuScene: SKScene{
             self.recursiveRemovingSKActions(sknodes: self.children)
             self.removeAllChildren()
             self.removeAllActions()
+            sceneManager.gameScene = nil
             let newScene = MainScene(size: self.size)
             self.view?.presentScene(newScene)
         case .Character_Menu_LeftArrow:
@@ -466,9 +469,7 @@ class CharacterMenuScene: SKScene{
         let bulletLevel = gameinfo.requestToonBulletLevel(index: toon.rawValue)
         guard let currToon = Toon.Character(rawValue: toon.string),
             let blevel = BulletMaker.Level(rawValue: bulletLevel)
-            else{
-                return
-        }
+            else { return  }
         
         if let bullet = icon.childNode(withName: "projectile"){
             bullet.removeFromParent()

@@ -1,20 +1,24 @@
 import SpriteKit
 
-class MainScene: SKScene, SKPhysicsContactDelegate{
+class MainScene: SKScene, SKPhysicsContactDelegate {
     enum Scene {
         case MainScene
         case EndScene
         case CharacterMenuScene
         case EndGameScene
-        case WinLevelScene
+        case WinLevelNode
         case TopScoreScene
         case GameSettingsScene
     }
     
     var gameinfo = GameInfo()
     var isPlayerMoved:Bool = false
+    let sceneManager = SceneManager.shared
     
     override func didMove(to view: SKView) {
+        guard sceneManager.gameScene == nil else { return }
+        sceneManager.gameScene = self
+        
         removeUIViews()
         let gestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(self.handlePanFrom(recognizer:)))
         self.view?.addGestureRecognizer(gestureRecognizer)
@@ -277,8 +281,7 @@ class MainScene: SKScene, SKPhysicsContactDelegate{
         else if contact.bodyA.categoryBitMask < contact.bodyB.categoryBitMask{
             higherNode = contact.bodyB.node as! SKSpriteNode?
             lowerNode = contact.bodyA.node as! SKSpriteNode?
-        }
-        else{
+        } else {
             return
         }
         
@@ -369,6 +372,10 @@ class MainScene: SKScene, SKPhysicsContactDelegate{
             self.run(self.gameinfo.mainAudio.getAction(type: .coin))
             self.gameinfo.addCoin(amount: 1)
             destroy(sknode: highNode)
+            
+            if self.gameinfo.getCurrentGold() == 10 {
+                prepareToChangeScene(scene: .WinLevelNode)
+            }
         case .None:
             break
         }
@@ -382,20 +389,21 @@ class MainScene: SKScene, SKPhysicsContactDelegate{
     
     func prepareToChangeScene(scene: Scene){
         // remove all gestures
-        for gesture in (view?.gestureRecognizers)!{
-            view?.removeGestureRecognizer(gesture)
+        if scene != .WinLevelNode {
+            for gesture in (view?.gestureRecognizers)!{
+                view?.removeGestureRecognizer(gesture)
+            }
         }
         
         switch scene {
         case .EndScene:
             self.physicsWorld.speed = 0.4
             self.run(SKAction.sequence([SKAction.wait(forDuration: 4), SKAction.run {
-                self.gameinfo.prepareToChangeScene()
-                self.recursiveRemovingSKActions(sknodes: self.children)
-                self.removeAllChildren()
-                self.removeAllActions()
-                
-                let scene = EndGameScene(size: self.size)
+            self.gameinfo.prepareToChangeScene()
+            self.recursiveRemovingSKActions(sknodes: self.children)
+            self.removeAllChildren()
+            self.removeAllActions()
+            let scene = EndGameScene(size: self.size)
                 scene.collectedCoins = self.gameinfo.getCurrentGold()
                 self.view?.presentScene(scene)
                 }]))
@@ -408,10 +416,14 @@ class MainScene: SKScene, SKPhysicsContactDelegate{
             let newScene = CharacterMenuScene(size: self.size)
             self.view?.presentScene(newScene)
             
-        case .EndGameScene:
-            print(#line, #function, scene)
-        case .WinLevelScene:
-            print(#line, #function, scene)
+        case .WinLevelNode:
+                let transition = SKTransition.doorway(withDuration: 0.5)
+                let winLevel = WinLevelNode(size: self.size)
+                winLevel.scaleMode = .aspectFill
+                sceneManager.gameScene = self
+                self.scene?.isPaused = true
+                self.scene!.view?.presentScene(winLevel, transition: transition)
+            
         case .TopScoreScene:
             self.gameinfo.prepareToChangeScene()
             self.recursiveRemovingSKActions(sknodes: self.children)

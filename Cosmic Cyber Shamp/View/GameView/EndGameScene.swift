@@ -2,6 +2,7 @@ import SpriteKit
 
 class EndGameScene: SKScene {
     weak var scoreManager = ScoreManager.shared
+    let sceneManager = SceneManager.shared
     var collectedCoins: Int = 0
     
     override func didMove(to view: SKView) {
@@ -45,6 +46,7 @@ class EndGameScene: SKScene {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        sceneManager.gameScene = nil
         let scene = MainScene(size: self.size)
         self.view?.presentScene(scene)
     }

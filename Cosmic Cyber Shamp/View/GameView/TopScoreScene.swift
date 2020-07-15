@@ -32,6 +32,8 @@ class TopScoreScene: SKScene {
         self.addChild(bg)
     }
     
+    let sceneManager = SceneManager.shared
+    
     private func load(){
         //GameInfo Load
         let check = gameinfo.load(scene: self)
@@ -122,6 +124,7 @@ class TopScoreScene: SKScene {
             self.recursiveRemovingSKActions(sknodes: self.children)
             self.removeAllChildren()
             self.removeAllActions()
+            sceneManager.gameScene = nil
             let newScene = MainScene(size: self.size)
             self.view?.presentScene(newScene)
         default:

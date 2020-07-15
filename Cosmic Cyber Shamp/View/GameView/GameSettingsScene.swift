@@ -19,6 +19,7 @@ class GameSettingsScene: SKScene{
     
     var scoreManager = ScoreManager.shared
     var audioVibroManager = AudioVibroManager.shared
+    let sceneManager = SceneManager.shared
     
     override func didMove(to view: SKView) {
         self.anchorPoint = CGPoint(x: 0.5, y: 0.5)
@@ -121,6 +122,7 @@ class GameSettingsScene: SKScene{
             self.recursiveRemovingSKActions(sknodes: self.children)
             self.removeAllChildren()
             self.removeAllActions()
+            sceneManager.gameScene = nil
             let newScene = MainScene(size: self.size)
             self.view?.presentScene(newScene)
         default:

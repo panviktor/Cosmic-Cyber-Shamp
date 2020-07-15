@@ -70,7 +70,7 @@ class GameViewController: UIViewController {
         return label
     }()
     
-    let labelNumber:UILabel = {
+    let labelNumber: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: "Arial", size: 25)
         label.text = "0%"
@@ -100,6 +100,7 @@ class GameViewController: UIViewController {
         self.view = SKView()
     }
     
+    //MARK: - View Controller Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         // Add Notification
