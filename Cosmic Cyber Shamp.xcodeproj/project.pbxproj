@@ -65,6 +65,7 @@
 		146F024D24BC63F500402CB4 /* BulletMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146F023A24BC63F500402CB4 /* BulletMaker.swift */; };
 		146F024E24BC63F500402CB4 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146F023B24BC63F500402CB4 /* Map.swift */; };
 		146F024F24BC63F500402CB4 /* AccountInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146F023C24BC63F500402CB4 /* AccountInfo.swift */; };
+		14DE010524BF274E008472C7 /* SceneMeneger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DE010424BF274E008472C7 /* SceneMeneger.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -128,6 +129,7 @@
 		146F023A24BC63F500402CB4 /* BulletMaker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BulletMaker.swift; sourceTree = "<group>"; };
 		146F023B24BC63F500402CB4 /* Map.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
 		146F023C24BC63F500402CB4 /* AccountInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountInfo.swift; sourceTree = "<group>"; };
+		14DE010424BF274E008472C7 /* SceneMeneger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneMeneger.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -366,6 +368,7 @@
 				146F023C24BC63F500402CB4 /* AccountInfo.swift */,
 				145E7BC224BE053C00C0039A /* ScoreManager.swift */,
 				146F022A24BC63F500402CB4 /* AudioVibroManager.swift */,
+				14DE010424BF274E008472C7 /* SceneMeneger.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -497,6 +500,7 @@
 				146F024C24BC63F500402CB4 /* RegularEnemy.swift in Sources */,
 				146F024F24BC63F500402CB4 /* AccountInfo.swift in Sources */,
 				1451C66524BD902F007B915F /* TopScoreScene.swift in Sources */,
+				14DE010524BF274E008472C7 /* SceneMeneger.swift in Sources */,
 				1451C66724BD9070007B915F /* GameSettingsScene.swift in Sources */,
 				146F024124BC63F500402CB4 /* HUD.swift in Sources */,
 				146F023F24BC63F500402CB4 /* PhysicsCategory.swift in Sources */,

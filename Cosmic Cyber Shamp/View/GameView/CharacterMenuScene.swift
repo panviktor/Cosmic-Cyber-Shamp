@@ -32,7 +32,7 @@ class CharacterMenuScene: SKScene{
         case Upgrade
     }
     
-    let MAXTOONS = 3
+    let maxtoons = 3
     
     let sceneManager = SceneManager.shared
     
@@ -353,7 +353,6 @@ class CharacterMenuScene: SKScene{
     private func doTask(gb:Global.Main){
         switch gb {
         case .Character_Menu_BackArrow:
-            
             self.gameinfo.prepareToChangeScene()
             self.recursiveRemovingSKActions(sknodes: self.children)
             self.removeAllChildren()
@@ -483,7 +482,7 @@ class CharacterMenuScene: SKScene{
     private func nextArrow(currToon:CurrToon){
         currToonIndex = currToon.rawValue + 1
         
-        if (currToonIndex >= MAXTOONS){
+        if (currToonIndex >= maxtoons){
             currToonIndex = 0
         }
         
@@ -493,7 +492,7 @@ class CharacterMenuScene: SKScene{
     private func prevArrow(currToon:CurrToon){
         currToonIndex = currToon.rawValue - 1
         if (currToonIndex < 0) {
-            currToonIndex = MAXTOONS - 1
+            currToonIndex = maxtoons - 1
         }
         update(Case: .ToonChanged)
     }

@@ -10,24 +10,9 @@ import SpriteKit
 
 class WinLevelNode: SKScene {
     let sceneManager = SceneManager.shared
-    var collectedCoins: Int = 0
-    
+   
     override func didMove(to view: SKView) {
-        self.backgroundColor = SKColor(red: 0.15, green: 0.15, blue: 0.3, alpha: 1.0)
-        
-        let header = ButtonNode(titled: "pause", backgroundName: "header_background")
-        header.position = CGPoint(x: self.frame.midX, y: self.frame.midY + 150)
-        self.addChild(header)
-        
-        let titles = ["resume"]
-        
-        for (index, title) in titles.enumerated() {
-            let button = ButtonNode(titled: title, backgroundName: "button_background")
-            button.position = CGPoint(x: self.frame.midX, y: self.frame.midY - CGFloat(100 * index))
-            button.name = title
-            button.label.name = title
-            addChild(button)
-        }
+       loadBackground()
     }
     
     override func update(_ currentTime: TimeInterval) {
@@ -39,46 +24,20 @@ class WinLevelNode: SKScene {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        let location = touches.first!.location(in: self)
-        let node = self.atPoint(location)
-        
-        if node.name == "resume" {
             let transition = SKTransition.crossFade(withDuration: 1.0)
             guard let gameScene = sceneManager.gameScene else { return }
             gameScene.scaleMode = .aspectFill
             self.scene!.view?.presentScene(gameScene, transition: transition)
-        }
-    }
-}
-
-
-
-class ButtonNode: SKSpriteNode {
-    let label: SKLabelNode = {
-        let l = SKLabelNode(text: "whatever")
-        l.fontColor = UIColor(red: 219 / 255, green: 226 / 255, blue: 215 / 255, alpha: 1.0)
-        l.fontName = "AmericanTypewriter-Bold"
-        l.fontSize = 30
-        l.horizontalAlignmentMode = .center
-        l.verticalAlignmentMode = .center
-        l.zPosition = 2
-        return l
-    }()
-    
-    init(titled title: String, backgroundName: String) {
-        let texture = SKTexture(imageNamed: backgroundName)
-        super.init(texture: texture, color: .clear, size: texture.size())
-        label.text = title.uppercased()
-        addChild(label)
+        
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    private func loadBackground() {
+        let bg = SKSpriteNode(texture: Global.sharedInstance.getMainTexture(main: .WinLevelScene_Background_1))
+        bg.anchorPoint = CGPoint(x: 0.0, y: 0.0)
+        bg.size = CGSize(width: screenSize.width, height: screenSize.height)
+        bg.zPosition = -10
+        self.addChild(bg)
     }
 }
 
 
-class SceneManager {
-    static let shared = SceneManager()
-    var gameScene: MainScene?
-}
