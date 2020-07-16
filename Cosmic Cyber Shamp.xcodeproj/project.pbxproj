@@ -74,6 +74,25 @@
 		14F3060F24C08AF2002A893C /* OneSignalNotificationServiceExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 14F3060824C08AF2002A893C /* OneSignalNotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		14F3061424C08B6A002A893C /* OneSignal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14F3060124C08A99002A893C /* OneSignal.framework */; };
 		14F3061524C08B6A002A893C /* OneSignal.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 14F3060124C08A99002A893C /* OneSignal.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		14F3061A24C090EE002A893C /* ReachabilityObserverDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F3061824C090EE002A893C /* ReachabilityObserverDelegate.swift */; };
+		14F3061B24C090EE002A893C /* DifferentServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F3061924C090EE002A893C /* DifferentServices.swift */; };
+		14F3062224C09104002A893C /* Extension+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F3061C24C09104002A893C /* Extension+URL.swift */; };
+		14F3062324C09104002A893C /* Extension+UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F3061D24C09104002A893C /* Extension+UIButton.swift */; };
+		14F3062424C09104002A893C /* Extension+WKWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F3061E24C09104002A893C /* Extension+WKWebView.swift */; };
+		14F3062524C09104002A893C /* Extension+DispatchQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F3061F24C09104002A893C /* Extension+DispatchQueue.swift */; };
+		14F3062624C09104002A893C /* Extension+Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F3062024C09104002A893C /* Extension+Collection.swift */; };
+		14F3062724C09104002A893C /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F3062124C09104002A893C /* Device.swift */; };
+		14F3062C24C0916A002A893C /* SecondNoInternetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F3062824C09169002A893C /* SecondNoInternetViewController.swift */; };
+		14F3062D24C0916A002A893C /* NoInternetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F3062924C0916A002A893C /* NoInternetViewController.swift */; };
+		14F3062E24C0916A002A893C /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F3062A24C0916A002A893C /* WebViewController.swift */; };
+		14F3062F24C0916A002A893C /* GIFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F3062B24C0916A002A893C /* GIFViewController.swift */; };
+		14F3063824C091BD002A893C /* NoInternet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14F3063124C091BD002A893C /* NoInternet.storyboard */; };
+		14F3063924C091BD002A893C /* WKweb.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14F3063224C091BD002A893C /* WKweb.storyboard */; };
+		14F3063A24C091BD002A893C /* GIFViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14F3063424C091BD002A893C /* GIFViewController.xib */; };
+		14F3063B24C091BD002A893C /* SecondNoInternetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14F3063524C091BD002A893C /* SecondNoInternetViewController.xib */; };
+		14F3064024C09224002A893C /* FacebookCore in Frameworks */ = {isa = PBXBuildFile; productRef = 14F3063F24C09224002A893C /* FacebookCore */; };
+		14F3064224C093CD002A893C /* no-internet-connection.json in Resources */ = {isa = PBXBuildFile; fileRef = 14F3064124C093CD002A893C /* no-internet-connection.json */; };
+		14F3064424C09430002A893C /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F3064324C09430002A893C /* WelcomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -189,6 +208,24 @@
 		14F3060A24C08AF2002A893C /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		14F3060C24C08AF2002A893C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		14F3061724C08BAC002A893C /* Cosmic Cyber Shamp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Cosmic Cyber Shamp.entitlements"; sourceTree = "<group>"; };
+		14F3061824C090EE002A893C /* ReachabilityObserverDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReachabilityObserverDelegate.swift; sourceTree = "<group>"; };
+		14F3061924C090EE002A893C /* DifferentServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DifferentServices.swift; sourceTree = "<group>"; };
+		14F3061C24C09104002A893C /* Extension+URL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension+URL.swift"; sourceTree = "<group>"; };
+		14F3061D24C09104002A893C /* Extension+UIButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension+UIButton.swift"; sourceTree = "<group>"; };
+		14F3061E24C09104002A893C /* Extension+WKWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension+WKWebView.swift"; sourceTree = "<group>"; };
+		14F3061F24C09104002A893C /* Extension+DispatchQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension+DispatchQueue.swift"; sourceTree = "<group>"; };
+		14F3062024C09104002A893C /* Extension+Collection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension+Collection.swift"; sourceTree = "<group>"; };
+		14F3062124C09104002A893C /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
+		14F3062824C09169002A893C /* SecondNoInternetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondNoInternetViewController.swift; sourceTree = "<group>"; };
+		14F3062924C0916A002A893C /* NoInternetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoInternetViewController.swift; sourceTree = "<group>"; };
+		14F3062A24C0916A002A893C /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		14F3062B24C0916A002A893C /* GIFViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GIFViewController.swift; sourceTree = "<group>"; };
+		14F3063124C091BD002A893C /* NoInternet.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NoInternet.storyboard; sourceTree = "<group>"; };
+		14F3063224C091BD002A893C /* WKweb.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = WKweb.storyboard; sourceTree = "<group>"; };
+		14F3063424C091BD002A893C /* GIFViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GIFViewController.xib; sourceTree = "<group>"; };
+		14F3063524C091BD002A893C /* SecondNoInternetViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SecondNoInternetViewController.xib; sourceTree = "<group>"; };
+		14F3064124C093CD002A893C /* no-internet-connection.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "no-internet-connection.json"; sourceTree = "<group>"; };
+		14F3064324C09430002A893C /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,6 +236,7 @@
 				14DE010B24BF3220008472C7 /* Reachability in Frameworks */,
 				14DE010E24BF3244008472C7 /* Lottie in Frameworks */,
 				14F3060224C08A99002A893C /* OneSignal.framework in Frameworks */,
+				14F3064024C09224002A893C /* FacebookCore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,7 +288,9 @@
 			isa = PBXGroup;
 			children = (
 				146F01C124BC404900402CB4 /* AppDelegate.swift */,
+				14F3061924C090EE002A893C /* DifferentServices.swift */,
 				146F01DA24BC411F00402CB4 /* Library */,
+				14F3061824C090EE002A893C /* ReachabilityObserverDelegate.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -268,6 +308,7 @@
 		146F01D724BC40F200402CB4 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				14F3063024C0917A002A893C /* Web */,
 				146F01E424BC63CE00402CB4 /* Game */,
 			);
 			path = Controller;
@@ -278,6 +319,9 @@
 			children = (
 				146F01DD24BC63BB00402CB4 /* GameView */,
 				146F01CC24BC404A00402CB4 /* LaunchScreen.storyboard */,
+				14F3063124C091BD002A893C /* NoInternet.storyboard */,
+				14F3063224C091BD002A893C /* WKweb.storyboard */,
+				14F3063324C091BD002A893C /* Xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -285,6 +329,7 @@
 		146F01D924BC410100402CB4 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				14F3064124C093CD002A893C /* no-internet-connection.json */,
 				146F01E524BC63E400402CB4 /* Resources */,
 				146F01CA24BC404A00402CB4 /* Assets.xcassets */,
 			);
@@ -294,6 +339,12 @@
 		146F01DA24BC411F00402CB4 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				14F3062124C09104002A893C /* Device.swift */,
+				14F3062024C09104002A893C /* Extension+Collection.swift */,
+				14F3061F24C09104002A893C /* Extension+DispatchQueue.swift */,
+				14F3061D24C09104002A893C /* Extension+UIButton.swift */,
+				14F3061C24C09104002A893C /* Extension+URL.swift */,
+				14F3061E24C09104002A893C /* Extension+WKWebView.swift */,
 				146F01DB24BC623D00402CB4 /* Extensions+Game.swift */,
 			);
 			path = Library;
@@ -315,6 +366,7 @@
 		146F01E424BC63CE00402CB4 /* Game */ = {
 			isa = PBXGroup;
 			children = (
+				14F3064324C09430002A893C /* WelcomeViewController.swift */,
 				146F01C524BC404900402CB4 /* GameViewController.swift */,
 			);
 			path = Game;
@@ -485,6 +537,26 @@
 			path = OneSignalNotificationServiceExtension;
 			sourceTree = "<group>";
 		};
+		14F3063024C0917A002A893C /* Web */ = {
+			isa = PBXGroup;
+			children = (
+				14F3062B24C0916A002A893C /* GIFViewController.swift */,
+				14F3062924C0916A002A893C /* NoInternetViewController.swift */,
+				14F3062824C09169002A893C /* SecondNoInternetViewController.swift */,
+				14F3062A24C0916A002A893C /* WebViewController.swift */,
+			);
+			path = Web;
+			sourceTree = "<group>";
+		};
+		14F3063324C091BD002A893C /* Xib */ = {
+			isa = PBXGroup;
+			children = (
+				14F3063424C091BD002A893C /* GIFViewController.xib */,
+				14F3063524C091BD002A893C /* SecondNoInternetViewController.xib */,
+			);
+			path = Xib;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -508,6 +580,7 @@
 			packageProductDependencies = (
 				14DE010A24BF3220008472C7 /* Reachability */,
 				14DE010D24BF3244008472C7 /* Lottie */,
+				14F3063F24C09224002A893C /* FacebookCore */,
 			);
 			productName = "Cosmic Cyber Shamp";
 			productReference = 146F01BE24BC404900402CB4 /* Cosmic Cyber Shamp.app */;
@@ -561,6 +634,7 @@
 			packageReferences = (
 				14DE010924BF3220008472C7 /* XCRemoteSwiftPackageReference "Reachability" */,
 				14DE010C24BF3244008472C7 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				14F3063E24C09224002A893C /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
 			);
 			productRefGroup = 146F01BF24BC404900402CB4 /* Products */;
 			projectDirPath = "";
@@ -577,6 +651,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14F3063A24C091BD002A893C /* GIFViewController.xib in Resources */,
 				146F021824BC63E400402CB4 /* HUD.atlas in Resources */,
 				146F021524BC63E400402CB4 /* Map.atlas in Resources */,
 				146F022424BC63E400402CB4 /* puff.m4a in Resources */,
@@ -584,10 +659,12 @@
 				146F021724BC63E400402CB4 /* CharacterScene.atlas in Resources */,
 				146F020E24BC63E400402CB4 /* fx_5_smoke.png in Resources */,
 				146F023D24BC63F500402CB4 /* userinfo.plist in Resources */,
+				14F3063924C091BD002A893C /* WKweb.storyboard in Resources */,
 				146F022024BC63E400402CB4 /* Quebab-Shadow-ffp.ttf in Resources */,
 				146F021124BC63E400402CB4 /* Logo.png in Resources */,
 				146F021F24BC63E400402CB4 /* begin.m4a in Resources */,
 				146F022124BC63E400402CB4 /* famifont.ttf in Resources */,
+				14F3063824C091BD002A893C /* NoInternet.storyboard in Resources */,
 				146F022224BC63E400402CB4 /* gradientMonoTone.fsh in Resources */,
 				146F020C24BC63E400402CB4 /* fx_2.png in Resources */,
 				146F022324BC63E400402CB4 /* Sansani Fonts - Cartwheel.otf in Resources */,
@@ -604,9 +681,11 @@
 				146F020D24BC63E400402CB4 /* fx_1.png in Resources */,
 				146F021E24BC63E400402CB4 /* trail.sks in Resources */,
 				146F021D24BC63E400402CB4 /* selectedChar-Three.sks in Resources */,
+				14F3063B24C091BD002A893C /* SecondNoInternetViewController.xib in Resources */,
 				146F021424BC63E400402CB4 /* mainmenu.atlas in Resources */,
 				146F022524BC63E400402CB4 /* getcoin.m4a in Resources */,
 				14D3527224C04B2A00D8D8F1 /* initial_bg.png in Resources */,
+				14F3064224C093CD002A893C /* no-internet-connection.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -646,34 +725,47 @@
 			buildActionMask = 2147483647;
 			files = (
 				1451C66324BD8F9C007B915F /* WinLevelNode.swift in Sources */,
+				14F3062624C09104002A893C /* Extension+Collection.swift in Sources */,
 				146F01C624BC404900402CB4 /* GameViewController.swift in Sources */,
 				146F024224BC63F500402CB4 /* Projectile.swift in Sources */,
 				146F024B24BC63F500402CB4 /* Fireball.swift in Sources */,
 				146F024424BC63F500402CB4 /* Toon.swift in Sources */,
+				14F3062424C09104002A893C /* Extension+WKWebView.swift in Sources */,
+				14F3062724C09104002A893C /* Device.swift in Sources */,
 				146F024C24BC63F500402CB4 /* RegularEnemy.swift in Sources */,
+				14F3061B24C090EE002A893C /* DifferentServices.swift in Sources */,
+				14F3062C24C0916A002A893C /* SecondNoInternetViewController.swift in Sources */,
 				146F024F24BC63F500402CB4 /* AccountInfo.swift in Sources */,
 				1451C66524BD902F007B915F /* TopScoreScene.swift in Sources */,
+				14F3062224C09104002A893C /* Extension+URL.swift in Sources */,
 				14DE010524BF274E008472C7 /* SceneMeneger.swift in Sources */,
+				14F3062324C09104002A893C /* Extension+UIButton.swift in Sources */,
 				1451C66724BD9070007B915F /* GameSettingsScene.swift in Sources */,
 				146F024124BC63F500402CB4 /* HUD.swift in Sources */,
 				146F023F24BC63F500402CB4 /* PhysicsCategory.swift in Sources */,
 				146F01E324BC63BB00402CB4 /* CharacterMenuScene.swift in Sources */,
+				14F3061A24C090EE002A893C /* ReachabilityObserverDelegate.swift in Sources */,
 				146F01E124BC63BB00402CB4 /* EndGameScene.swift in Sources */,
 				146F024824BC63F500402CB4 /* Enemy.swift in Sources */,
+				14F3062E24C0916A002A893C /* WebViewController.swift in Sources */,
 				146F024A24BC63F500402CB4 /* Bomber.swift in Sources */,
 				146F024524BC63F500402CB4 /* GameInfo.swift in Sources */,
 				146F01DC24BC623D00402CB4 /* Extensions+Game.swift in Sources */,
+				14F3064424C09430002A893C /* WelcomeViewController.swift in Sources */,
 				146F01E224BC63BB00402CB4 /* MainScene.swift in Sources */,
 				146F024D24BC63F500402CB4 /* BulletMaker.swift in Sources */,
 				146F024724BC63F500402CB4 /* EnemyModel.swift in Sources */,
 				145E7BC324BE053C00C0039A /* ScoreManager.swift in Sources */,
+				14F3062524C09104002A893C /* Extension+DispatchQueue.swift in Sources */,
 				146F024324BC63F500402CB4 /* Global.swift in Sources */,
 				146F024024BC63F500402CB4 /* AudioVibroManager.swift in Sources */,
+				14F3062D24C0916A002A893C /* NoInternetViewController.swift in Sources */,
 				146F023E24BC63F500402CB4 /* Currency.swift in Sources */,
 				146F024E24BC63F500402CB4 /* Map.swift in Sources */,
 				146F024924BC63F500402CB4 /* Pinky.swift in Sources */,
 				146F024624BC63F500402CB4 /* Infobar.swift in Sources */,
 				146F01C224BC404900402CB4 /* AppDelegate.swift in Sources */,
+				14F3062F24C0916A002A893C /* GIFViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -825,6 +917,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				APPLICATION_EXTENSION_API_ONLY = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Cosmic Cyber Shamp/Cosmic Cyber Shamp.entitlements";
 				CODE_SIGN_STYLE = Automatic;
@@ -845,7 +938,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
-				"Texture Atlas Maximum Size" = 2048x2048;
+				"Texture Atlas Maximum Size" = 4096x4096;
 			};
 			name = Debug;
 		};
@@ -853,6 +946,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Cosmic Cyber Shamp/Cosmic Cyber Shamp.entitlements";
 				CODE_SIGN_STYLE = Automatic;
@@ -873,13 +967,14 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
-				"Texture Atlas Maximum Size" = 2048x2048;
+				"Texture Atlas Maximum Size" = 4096x4096;
 			};
 			name = Release;
 		};
 		14F3061124C08AF2002A893C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = 2335GSPY5N;
@@ -906,6 +1001,7 @@
 		14F3061224C08AF2002A893C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = 2335GSPY5N;
@@ -978,6 +1074,14 @@
 				minimumVersion = 3.1.8;
 			};
 		};
+		14F3063E24C09224002A893C /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/facebook/facebook-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.1.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -990,6 +1094,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 14DE010C24BF3244008472C7 /* XCRemoteSwiftPackageReference "lottie-ios" */;
 			productName = Lottie;
+		};
+		14F3063F24C09224002A893C /* FacebookCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 14F3063E24C09224002A893C /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			productName = FacebookCore;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
