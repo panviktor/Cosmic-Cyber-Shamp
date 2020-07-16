@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -24,8 +24,6 @@
 		146F020C24BC63E400402CB4 /* fx_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 146F01EA24BC63E400402CB4 /* fx_2.png */; };
 		146F020D24BC63E400402CB4 /* fx_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 146F01EB24BC63E400402CB4 /* fx_1.png */; };
 		146F020E24BC63E400402CB4 /* fx_5_smoke.png in Resources */ = {isa = PBXBuildFile; fileRef = 146F01EC24BC63E400402CB4 /* fx_5_smoke.png */; };
-		146F020F24BC63E400402CB4 /* initial_main_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 146F01EE24BC63E400402CB4 /* initial_main_bg.png */; };
-		146F021024BC63E400402CB4 /* initial_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 146F01EF24BC63E400402CB4 /* initial_bg.png */; };
 		146F021124BC63E400402CB4 /* Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 146F01F024BC63E400402CB4 /* Logo.png */; };
 		146F021224BC63E400402CB4 /* Enemy.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 146F01F224BC63E400402CB4 /* Enemy.atlas */; };
 		146F021324BC63E400402CB4 /* Items.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 146F01F324BC63E400402CB4 /* Items.atlas */; };
@@ -65,7 +63,11 @@
 		146F024D24BC63F500402CB4 /* BulletMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146F023A24BC63F500402CB4 /* BulletMaker.swift */; };
 		146F024E24BC63F500402CB4 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146F023B24BC63F500402CB4 /* Map.swift */; };
 		146F024F24BC63F500402CB4 /* AccountInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146F023C24BC63F500402CB4 /* AccountInfo.swift */; };
+		14D3527224C04B2A00D8D8F1 /* initial_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 14D3527124C04B2A00D8D8F1 /* initial_bg.png */; };
 		14DE010524BF274E008472C7 /* SceneMeneger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DE010424BF274E008472C7 /* SceneMeneger.swift */; };
+		14DE010B24BF3220008472C7 /* Reachability in Frameworks */ = {isa = PBXBuildFile; productRef = 14DE010A24BF3220008472C7 /* Reachability */; };
+		14DE010E24BF3244008472C7 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 14DE010D24BF3244008472C7 /* Lottie */; };
+		14DE011024BF440E008472C7 /* initial_main_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 14DE010F24BF440E008472C7 /* initial_main_bg.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,8 +90,6 @@
 		146F01EA24BC63E400402CB4 /* fx_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fx_2.png; sourceTree = "<group>"; };
 		146F01EB24BC63E400402CB4 /* fx_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fx_1.png; sourceTree = "<group>"; };
 		146F01EC24BC63E400402CB4 /* fx_5_smoke.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fx_5_smoke.png; sourceTree = "<group>"; };
-		146F01EE24BC63E400402CB4 /* initial_main_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = initial_main_bg.png; sourceTree = "<group>"; };
-		146F01EF24BC63E400402CB4 /* initial_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = initial_bg.png; sourceTree = "<group>"; };
 		146F01F024BC63E400402CB4 /* Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo.png; sourceTree = "<group>"; };
 		146F01F224BC63E400402CB4 /* Enemy.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Enemy.atlas; sourceTree = "<group>"; };
 		146F01F324BC63E400402CB4 /* Items.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Items.atlas; sourceTree = "<group>"; };
@@ -129,7 +129,9 @@
 		146F023A24BC63F500402CB4 /* BulletMaker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BulletMaker.swift; sourceTree = "<group>"; };
 		146F023B24BC63F500402CB4 /* Map.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
 		146F023C24BC63F500402CB4 /* AccountInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountInfo.swift; sourceTree = "<group>"; };
+		14D3527124C04B2A00D8D8F1 /* initial_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = initial_bg.png; sourceTree = "<group>"; };
 		14DE010424BF274E008472C7 /* SceneMeneger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneMeneger.swift; sourceTree = "<group>"; };
+		14DE010F24BF440E008472C7 /* initial_main_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = initial_main_bg.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +139,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14DE010B24BF3220008472C7 /* Reachability in Frameworks */,
+				14DE010E24BF3244008472C7 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,8 +287,8 @@
 		146F01ED24BC63E400402CB4 /* Load */ = {
 			isa = PBXGroup;
 			children = (
-				146F01EE24BC63E400402CB4 /* initial_main_bg.png */,
-				146F01EF24BC63E400402CB4 /* initial_bg.png */,
+				14DE010F24BF440E008472C7 /* initial_main_bg.png */,
+				14D3527124C04B2A00D8D8F1 /* initial_bg.png */,
 				146F01F024BC63E400402CB4 /* Logo.png */,
 			);
 			path = Load;
@@ -410,6 +414,10 @@
 			dependencies = (
 			);
 			name = "Cosmic Cyber Shamp";
+			packageProductDependencies = (
+				14DE010A24BF3220008472C7 /* Reachability */,
+				14DE010D24BF3244008472C7 /* Lottie */,
+			);
 			productName = "Cosmic Cyber Shamp";
 			productReference = 146F01BE24BC404900402CB4 /* Cosmic Cyber Shamp.app */;
 			productType = "com.apple.product-type.application";
@@ -438,6 +446,10 @@
 				Base,
 			);
 			mainGroup = 146F01B524BC404900402CB4;
+			packageReferences = (
+				14DE010924BF3220008472C7 /* XCRemoteSwiftPackageReference "Reachability" */,
+				14DE010C24BF3244008472C7 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+			);
 			productRefGroup = 146F01BF24BC404900402CB4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -468,10 +480,9 @@
 				146F022324BC63E400402CB4 /* Sansani Fonts - Cartwheel.otf in Resources */,
 				146F021B24BC63E400402CB4 /* bulling.sks in Resources */,
 				146F021324BC63E400402CB4 /* Items.atlas in Resources */,
+				14DE011024BF440E008472C7 /* initial_main_bg.png in Resources */,
 				146F01CB24BC404A00402CB4 /* Assets.xcassets in Resources */,
-				146F020F24BC63E400402CB4 /* initial_main_bg.png in Resources */,
 				146F021224BC63E400402CB4 /* Enemy.atlas in Resources */,
-				146F021024BC63E400402CB4 /* initial_bg.png in Resources */,
 				146F021C24BC63E400402CB4 /* selectedChar-Two.sks in Resources */,
 				146F021A24BC63E400402CB4 /* selectedChar-One.sks in Resources */,
 				146F020A24BC63E400402CB4 /* fx_4.png in Resources */,
@@ -482,6 +493,7 @@
 				146F021D24BC63E400402CB4 /* selectedChar-Three.sks in Resources */,
 				146F021424BC63E400402CB4 /* mainmenu.atlas in Resources */,
 				146F022524BC63E400402CB4 /* getcoin.m4a in Resources */,
+				14D3527224C04B2A00D8D8F1 /* initial_bg.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -670,6 +682,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
+				"Texture Atlas Maximum Size" = 2048x2048;
 			};
 			name = Debug;
 		};
@@ -691,6 +704,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
+				"Texture Atlas Maximum Size" = 2048x2048;
 			};
 			name = Release;
 		};
@@ -716,6 +730,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		14DE010924BF3220008472C7 /* XCRemoteSwiftPackageReference "Reachability" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ashleymills/Reachability.swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		14DE010C24BF3244008472C7 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.1.8;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		14DE010A24BF3220008472C7 /* Reachability */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 14DE010924BF3220008472C7 /* XCRemoteSwiftPackageReference "Reachability" */;
+			productName = Reachability;
+		};
+		14DE010D24BF3244008472C7 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 14DE010C24BF3244008472C7 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 146F01B624BC404900402CB4 /* Project object */;
 }

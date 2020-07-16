@@ -55,26 +55,27 @@ class GameViewController: UIViewController {
     
     let bview: UIView = {
         let view = UIView()
-        view.backgroundColor = .white
+        view.backgroundColor = .clear
         view.translatesAutoresizingMaskIntoConstraints = false
         view.layer.cornerRadius = 20
+        view.clipsToBounds = true
         return view
     }()
     
     let loadLabel:UILabel = {
         let label = UILabel()
-        label.font = UIFont(name: "Arial", size: 25)
+        label.font = UIFont(name: "KohinoorDevanagari-Medium", size: 25)
         label.text = "Loading:"
-        // label.backgroundColor = .red
+         label.textColor = .white
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
     let labelNumber: UILabel = {
         let label = UILabel()
-        label.font = UIFont(name: "Arial", size: 25)
+        label.font = UIFont(name: "KohinoorDevanagari-Medium", size: 25)
+        label.textColor = .white
         label.text = "0%"
-        // labelNumber.backgroundColor = .blue
         label.translatesAutoresizingMaskIntoConstraints = false
         
         return label
@@ -83,6 +84,7 @@ class GameViewController: UIViewController {
     let imgView:UIView = {
         let img = UIImageView(image: UIImage(named: "initial_bg"))
         img.layer.cornerRadius = 20
+        img.contentMode = .scaleAspectFit
         img.translatesAutoresizingMaskIntoConstraints = false
         
         return img
@@ -329,7 +331,6 @@ class GameViewController: UIViewController {
     }
     
     private func loadingScene(){
-        // x, y, width, height
         view.addSubview(rootView)
         view.addSubview(bview)
         bview.addSubview(imgView)
@@ -342,23 +343,23 @@ class GameViewController: UIViewController {
         rootView.heightAnchor.constraint(equalTo: view.heightAnchor).isActive = true
         
         bview.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        bview.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -5).isActive = true
-        bview.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -10).isActive = true
-        bview.heightAnchor.constraint(equalToConstant: screenSize.height/2).isActive = true
-        
+        bview.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        bview.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -5).isActive = true
+        bview.heightAnchor.constraint(equalToConstant: screenSize.height / 1.5).isActive = true
+
         imgView.centerXAnchor.constraint(equalTo: bview.centerXAnchor).isActive = true
         imgView.topAnchor.constraint(equalTo: bview.topAnchor).isActive = true
         imgView.widthAnchor.constraint(equalTo: bview.widthAnchor).isActive = true
-        imgView.heightAnchor.constraint(equalToConstant: screenSize.height/3.5).isActive = true
+        imgView.heightAnchor.constraint(equalToConstant: screenSize.height / 3.5).isActive = true
         
-        loadLabel.centerXAnchor.constraint(equalTo: bview.centerXAnchor, constant: -50).isActive = true
-        loadLabel.topAnchor.constraint(equalTo: imgView.bottomAnchor, constant: 50).isActive = true
+        loadLabel.leftAnchor.constraint(equalTo: bview.leftAnchor, constant: 20).isActive = true
+        loadLabel.topAnchor.constraint(equalTo: imgView.bottomAnchor, constant: -10).isActive = true
         loadLabel.widthAnchor.constraint(equalToConstant: 100).isActive = true
         loadLabel.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        
-        labelNumber.leftAnchor.constraint(equalTo: loadLabel.rightAnchor).isActive = true
+
+        labelNumber.leftAnchor.constraint(equalTo: loadLabel.rightAnchor, constant: 5).isActive = true
         labelNumber.centerYAnchor.constraint(equalTo: loadLabel.centerYAnchor).isActive = true
-        labelNumber.widthAnchor.constraint(equalToConstant: screenSize.width/4).isActive = true
+        labelNumber.widthAnchor.constraint(equalToConstant: screenSize.width / 4).isActive = true
         labelNumber.heightAnchor.constraint(equalToConstant: 50).isActive = true
         
     }
