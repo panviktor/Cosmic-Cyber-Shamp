@@ -11,7 +11,7 @@ class GIFViewController: UIViewController {
             checkMainURL()
         }
     }
-   
+    
     //MARK: - ViewController Methods
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,6 +64,10 @@ class GIFViewController: UIViewController {
             }
         }
         print("hasPrompted = \(hasPrompted)")
+    }
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
     }
     
     deinit {

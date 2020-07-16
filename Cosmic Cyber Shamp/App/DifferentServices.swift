@@ -52,7 +52,6 @@ class DifferentServices: UIResponder, UIApplicationDelegate,  ReachabilityObserv
                 guard error == nil else { return }
                 if let data = data {
                     if let jsonString = String(data: data, encoding: .utf8) {
-                        print(#line, #function, "dropboxJSSource was loading from DropBox")
                         self.dropboxJSSource = jsonString
                     }
                 }
@@ -72,7 +71,6 @@ class DifferentServices: UIResponder, UIApplicationDelegate,  ReachabilityObserv
     
     func reachabilityChanged(_ isReachable: Bool) {
         if isReachable {
-            print("Internet connection!")
             switch state {
             case .inGame:
                 launchTheGame()
@@ -88,7 +86,6 @@ class DifferentServices: UIResponder, UIApplicationDelegate,  ReachabilityObserv
                 break
             }
         } else {
-            print("No internet connection")
             delay(bySeconds: 0.1) {
                 self.launchNoInternet()
             }
@@ -120,9 +117,8 @@ extension DifferentServices {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         state = .inGame
-        let storyboard = UIStoryboard(name: "Welcome", bundle: .main)
-        let initialViewController = storyboard.instantiateViewController(withIdentifier: "WelcomeViewController")
-        self.window?.rootViewController = initialViewController
+        let gameVC = WelcomeViewController()
+        self.window?.rootViewController = gameVC
     }
     
     private func launchGIF() {

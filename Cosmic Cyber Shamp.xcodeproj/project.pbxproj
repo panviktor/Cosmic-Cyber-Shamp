@@ -308,8 +308,8 @@
 		146F01D724BC40F200402CB4 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				14F3063024C0917A002A893C /* Web */,
 				146F01E424BC63CE00402CB4 /* Game */,
+				14F3063024C0917A002A893C /* Web */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -318,9 +318,7 @@
 			isa = PBXGroup;
 			children = (
 				146F01DD24BC63BB00402CB4 /* GameView */,
-				146F01CC24BC404A00402CB4 /* LaunchScreen.storyboard */,
-				14F3063124C091BD002A893C /* NoInternet.storyboard */,
-				14F3063224C091BD002A893C /* WKweb.storyboard */,
+				14F3064724C09558002A893C /* Storyboards */,
 				14F3063324C091BD002A893C /* Xib */,
 			);
 			path = View;
@@ -555,6 +553,16 @@
 				14F3063524C091BD002A893C /* SecondNoInternetViewController.xib */,
 			);
 			path = Xib;
+			sourceTree = "<group>";
+		};
+		14F3064724C09558002A893C /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				146F01CC24BC404A00402CB4 /* LaunchScreen.storyboard */,
+				14F3063124C091BD002A893C /* NoInternet.storyboard */,
+				14F3063224C091BD002A893C /* WKweb.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -1,37 +1,34 @@
-//
-//  ViewController.swift
-//  Priest in Egypt
-//
-//  Created by Viktor on 24.06.2020.
-//  Copyright © 2020 Viktor. All rights reserved.
-//
-
 import UIKit
 
 class WelcomeViewController: UIViewController {
-    @IBOutlet var playButton: UIButton!
-    @IBOutlet var mainBackgroundView: UIImageView!
+    let rootView: UIImageView = {
+        let view = UIImageView(image: UIImage(named: "initial_main_bg"))
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        playButton.pulsate(_repeatCount: 10)
+        loadGUI()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-    }
-    
-    private func launchTheGame() {
-        //FIXME!
+    private func loadGUI() {
+        view.addSubview(rootView)
+        rootView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        rootView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        rootView.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
+        rootView.heightAnchor.constraint(equalTo: view.heightAnchor).isActive = true
         
-    }
-
-    @IBAction func playButtonPressed(_ sender: UIButton) {
-        self.launchTheGame()
     }
     
     override var prefersStatusBarHidden: Bool {
         return true
-    } 
+    }
+    
+    private func launchTheGame() {
+        let gameVC = GameViewController()
+        gameVC.modalPresentationStyle = .fullScreen
+        gameVC.present(gameVC, animated: true)
+    }
 }
 
