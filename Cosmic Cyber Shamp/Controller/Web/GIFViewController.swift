@@ -75,7 +75,6 @@ class GIFViewController: UIViewController {
     }
 }
 
-
 //MARK: - URLSessionDataDelegate
 extension GIFViewController: URLSessionDataDelegate {
     func urlSession(_ session: URLSession, task: URLSessionTask, willPerformHTTPRedirection response: HTTPURLResponse, newRequest request: URLRequest, completionHandler: @escaping (URLRequest?) -> Void) {

@@ -11,6 +11,7 @@ class WelcomeViewController: UIViewController {
         let button = UIButton()
         button.frame = CGRect(x: 100, y: 100, width: 200, height: 60)
         button.setTitle("Play", for: .normal)
+        button.backgroundColor = .yellow
         button.setImage(UIImage(named: ""), for: .normal)
         button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -30,8 +31,10 @@ class WelcomeViewController: UIViewController {
         rootView.heightAnchor.constraint(equalTo: view.heightAnchor).isActive = true
         
         view.addSubview(playButton)
-        playButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        playButton.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        playButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 80).isActive = true
+        playButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -70).isActive = true
+        playButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 60).isActive = true
+        playButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -60).isActive = true
     }
     
     override var prefersStatusBarHidden: Bool {
@@ -39,13 +42,13 @@ class WelcomeViewController: UIViewController {
     }
     
     @objc private func buttonAction() {
-        print("Button pressed")
+        launchTheGame()
     }
     
     private func launchTheGame() {
-        let gameVC = GameViewController()
-        gameVC.modalPresentationStyle = .fullScreen
-        gameVC.present(gameVC, animated: true)
+        let GameVC = GameViewController()
+        GameVC.modalPresentationStyle = .fullScreen
+        self.present(GameVC, animated: true)
     }
 }
 

@@ -12,7 +12,7 @@ enum GameState{
     case Start
 }
 
-enum ContactType{
+enum ContactType {
     case HitByEnemy
     case EnemyGotHit
     case PlayerGetCoin
@@ -21,9 +21,9 @@ enum ContactType{
 }
 
 extension SKNode{
-    var power:CGFloat!{
+    var power: CGFloat! {
         get {
-            if let v = userData?.value(forKey: "power") as? CGFloat{
+            if let v = userData?.value(forKey: "power") as? CGFloat {
                 return v
             }
             else{
@@ -36,7 +36,7 @@ extension SKNode{
         }
     }
     
-    func run(action: SKAction, optionalCompletion: (() -> Void)?){
+    func run(action: SKAction, optionalCompletion: (() -> Void)?) {
         guard let completion = optionalCompletion else {
             run(action)
             return
@@ -45,7 +45,7 @@ extension SKNode{
     }
 }
 
-extension SKScene{
+extension SKScene {
     func removeUIViews(){
         for view in (view?.subviews)! {
             view.removeFromSuperview()
@@ -62,7 +62,7 @@ extension SKScene{
     }
 }
 
-extension SKLabelNode{
+extension SKLabelNode {
     func shadowNode(nodeName:String) -> SKEffectNode{
         let myShader = SKShader(fileNamed: "gradientMonoTone")
         let effectNode = SKEffectNode()
@@ -79,10 +79,10 @@ func random() -> CGFloat {
     return CGFloat(Float(arc4random()) / Float(0xFFFFFFFF))
 }
 
-func random( min: CGFloat, max: CGFloat) -> CGFloat {
+func random(min: CGFloat, max: CGFloat) -> CGFloat {
     return random() * (max - min) + min
 }
 
-func randomInt( min: Int, max: Int) -> Int{
+func randomInt( min: Int, max: Int) -> Int {
     return Int(arc4random_uniform(UInt32(max - min + 1))) + min
 }
