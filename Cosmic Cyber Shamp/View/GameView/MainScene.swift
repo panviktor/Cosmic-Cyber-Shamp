@@ -72,8 +72,8 @@ class MainScene: SKScene, SKPhysicsContactDelegate {
         let bd_one = SKSpriteNode()
         bd_one.anchorPoint = CGPoint(x: 0.5, y: 1)
         bd_one.texture = Global.sharedInstance.getMainTexture(main: .Main_Menu_Building_1)
-        bd_one.position = CGPoint(x: 0, y: root.size.height / 1.5)
-        bd_one.size = CGSize(width: screenSize.width / 1.5, height: screenSize.height / 1.5 )
+        bd_one.position = CGPoint(x: 0, y: root.size.height / 1.8)
+        bd_one.size = CGSize(width: screenSize.width / 1.5, height: screenSize.height / 3 )
         bd_one.name = "main_menu_building_1"
         root.addChild(bd_one)
         
@@ -81,23 +81,23 @@ class MainScene: SKScene, SKPhysicsContactDelegate {
         bd_one_shade.anchorPoint = CGPoint(x: 0.5, y: 1)
         bd_one_shade.texture = Global.sharedInstance.getMainTexture(main: .Main_Menu_Building_1_Additional)
         bd_one_shade.position = CGPoint(x: 0, y: -25)
-        bd_one_shade.size = CGSize(width: screenSize.width/1.2, height: screenSize.height/1.2)
+        bd_one_shade.size = CGSize(width: screenSize.width/1.2, height: screenSize.height / 1.2)
         bd_one_shade.name = "main_menu_building_1_Additional"
         bd_one.addChild(bd_one_shade)
         
         let bd_two = SKSpriteNode()
-        bd_two.anchorPoint = CGPoint(x: 0.5, y: 1)
+        bd_two.anchorPoint = CGPoint(x: 0.6, y: 1.2)
         bd_two.texture = Global.sharedInstance.getMainTexture(main: .Main_Menu_Building_2)
         bd_two.position = CGPoint(x: bd_one.size.width / 2, y: bd_one.position.y - bd_one.size.height / 2)
-        bd_two.size = CGSize(width: screenSize.width / 2.5, height: screenSize.height / 3.5)
+        bd_two.size = CGSize(width: screenSize.width / 2, height: screenSize.height / 3)
         bd_two.name = "main_menu_building_2"
         root.addChild(bd_two)
         
         let bd_three = SKSpriteNode()
-        bd_three.anchorPoint = CGPoint(x: 0.5, y: 1)
+        bd_three.anchorPoint = CGPoint(x: 0.6, y: 1)
         bd_three.texture = Global.sharedInstance.getMainTexture(main: .Main_Menu_Building_3)
-        bd_three.position = CGPoint(x: -bd_one.size.width/3, y: bd_one.position.y - bd_one.size.height/2)
-        bd_three.size = CGSize(width: screenSize.width/2.5, height: screenSize.height/3.5)
+        bd_three.position = CGPoint(x: -bd_one.size.width / 3, y: bd_one.position.y - bd_one.size.height / 2)
+        bd_three.size = CGSize(width: screenSize.width / 2, height: screenSize.height / 3.6)
         bd_three.name = "main_menu_building_3"
         root.addChild(bd_three)
         
@@ -111,7 +111,7 @@ class MainScene: SKScene, SKPhysicsContactDelegate {
         root.addChild(bd_three_button)
         
         
-        let LONGESTSTRCOUNT:CGFloat = 6
+        let LONGESTSTRCOUNT:CGFloat = 10
         // Button Labels
         let bd_one_label = SKLabelNode()
         bd_one_label.text = "Rockets!"

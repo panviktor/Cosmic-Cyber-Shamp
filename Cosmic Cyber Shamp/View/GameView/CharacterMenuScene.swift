@@ -80,8 +80,8 @@ class CharacterMenuScene: SKScene{
         
         let titleLabel = SKLabelNode(fontNamed: "Family Guy")
         titleLabel.text = "Cosmic Cyber Shamp"
-        titleLabel.fontColor = SKColor(red: 254/255, green: 189/255, blue: 62/255, alpha: 1)
-        titleLabel.fontSize = screenSize.width/28
+        titleLabel.fontColor = SKColor(#colorLiteral(red: 0.1764705926, green: 0.01176470611, blue: 0.5607843399, alpha: 1))
+        titleLabel.fontSize = screenSize.width/20
         title.addChild(titleLabel.shadowNode(nodeName: "titleEffectNodeLabel"))
         
         self.addChild(title)
@@ -181,6 +181,9 @@ class CharacterMenuScene: SKScene{
         let projectile = bulletMaker.make(level: .Level_1, char: .Alpha)
         projectile.name = "projectile"
         projectile.setScale(0.5)
+                //FIXME: - ?
+        
+    //    projectile.zPosition = -10
         iconBadge.addChild(projectile)
         
         // MessageBox Right Root
@@ -197,6 +200,9 @@ class CharacterMenuScene: SKScene{
         //text area of Message Box
         let txtBox = SKSpriteNode()
         txtBox.name = "character_menu_text_box"
+        
+        
+        
         txtBox.size = CGSize(width: rightRoot.size.width*0.9, height: rightRoot.size.height/2)
         txtBox.anchorPoint = CGPoint(x: 0.0, y: 1.0)
         txtBox.position.x = msgBox.size.width*0.03
@@ -449,10 +455,13 @@ class CharacterMenuScene: SKScene{
         switch toon {
         case .Alpha:
             charNode.texture! = Global.sharedInstance.getMainTexture(main: .Character_Menu_Alpha)
+            playerProfile.texture = SKTexture(imageNamed: "toon_1_main_profile.png")
         case .Beta:
             charNode.texture! = Global.sharedInstance.getMainTexture(main: .Character_Menu_Beta)
+            playerProfile.texture = SKTexture(imageNamed: "toon_2_main_profile.png")
         case .Celta:
             charNode.texture! = Global.sharedInstance.getMainTexture(main: .Character_Menu_Celta)
+            playerProfile.texture = SKTexture(imageNamed: "toon_3_main_profile.png")
         }
         
         // Update Description
@@ -593,7 +602,6 @@ class CharacterMenuScene: SKScene{
         upgradeBox.addChild(icon)
         
         // Icon Sprite (Bullet Display)
-        
         let iconSprite = bulletMaker.make(level: blevel, char: currToon)
         iconSprite.name = "projectile"
         icon.addChild(iconSprite)
@@ -749,11 +757,9 @@ class CharacterMenuScene: SKScene{
         let bground = upgradeSceneRoot.childNode(withName: "upgrade_background")!
         let contentRoot = upgradeSceneRoot.childNode(withName: "upgrade_contentRoot")!
         bground.run(SKAction.fadeAlpha(to: 0.0, duration: 0.1))
-        
         let scaleAction = SKAction.scale(to: 0.0, duration: 0.1)
         let fadeIn = SKAction.fadeOut(withDuration: 0.1)
         contentRoot.run(SKAction.group([scaleAction, fadeIn]))
-        
         upgradeSceneRoot.run(SKAction.sequence([SKAction.wait(forDuration: 0.15), SKAction.removeFromParent()]))
         state = .Select
     }

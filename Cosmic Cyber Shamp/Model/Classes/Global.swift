@@ -540,7 +540,7 @@ class Global {
         
     }
     
-    func getHUDTexture(hudType:HUD, text:String) -> SKTexture{
+    func getHUDTexture(hudType:HUD, text:String) -> SKTexture {
         let num:Int!
         if text == ","{
             num = 10

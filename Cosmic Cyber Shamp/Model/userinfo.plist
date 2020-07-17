@@ -33,17 +33,17 @@
 			<key>BulletLevel</key>
 			<integer>1</integer>
 		</dict>
-		<key>Alpha</key>
+		<key>Jupiter 2</key>
 		<dict>
 			<key>Purchased</key>
 			<true/>
 			<key>Title</key>
-			<string>GUARDIAN OF DRAGONS</string>
+			<string>Captain Miranda</string>
 			<key>Description</key>
 			<array>
-				<string>She was born in the wilds and</string>
-				<string>raised by dragons. When dragons</string>
-				<string>fly with her, they earn 2x XP!</string>
+				<string>She was born </string>
+				<string>in the solar system and </string>
+				<string>conquered the best spaceships.</string>
 			</array>
 			<key>Level</key>
 			<integer>1</integer>
@@ -52,17 +52,17 @@
 			<key>BulletLevel</key>
 			<integer>1</integer>
 		</dict>
-		<key>Beta</key>
+		<key>Normandy</key>
 		<dict>
 			<key>Purchased</key>
 			<false/>
 			<key>Title</key>
-			<string>GUARDIAN OF ADVENTURE</string>
+			<string>Captain Triss</string>
 			<key>Description</key>
 			<array>
-				<string>Renowned, explorer, inventor, and</string>
-				<string>scientis, she is 2x faster</string>
-				<string>completing Quests!</string>
+				<string>One who </string>
+				<string>has friends in</string>
+				<string>the Alliance military.</string>
 			</array>
 			<key>Level</key>
 			<integer>1</integer>
@@ -71,17 +71,17 @@
 			<key>BulletLevel</key>
 			<integer>1</integer>
 		</dict>
-		<key>Celta</key>
+		<key>Thunderbolt</key>
 		<dict>
 			<key>Purchased</key>
 			<false/>
 			<key>Title</key>
-			<string>GUARDIAN OF TWILIGHT</string>
+			<string>Captain Charles</string>
 			<key>Description</key>
 			<array>
-				<string>A mysterious loner, with a dark</string>
-				<string>and haunting past, some say she</string>
-				<string>acts as if she has 2 lives...</string>
+				<string>She is </string>
+				<string>mysterious loner</string>
+				<string>a human Officer</string>
 			</array>
 			<key>Level</key>
 			<integer>1</integer>

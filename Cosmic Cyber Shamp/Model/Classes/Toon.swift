@@ -3,9 +3,9 @@ import SpriteKit
 
 class Toon {
     enum Character: String{
-        case Alpha = "ALPHA"
-        case Beta = "BETA"
-        case Celta = "CELTA"
+        case Alpha = "Jupiter 2"
+        case Beta = "Normandy"
+        case Celta = "Thunderbolt"
         
         var string:String{
             let name = String(describing: self)

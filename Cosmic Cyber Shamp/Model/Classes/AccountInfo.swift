@@ -43,9 +43,9 @@ class AccountInfo {
         currentToonIndex = data.plist.value(forKey: "CurrentToon") as! Int
         
         let toondDict = data.plist.value(forKey: "Toons") as! NSDictionary
-        characters[0].load(infoDict: toondDict.value(forKey: "Alpha") as! NSDictionary)
-        characters[1].load(infoDict: toondDict.value(forKey: "Beta") as! NSDictionary)
-        characters[2].load(infoDict: toondDict.value(forKey: "Celta") as! NSDictionary)
+        characters[0].load(infoDict: toondDict.value(forKey: "Jupiter 2") as! NSDictionary)
+        characters[1].load(infoDict: toondDict.value(forKey: "Normandy") as! NSDictionary)
+        characters[2].load(infoDict: toondDict.value(forKey: "Thunderbolt") as! NSDictionary)
         
         return true
     }
