@@ -10,9 +10,9 @@ import SpriteKit
 
 class CharacterMenuScene: SKScene{
     private enum CurrToon: Int{
-        case Alpha = 0
-        case Beta = 1
-        case Celta = 2
+        case Jupiter_2 = 0
+        case Normandy = 1
+        case Thunderbolt = 2
         
         var string:String{
             let name = String(describing: self)
@@ -352,6 +352,7 @@ class CharacterMenuScene: SKScene{
                     doTask(gb: .Character_Menu_UpgradeCloseButton)
                 }
                 else if c.name == Global.Main.Character_Menu_UpgradeGreenButton.rawValue{
+                    print(#line, #function)
                     doTask(gb: .Character_Menu_UpgradeGreenButton)
                 }
             }
@@ -379,8 +380,10 @@ class CharacterMenuScene: SKScene{
         case .Character_Menu_UpgradeCloseButton:
             closeUpgrade()
         case .Character_Menu_UpgradeGreenButton:
+            print(#line, #function)
             let (success, msg) = gameinfo.requestUpgradeBullet()
             if !success{
+                print(#line, #function)
                 print(msg)
                 break
             }
@@ -456,13 +459,13 @@ class CharacterMenuScene: SKScene{
         
         // Update Texture
         switch toon {
-        case .Alpha:
+        case .Jupiter_2:
             charNode.texture! = Global.sharedInstance.getMainTexture(main: .Character_Menu_Alpha)
             playerProfile.texture = SKTexture(imageNamed: "toon_1_main_profile.png")
-        case .Beta:
+        case .Normandy:
             charNode.texture! = Global.sharedInstance.getMainTexture(main: .Character_Menu_Beta)
             playerProfile.texture = SKTexture(imageNamed: "toon_2_main_profile.png")
-        case .Celta:
+        case .Thunderbolt:
             charNode.texture! = Global.sharedInstance.getMainTexture(main: .Character_Menu_Celta)
             playerProfile.texture = SKTexture(imageNamed: "toon_3_main_profile.png")
         }
