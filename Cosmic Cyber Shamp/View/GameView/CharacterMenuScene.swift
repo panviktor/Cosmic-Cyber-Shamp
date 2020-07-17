@@ -9,14 +9,21 @@
 import SpriteKit
 
 class CharacterMenuScene: SKScene{
-    private enum CurrToon: Int{
+    private enum CurrToon: Int {
         case Jupiter_2 = 0
         case Normandy = 1
         case Thunderbolt = 2
         
-        var string:String{
-            let name = String(describing: self)
-            return name.uppercased()
+        var string: String {
+            switch self {
+            case .Jupiter_2:
+                return "Jupiter_2"
+            case .Normandy:
+                return "Normandy"
+            case .Thunderbolt:
+               return "Thunderbolt"
+                
+            }
         }
     }
     
@@ -176,6 +183,7 @@ class CharacterMenuScene: SKScene{
         iconBadge.size = CGSize(width: leftRoot.size.width*0.9, height: leftRoot.size.height*0.9)
         iconBadge.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         iconBadge.position =  CGPoint(x: 0.5, y: 0.5)
+        iconBadge.alpha = 0
         iconBadge.texture = Global.sharedInstance.getMainTexture(main: .Character_Menu_Badge)
         leftRoot.addChild(iconBadge)
         
@@ -187,7 +195,7 @@ class CharacterMenuScene: SKScene{
         msgBox.addChild(playerProfile)
         
         // Projectile Sprite
-        let projectile = bulletMaker.make(level: .Level_1, char: .Alpha)
+        let projectile = bulletMaker.make(level: .Level_1, char: .Jupiter_2)
         projectile.name = "projectile"
         projectile.setScale(0.5)
         iconBadge.addChild(projectile)
@@ -376,6 +384,7 @@ class CharacterMenuScene: SKScene{
         case .Character_Menu_BlueButton:
             update(Case: .ToonSelected)
         case .Character_Menu_GreenButton:
+            print(#line, #function)
             self.state = showUpgrade() ? .Upgrade : .Select
         case .Character_Menu_UpgradeCloseButton:
             closeUpgrade()
@@ -560,12 +569,18 @@ class CharacterMenuScene: SKScene{
         let nextBulletLevel = gameinfo.requestToonBulletLevel(index: self.currToonIndex) + 1
         let currCharStr = CharacterMenuScene.CurrToon(rawValue: self.currToonIndex)!.string
         
-        guard let currToon = Toon.Character(rawValue: currCharStr),
-            let blevel = BulletMaker.Level(rawValue: nextBulletLevel)
-            else{
-                return false
+        print(#line, currCharStr)
+        
+        guard let currToon = Toon.Character(rawValue: currCharStr) else {
+            print(#line)
+            return false
         }
         
+        guard  let blevel = BulletMaker.Level(rawValue: nextBulletLevel) else {
+            print(#line)
+            return false
+        }
+
         let upgradeSceneRoot = SKSpriteNode()
         upgradeSceneRoot.name = "upgrade_rootView"
         upgradeSceneRoot.zPosition = 10.0
@@ -577,7 +592,7 @@ class CharacterMenuScene: SKScene{
         bground.alpha = 0.0
         bground.run(SKAction.fadeAlpha(to: 0.7, duration: 0.15))
         upgradeSceneRoot.addChild(bground)
-        
+        print(#line, #function)
         
         let contentRoot = SKSpriteNode()
         contentRoot.setScale(0.1)

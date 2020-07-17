@@ -29,7 +29,7 @@ class AccountInfo {
         currentToonIndex = 0
         gold = 0
         experience = 0.0
-        characters = [Toon(char: .Alpha), Toon(char: .Beta), Toon(char: .Celta)]
+        characters = [Toon(char: .Jupiter_2), Toon(char: .Normandy), Toon(char: .Thunderbolt)]
         highscore = 0
         data = Data()
     }
@@ -43,7 +43,7 @@ class AccountInfo {
         currentToonIndex = data.plist.value(forKey: "CurrentToon") as! Int
         
         let toondDict = data.plist.value(forKey: "Toons") as! NSDictionary
-        characters[0].load(infoDict: toondDict.value(forKey: "Jupiter 2") as! NSDictionary)
+        characters[0].load(infoDict: toondDict.value(forKey: "Jupiter_2") as! NSDictionary)
         characters[1].load(infoDict: toondDict.value(forKey: "Normandy") as! NSDictionary)
         characters[2].load(infoDict: toondDict.value(forKey: "Thunderbolt") as! NSDictionary)
         
@@ -86,7 +86,7 @@ class AccountInfo {
         }
         
         let toonDict = data.plist.value(forKey: "Toons") as! NSDictionary
-        guard let currToonDict = toonDict.value(forKey: characters[currentToonIndex].getCharacter().string) as? NSMutableDictionary else{
+        guard let currToonDict = toonDict.value(forKey: characters[currentToonIndex].getCharacter().rawValue) as? NSMutableDictionary else{
             return (false, "Error: AccountInfo.upgradeBullet[2]")
         }
         

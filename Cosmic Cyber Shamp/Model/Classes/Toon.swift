@@ -2,15 +2,10 @@
 import SpriteKit
 
 class Toon {
-    enum Character: String{
-        case Alpha = "Jupiter 2"
-        case Beta = "Normandy"
-        case Celta = "Thunderbolt"
-        
-        var string:String{
-            let name = String(describing: self)
-            return name
-        }
+    enum Character: String {
+        case Jupiter_2 = "Jupiter_2"
+        case Normandy = "Normandy"
+        case Thunderbolt = "Thunderbolt"
     }
     
     private var size: CGSize
@@ -32,21 +27,21 @@ class Toon {
         var ww:CGFloat!
         var wh:CGFloat!
         switch char {
-        case .Alpha:
+        case .Jupiter_2:
             cw = screenSize.width * 0.150
             ch = screenSize.height * 0.177
             ww = screenSize.width * 0.150
             wh = screenSize.height * 0.177
             localMainTexture = Global.sharedInstance.getMainTexture(main: .Character_Alpha)
             localWingTexture = Global.sharedInstance.getMainTexture(main: .Character_Alpha_Wing)
-        case .Beta:
+        case .Normandy:
              cw = screenSize.width * 0.150
             ch = screenSize.height * 0.177
             ww = screenSize.width * 0.186
             wh = screenSize.height * 0.081
             localMainTexture = Global.sharedInstance.getMainTexture(main: .Character_Beta)
             localWingTexture = Global.sharedInstance.getMainTexture(main: .Character_Beta_Wing)
-        case .Celta:
+        case .Thunderbolt:
             cw = screenSize.width * 0.150
             ch = screenSize.height * 0.177
             ww = screenSize.width * 0.186

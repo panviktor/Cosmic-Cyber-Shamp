@@ -85,7 +85,7 @@ class BulletMaker: NSObject{
     private func getBulletType(charType: Toon.Character, type:BulletType) -> (SKTexture, CGSize){
         
         switch charType {
-        case .Alpha:
+        case .Jupiter_2:
             switch type {
             case .Type_1:
                 let sprite = Global.sharedInstance.getMainTexture(main: .Character_Alpha_Projectile_1)
@@ -113,7 +113,7 @@ class BulletMaker: NSObject{
                 let h = screenSize.height * 0.1
                 return (sprite, CGSize(width: w, height: h))
             }
-        case .Beta:
+        case .Normandy:
             switch type {
             case .Type_1:
                 let sprite = Global.sharedInstance.getMainTexture(main: .Character_Beta_Projectile_1)
@@ -141,7 +141,7 @@ class BulletMaker: NSObject{
                 let h = screenSize.height * 0.1
                 return (sprite, CGSize(width: w, height: h))
             }
-        case .Celta:
+        case .Thunderbolt:
             switch type {
             case .Type_1:
                 let sprite = Global.sharedInstance.getMainTexture(main: .Character_Celta_Projectile_1)
