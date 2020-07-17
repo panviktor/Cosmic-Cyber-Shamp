@@ -75,23 +75,22 @@ class CharacterMenuScene: SKScene{
         
         // Title
         let title = SKSpriteNode(texture: Global.sharedInstance.getMainTexture(main: .Character_Menu_TitleMenu))
-        title.position.y = screenSize.width/2*1.3
-        title.size = CGSize(width: screenSize.width*0.6, height: screenSize.height*0.1)
+        title.position.y = screenSize.width / 2 * 1.3
+        title.size = CGSize(width: screenSize.width * 0.6, height: screenSize.height * 0.1)
         
-        let titleLabel = SKLabelNode(fontNamed: "Family Guy")
+        let titleLabel = SKLabelNode(fontNamed: "KohinoorTelugu-Medium")
         titleLabel.text = "Cosmic Cyber Shamp"
         titleLabel.fontColor = SKColor(#colorLiteral(red: 0.1764705926, green: 0.01176470611, blue: 0.5607843399, alpha: 1))
         titleLabel.fontSize = screenSize.width/20
         title.addChild(titleLabel.shadowNode(nodeName: "titleEffectNodeLabel"))
-        
         self.addChild(title)
         
         // BackArrow
         let backarrow = SKSpriteNode(texture: Global.sharedInstance.getMainTexture(main: .Character_Menu_BackArrow))
         backarrow.name = Global.Main.Character_Menu_BackArrow.rawValue
         backarrow.anchorPoint = CGPoint(x: 1.0, y: 0.5)
-        backarrow.position = CGPoint(x: -title.size.width/2 - 10, y: title.position.y + 3)
-        backarrow.size = CGSize(width: screenSize.width/8, height: screenSize.height*0.06)
+        backarrow.position = CGPoint(x: -title.size.width / 2 - 10, y: title.position.y + 3)
+        backarrow.size = CGSize(width: screenSize.width / 8, height: screenSize.height * 0.06)
         self.addChild(backarrow)
         
         // Left Arrow
@@ -113,7 +112,7 @@ class CharacterMenuScene: SKScene{
         // Character
         charNode.texture = Global.sharedInstance.getMainTexture(main: .Character_Menu_Alpha) // Default
         charNode.anchorPoint = CGPoint(x: 0.5, y: 0.3)
-        charNode.size = CGSize(width: screenSize.width/1.5, height: screenSize.height/2.55)
+        charNode.size = CGSize(width: screenSize.width / 1.25, height: screenSize.height / 2.55)
         charNode.run(SKAction.repeatForever(SKAction.sequence([SKAction.moveBy(x: 0, y: 10, duration: 1), SKAction.moveBy(x: 0, y: -10, duration: 1.2)])))
         self.addChild(charNode)
         
@@ -146,44 +145,51 @@ class CharacterMenuScene: SKScene{
         let char_name_box = SKSpriteNode(texture: Global.sharedInstance.getMainTexture(main: .Character_Menu_CharacterNameBar))
         char_name_box.size = CGSize(width: screenSize.width*0.6, height: screenSize.height*0.1)
         char_name_box.name = "char_name_box"
-        char_name_box.position.y = msgBox.size.height/2
+        char_name_box.position.y = msgBox.size.height / 1.9
         msgBox.addChild(char_name_box)
-        let nameBoxLabel = SKLabelNode(fontNamed: "Cartwheel")
+        let nameBoxLabel = SKLabelNode(fontNamed: "KohinoorTelugu-Medium")
         nameBoxLabel.name = "nameBoxLabel"
-        nameBoxLabel.text = "ALPHA"
-        nameBoxLabel.fontSize = char_name_box.size.width/10
-        nameBoxLabel.fontColor = SKColor(red: 254/255, green: 189/255, blue: 62/255, alpha: 1)
+        nameBoxLabel.text = "Jupiter 2"
+        nameBoxLabel.fontSize = char_name_box.size.width / 10
+        nameBoxLabel.fontColor = SKColor(#colorLiteral(red: 0.2196078449, green: 0.007843137719, blue: 0.8549019694, alpha: 1))
         char_name_box.addChild(nameBoxLabel.shadowNode(nodeName: "nameBoxLabel"))
-        let titleBoxLabel = SKLabelNode(fontNamed: "Cartwheel")
+        let titleBoxLabel = SKLabelNode(fontNamed: "KohinoorTelugu-Light")
         titleBoxLabel.name = "titleBoxLabel"
-        titleBoxLabel.text = "GUARDIAN OF DRAGONS"
-        titleBoxLabel.position.y -= char_name_box.size.height/4
-        titleBoxLabel.fontSize = char_name_box.size.width/14
-        titleBoxLabel.fontColor = SKColor(red: 254/255, green: 189/255, blue: 62/255, alpha: 1)
+        titleBoxLabel.text = "Captain Miranda"
+        titleBoxLabel.position.y -= char_name_box.size.height / 3.5
+        titleBoxLabel.fontSize = char_name_box.size.width / 15
+        titleBoxLabel.fontColor = SKColor(#colorLiteral(red: 0.3647058904, green: 0.06666667014, blue: 0.9686274529, alpha: 1))
         char_name_box.addChild(titleBoxLabel.shadowNode(nodeName: "titleBoxLabel"))
         
         // MessageBox left Root
         let leftRoot = SKSpriteNode()
         leftRoot.color = .clear
         leftRoot.name = "leftRoot"
-        leftRoot.size = CGSize(width: msgBox.size.height/3, height: msgBox.size.height/3)
-        leftRoot.position.x = -msgBox.size.width/4
+        leftRoot.size = CGSize(width: msgBox.size.height, height: msgBox.size.height )
+        leftRoot.position.x = -msgBox.size.width / 4
         msgBox.addChild(leftRoot)
         
         // Icon Badge
         let iconBadge = SKSpriteNode()
         iconBadge.name = "iconBadge"
+        
         iconBadge.size = CGSize(width: leftRoot.size.width*0.9, height: leftRoot.size.height*0.9)
+        iconBadge.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        iconBadge.position =  CGPoint(x: 0.5, y: 0.5)
         iconBadge.texture = Global.sharedInstance.getMainTexture(main: .Character_Menu_Badge)
         leftRoot.addChild(iconBadge)
+        
+        let playerProfile = SKSpriteNode(texture: SKTexture(imageNamed: "toon_1_main_profile.png"))
+        playerProfile.name = "playerProfile"
+        playerProfile.size = CGSize(width: msgBox.size.width / 2,  height: msgBox.size.height / 1.1)
+        playerProfile.anchorPoint = CGPoint(x: 1, y: 0.5)
+        playerProfile.position = CGPoint(x: -1.5, y: 0.0)
+        msgBox.addChild(playerProfile)
         
         // Projectile Sprite
         let projectile = bulletMaker.make(level: .Level_1, char: .Alpha)
         projectile.name = "projectile"
         projectile.setScale(0.5)
-                //FIXME: - ?
-        
-    //    projectile.zPosition = -10
         iconBadge.addChild(projectile)
         
         // MessageBox Right Root
@@ -200,17 +206,14 @@ class CharacterMenuScene: SKScene{
         //text area of Message Box
         let txtBox = SKSpriteNode()
         txtBox.name = "character_menu_text_box"
-        
-        
-        
-        txtBox.size = CGSize(width: rightRoot.size.width*0.9, height: rightRoot.size.height/2)
-        txtBox.anchorPoint = CGPoint(x: 0.0, y: 1.0)
-        txtBox.position.x = msgBox.size.width*0.03
-        txtBox.position.y = txtBox.size.height - 4
+        txtBox.size = CGSize(width: rightRoot.size.width * 0.8, height: rightRoot.size.height / 2)
+        txtBox.anchorPoint = CGPoint(x: 0.05, y: 1.5)
+        txtBox.position.x = msgBox.size.width * 0.03
+        txtBox.position.y = rightRoot.size.height / 1.5
         txtBox.color = .clear
         rightRoot.addChild(txtBox)
         
-        let MAGICNUMBER:CGFloat = 17
+        let MAGICNUMBER:CGFloat = 14
         
         // 1st Line
         let firstlinebox = SKSpriteNode()
@@ -223,7 +226,7 @@ class CharacterMenuScene: SKScene{
         firstLabel.name = "character_menu_firstlabel"
         firstLabel.horizontalAlignmentMode = .left
         firstLabel.verticalAlignmentMode = .top
-        firstLabel.fontColor = .brown
+        firstLabel.fontColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         firstLabel.text = "She was born in the wilds and"
         firstLabel.fontName = "GillSans-Bold"
         firstLabel.fontSize = firstlinebox.size.width/MAGICNUMBER
@@ -242,7 +245,7 @@ class CharacterMenuScene: SKScene{
         secondLabel.name = "character_menu_secondlabel"
         secondLabel.horizontalAlignmentMode = .left
         secondLabel.verticalAlignmentMode = .top
-        secondLabel.fontColor = .brown
+        secondLabel.fontColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         secondLabel.text = "raised by dragons. When dragons"
         secondLabel.fontName = "GillSans-Bold"
         secondLabel.fontSize = secondlinebox.size.width/MAGICNUMBER
@@ -261,7 +264,7 @@ class CharacterMenuScene: SKScene{
         thirdLabel.name = "character_menu_thirdlabel"
         thirdLabel.horizontalAlignmentMode = .left
         thirdLabel.verticalAlignmentMode = .top
-        thirdLabel.fontColor = .brown
+        thirdLabel.fontColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         thirdLabel.text = "fly with her, they earn 2x XP!"
         thirdLabel.fontName = "GillSans-Bold"
         thirdLabel.fontSize = thirdlinebox.size.width/MAGICNUMBER
@@ -300,8 +303,7 @@ class CharacterMenuScene: SKScene{
         bbuttonLabel.fontSize = msgBlueButton.size.width/5
         bbuttonLabel.text = "Equip"
         msgBlueButton.addChild(bbuttonLabel)
-        
-        update(Case: .UpdateTexture) // update toon texture
+        update(Case: .UpdateTexture)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -450,6 +452,7 @@ class CharacterMenuScene: SKScene{
         let slabel = sbox?.childNode(withName: "character_menu_secondlabel") as! SKLabelNode
         let tbox = textbox?.childNode(withName: "character_menu_thirdlinebox")
         let tlabel = tbox?.childNode(withName: "character_menu_thirdlabel") as! SKLabelNode
+        let playerProfile =  msgbox.childNode(withName: "playerProfile")! as! SKSpriteNode
         
         // Update Texture
         switch toon {
