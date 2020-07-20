@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		144B9DCF24C5DE7500F3E7F1 /* PlayNow.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 144B9DCE24C5DE7500F3E7F1 /* PlayNow.jpg */; };
+		144B9DD324C5E49500F3E7F1 /* YouWin.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 144B9DD224C5E49500F3E7F1 /* YouWin.jpg */; };
 		1451C66324BD8F9C007B915F /* WinLevelNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1451C66224BD8F9C007B915F /* WinLevelNode.swift */; };
 		1451C66524BD902F007B915F /* TopScoreScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1451C66424BD902F007B915F /* TopScoreScene.swift */; };
 		1451C66724BD9070007B915F /* GameSettingsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1451C66624BD9070007B915F /* GameSettingsScene.swift */; };
@@ -140,6 +142,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		144B9DCE24C5DE7500F3E7F1 /* PlayNow.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = PlayNow.jpg; sourceTree = "<group>"; };
+		144B9DD224C5E49500F3E7F1 /* YouWin.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = YouWin.jpg; sourceTree = "<group>"; };
 		1451C66224BD8F9C007B915F /* WinLevelNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinLevelNode.swift; sourceTree = "<group>"; };
 		1451C66424BD902F007B915F /* TopScoreScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopScoreScene.swift; sourceTree = "<group>"; };
 		1451C66624BD9070007B915F /* GameSettingsScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSettingsScene.swift; sourceTree = "<group>"; };
@@ -403,6 +407,8 @@
 		146F01ED24BC63E400402CB4 /* Load */ = {
 			isa = PBXGroup;
 			children = (
+				144B9DD224C5E49500F3E7F1 /* YouWin.jpg */,
+				144B9DCE24C5DE7500F3E7F1 /* PlayNow.jpg */,
 				14DE010F24BF440E008472C7 /* initial_main_bg.png */,
 				14D3527124C04B2A00D8D8F1 /* initial_bg.png */,
 				146F01F024BC63E400402CB4 /* Logo.png */,
@@ -671,7 +677,9 @@
 				146F022324BC63E400402CB4 /* Sansani Fonts - Cartwheel.otf in Resources */,
 				146F021B24BC63E400402CB4 /* bulling.sks in Resources */,
 				146F021324BC63E400402CB4 /* Items.atlas in Resources */,
+				144B9DCF24C5DE7500F3E7F1 /* PlayNow.jpg in Resources */,
 				14DE011024BF440E008472C7 /* initial_main_bg.png in Resources */,
+				144B9DD324C5E49500F3E7F1 /* YouWin.jpg in Resources */,
 				146F01CB24BC404A00402CB4 /* Assets.xcassets in Resources */,
 				146F021224BC63E400402CB4 /* Enemy.atlas in Resources */,
 				146F021C24BC63E400402CB4 /* selectedChar-Two.sks in Resources */,

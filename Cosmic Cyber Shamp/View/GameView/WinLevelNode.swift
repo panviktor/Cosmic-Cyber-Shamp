@@ -31,10 +31,9 @@ class WinLevelNode: SKScene {
     }
     
     private func loadBackground() {
-        let bg = SKSpriteNode(texture: Global.sharedInstance.getMainTexture(main: .WinLevelScene_Background_1))
+        let bg = SKSpriteNode(texture: SKTexture(imageNamed: "YouWin.jpg"))
         bg.anchorPoint = CGPoint(x: 0.0, y: 0.0)
         bg.size = CGSize(width: screenSize.width, height: screenSize.height)
-        bg.zPosition = -10
         self.addChild(bg)
     }
 }

@@ -10,7 +10,7 @@ class Infobar: SKSpriteNode{
     }
     
     private let mainRootWidth: CGFloat = screenSize.width
-    private let mainRootHeight: CGFloat = 95
+    private let mainRootHeight: CGFloat = 100
     private var firstTemplate: SKSpriteNode!
     private var secondTemplate: SKSpriteNode!
     private var thirdTemplate: SKSpriteNode!
@@ -106,12 +106,12 @@ class Infobar: SKSpriteNode{
             let rect = CGRect(x: self.size.width*0.038, y: 0, width: barWidth, height: barHeight)
             let bar = SKShapeNode(rect: rect, cornerRadius: screenSize.height * 0.01)
             bar.alpha = 0.65
-            bar.fillColor = .black
-            bar.strokeColor = .black
+            bar.fillColor = .white
+            bar.strokeColor = .clear
             bar.name = "bar"
             node.addChild(bar)
             
-            let label = SKLabelNode(fontNamed: "CartWheel")
+            let label = SKLabelNode(fontNamed: "KohinoorTelugu-Medium")
             label.zPosition = 1
             label.fontSize = barWidth/5
             label.horizontalAlignmentMode = .right
@@ -122,11 +122,11 @@ class Infobar: SKSpriteNode{
             
             if templateStyle == .Second {
                 label.text = "123"
-                label.fontColor = SKColor(red: 254/255, green: 189/255, blue: 62/255, alpha: 1)
+                label.fontColor = SKColor(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1))
                 bar.addChild(label.shadowNode(nodeName: "labelCoinEffect"))
             } else {
                 label.text = "0"
-                label.fontColor = .green
+                label.fontColor = SKColor(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1))
                 bar.addChild(label.shadowNode(nodeName: "labelTrophyEffect"))
             }
         }
@@ -158,16 +158,15 @@ class Infobar: SKSpriteNode{
         // text
         let labelXPos:CGFloat = goldIcon.position.x - coinWidth/2 - (coinWidth*0.1)
         let labelYpos:CGFloat = goldIcon.position.y/2 - 2
-        let labelText = SKLabelNode(fontNamed: "Cartwheel")
+        let labelText = SKLabelNode(fontNamed: "KohinoorTelugu-Medium")
         labelText.text = "0"
-        labelText.fontSize = 26
-        labelText.fontColor = SKColor(red: 253/255, green: 188/255, blue: 0/255, alpha: 1)
+        labelText.fontSize = 20
+        labelText.fontColor = SKColor(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1))
         labelText.horizontalAlignmentMode = .right
         labelText.position = CGPoint(x: labelXPos, y:labelYpos)
         labelText.name = "coinText"
         node.addChild(labelText.shadowNode(nodeName: "coinLabelName"))
-        
-        
+       
         node.alpha = 0.0
         return node
     }
@@ -212,7 +211,6 @@ class Infobar: SKSpriteNode{
         fourthTemplate.run(fadeAwayAction)
         fifthTemplate.run(showCoinLabelAction)
     }
-    
     
     private func numberToString(num:Int) -> String {
         let formatter = NumberFormatter()

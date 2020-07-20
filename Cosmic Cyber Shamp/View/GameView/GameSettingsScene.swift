@@ -50,7 +50,7 @@ class GameSettingsScene: SKScene{
         
         // Title
         let title = SKSpriteNode(texture: Global.sharedInstance.getMainTexture(main: .Character_Menu_TitleMenu))
-        title.position.y = screenSize.width / 2 * 1.3
+        title.position.y = screenSize.width / 1.45
         title.size = CGSize(width: screenSize.width * 0.6, height: screenSize.height * 0.1)
         
         let titleLabel = SKLabelNode(fontNamed: "KohinoorTelugu-Medium")

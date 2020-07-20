@@ -111,7 +111,7 @@ class MainScene: SKScene, SKPhysicsContactDelegate {
         root.addChild(bd_three_button)
         
         
-        let LONGESTSTRCOUNT:CGFloat = 10
+        let LONGESTSTRCOUNT:CGFloat = 8
         // Button Labels
         let bd_one_label = SKLabelNode()
         bd_one_label.text = "Rockets!"
