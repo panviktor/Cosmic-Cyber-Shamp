@@ -83,10 +83,8 @@
 		14F3062624C09104002A893C /* Extension+Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F3062024C09104002A893C /* Extension+Collection.swift */; };
 		14F3062724C09104002A893C /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F3062124C09104002A893C /* Device.swift */; };
 		14F3062C24C0916A002A893C /* SecondNoInternetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F3062824C09169002A893C /* SecondNoInternetViewController.swift */; };
-		14F3062D24C0916A002A893C /* NoInternetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F3062924C0916A002A893C /* NoInternetViewController.swift */; };
 		14F3062E24C0916A002A893C /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F3062A24C0916A002A893C /* WebViewController.swift */; };
 		14F3062F24C0916A002A893C /* GIFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F3062B24C0916A002A893C /* GIFViewController.swift */; };
-		14F3063824C091BD002A893C /* NoInternet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14F3063124C091BD002A893C /* NoInternet.storyboard */; };
 		14F3063924C091BD002A893C /* WKweb.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14F3063224C091BD002A893C /* WKweb.storyboard */; };
 		14F3063A24C091BD002A893C /* GIFViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14F3063424C091BD002A893C /* GIFViewController.xib */; };
 		14F3063B24C091BD002A893C /* SecondNoInternetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14F3063524C091BD002A893C /* SecondNoInternetViewController.xib */; };
@@ -217,10 +215,8 @@
 		14F3062024C09104002A893C /* Extension+Collection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension+Collection.swift"; sourceTree = "<group>"; };
 		14F3062124C09104002A893C /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		14F3062824C09169002A893C /* SecondNoInternetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondNoInternetViewController.swift; sourceTree = "<group>"; };
-		14F3062924C0916A002A893C /* NoInternetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoInternetViewController.swift; sourceTree = "<group>"; };
 		14F3062A24C0916A002A893C /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		14F3062B24C0916A002A893C /* GIFViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GIFViewController.swift; sourceTree = "<group>"; };
-		14F3063124C091BD002A893C /* NoInternet.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NoInternet.storyboard; sourceTree = "<group>"; };
 		14F3063224C091BD002A893C /* WKweb.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = WKweb.storyboard; sourceTree = "<group>"; };
 		14F3063424C091BD002A893C /* GIFViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GIFViewController.xib; sourceTree = "<group>"; };
 		14F3063524C091BD002A893C /* SecondNoInternetViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SecondNoInternetViewController.xib; sourceTree = "<group>"; };
@@ -539,7 +535,6 @@
 			isa = PBXGroup;
 			children = (
 				14F3062B24C0916A002A893C /* GIFViewController.swift */,
-				14F3062924C0916A002A893C /* NoInternetViewController.swift */,
 				14F3062824C09169002A893C /* SecondNoInternetViewController.swift */,
 				14F3062A24C0916A002A893C /* WebViewController.swift */,
 			);
@@ -559,7 +554,6 @@
 			isa = PBXGroup;
 			children = (
 				146F01CC24BC404A00402CB4 /* LaunchScreen.storyboard */,
-				14F3063124C091BD002A893C /* NoInternet.storyboard */,
 				14F3063224C091BD002A893C /* WKweb.storyboard */,
 			);
 			path = Storyboards;
@@ -672,7 +666,6 @@
 				146F021124BC63E400402CB4 /* Logo.png in Resources */,
 				146F021F24BC63E400402CB4 /* begin.m4a in Resources */,
 				146F022124BC63E400402CB4 /* famifont.ttf in Resources */,
-				14F3063824C091BD002A893C /* NoInternet.storyboard in Resources */,
 				146F022224BC63E400402CB4 /* gradientMonoTone.fsh in Resources */,
 				146F020C24BC63E400402CB4 /* fx_2.png in Resources */,
 				146F022324BC63E400402CB4 /* Sansani Fonts - Cartwheel.otf in Resources */,
@@ -767,7 +760,6 @@
 				14F3062524C09104002A893C /* Extension+DispatchQueue.swift in Sources */,
 				146F024324BC63F500402CB4 /* Global.swift in Sources */,
 				146F024024BC63F500402CB4 /* AudioVibroManager.swift in Sources */,
-				14F3062D24C0916A002A893C /* NoInternetViewController.swift in Sources */,
 				146F023E24BC63F500402CB4 /* Currency.swift in Sources */,
 				146F024E24BC63F500402CB4 /* Map.swift in Sources */,
 				146F024924BC63F500402CB4 /* Pinky.swift in Sources */,

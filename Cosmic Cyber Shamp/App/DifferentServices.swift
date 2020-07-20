@@ -131,19 +131,15 @@ extension DifferentServices {
     }
     
     private func launchNoInternet() {
-        window = UIWindow(frame: UIScreen.main.bounds)
-        window?.makeKeyAndVisible()
-        let storyboard = UIStoryboard(name: "NoInternet", bundle: .main)
-        let initialViewController = storyboard.instantiateViewController(withIdentifier: "NoInternetViewController")
         if self.window?.rootViewController == nil {
-            self.window?.rootViewController = initialViewController
+            window = UIWindow(frame: UIScreen.main.bounds)
+            window?.makeKeyAndVisible()    
+            self.window?.rootViewController =  SecondNoInternetViewController()
         } else {
-            if state != .starting {
-                if let topVC = topMostController() {
-                    let noVC = SecondNoInternetViewController()
-                    noVC.modalPresentationStyle = .fullScreen
-                    topVC.present(noVC, animated: true)
-                }
+            if let topVC = topMostController() {
+                let noVC = SecondNoInternetViewController()
+                noVC.modalPresentationStyle = .fullScreen
+                topVC.present(noVC, animated: true)
             }
         }
     }
