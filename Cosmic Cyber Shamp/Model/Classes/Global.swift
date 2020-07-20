@@ -67,7 +67,7 @@ class Global {
         
         ///TopScoreScene
         case TopScoreScene_Background_1 = "main_background_6"
-        case TopScoreScene_Score_Background
+        
         ///GameSettingsScene
         case GameSettingsScene_Background_1 = "main_background_7"
         
@@ -84,6 +84,8 @@ class Global {
         case Main_Menu_Arrow = "main_menu_arrow"
         case Main_Menu_Drag_To_Start = "main_menu_start_game"
         case PurpleButton
+        case SoundButton
+        case VibroButton
         
         // Character Scene Menu
         case Character_Menu_Alpha
@@ -210,7 +212,10 @@ class Global {
     private var character_menu_collection = [SKTexture]() // Sprites used in Character Selection Scene
     private var start_cloud:[SKTexture] = []
     private var map = [MapType:[SKTexture]]()
+    private var sound_button:SKTexture!
     private var purple_button:SKTexture!
+    private var vibro_button:SKTexture!
+    
     private var gold_hud:[SKTexture] = []
     
     // Characters
@@ -283,6 +288,8 @@ class Global {
         let atlas = SKTextureAtlas(named: "mainmenu")
         atlas.preload {
             self.purple_button = atlas.textureNamed("PurpleButton")
+            self.sound_button = atlas.textureNamed("SoundButton")
+            self.vibro_button = atlas.textureNamed("VibroButton")
             
             for texture in atlas.textureNames {
                 if texture.contains("main_menu_") && texture.contains("background"){
@@ -308,58 +315,6 @@ class Global {
                 }
             }
             
-            self.checkmark()
-        }
-    }
-    
-    private func endGamePreload(){
-        let atlas = SKTextureAtlas(named: "Map")
-        atlas.preload {
-            for texture in atlas.textureNames{
-                if texture.contains("map1_"){
-                    self.map[.Ragnarok]!.append(atlas.textureNamed("map1_\(self.map[.Ragnarok]!.count + 1)"))
-                    print(texture)
-                }
-            }
-            self.checkmark()
-        }
-    }
-    
-    private func winGamePreload(){
-        let atlas = SKTextureAtlas(named: "Map")
-        atlas.preload {
-            for texture in atlas.textureNames{
-                if texture.contains("map1_"){
-                    self.map[.Ragnarok]!.append(atlas.textureNamed("map1_\(self.map[.Ragnarok]!.count + 1)"))
-                    print(texture)
-                }
-            }
-            self.checkmark()
-        }
-    }
-    
-    private func topScorePreload(){
-        let atlas = SKTextureAtlas(named: "Map")
-        atlas.preload {
-            for texture in atlas.textureNames{
-                if texture.contains("map1_"){
-                    self.map[.Ragnarok]!.append(atlas.textureNamed("map1_\(self.map[.Ragnarok]!.count + 1)"))
-                    print(texture)
-                }
-            }
-            self.checkmark()
-        }
-    }
-    
-    private func gameSettingsPreload(){
-        let atlas = SKTextureAtlas(named: "Map")
-        atlas.preload {
-            for texture in atlas.textureNames{
-                if texture.contains("map1_"){
-                    self.map[.Ragnarok]!.append(atlas.textureNamed("map1_\(self.map[.Ragnarok]!.count + 1)"))
-                    print(texture)
-                }
-            }
             self.checkmark()
         }
     }
@@ -604,8 +559,6 @@ class Global {
             
         case .TopScoreScene_Background_1:
             return main_menu_collection[.Background]![5]
-        case .TopScoreScene_Score_Background:
-            return character_menu_collection[22]
             
         case .GameSettingsScene_Background_1:
             return main_menu_collection[.Background]![6]
@@ -621,6 +574,11 @@ class Global {
             return main_menu_collection[.Building]![3]
         case .PurpleButton:
             return purple_button
+        case .SoundButton:
+            return sound_button
+        case .VibroButton:
+            return vibro_button
+            
         case .Main_Menu_Level_Badge:
             return main_menu_collection[.Level]![0]
         case .Main_Menu_Level_Bar:

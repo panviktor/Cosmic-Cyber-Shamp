@@ -54,7 +54,7 @@ class TopScoreScene: SKScene {
         
         let titleLabel = SKLabelNode(fontNamed: "KohinoorTelugu-Medium")
         titleLabel.text = "Your Best Score"
-        titleLabel.fontColor = SKColor(red: 254/255, green: 189/255, blue: 62/255, alpha: 1)
+        titleLabel.fontColor = SKColor(#colorLiteral(red: 0.1215686277, green: 0.01176470611, blue: 0.4235294163, alpha: 1))
         titleLabel.fontSize = screenSize.width / 15
         title.addChild(titleLabel.shadowNode(nodeName: "titleEffectNodeLabel"))
         
@@ -69,7 +69,7 @@ class TopScoreScene: SKScene {
         self.addChild(backarrow)
         
         // scoreNode
-        scoreNode.texture = Global.sharedInstance.getMainTexture(main: .TopScoreScene_Score_Background)
+        scoreNode.texture = Global.sharedInstance.getMainTexture(main: .Character_Menu_UpgradeBox)
         scoreNode.anchorPoint = CGPoint(x: 0.5, y: 0.1)
         scoreNode.size = CGSize(width: screenSize.width/1.5, height: screenSize.height / 4)
         scoreNode.run(SKAction.repeatForever(SKAction.sequence([SKAction.moveBy(x: 0, y: 20, duration: 1),
