@@ -27,8 +27,7 @@ class WinLevelNode: SKScene {
             let transition = SKTransition.crossFade(withDuration: 1.0)
             guard let gameScene = sceneManager.gameScene else { return }
             gameScene.scaleMode = .aspectFill
-            self.scene!.view?.presentScene(gameScene, transition: transition)
-        
+            self.scene!.view?.presentScene(gameScene, transition: transition)        
     }
     
     private func loadBackground() {

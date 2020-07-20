@@ -22,7 +22,6 @@ class CharacterMenuScene: SKScene{
                 return "Normandy"
             case .Thunderbolt:
                return "Thunderbolt"
-                
             }
         }
     }
