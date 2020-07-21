@@ -2,7 +2,7 @@
 //  NotificationService.swift
 //  OneSignalNotificationServiceExtension
 //
-//  Created by Viktor on 16.07.2020.
+//  Created by Viktor on 21.07.2020.
 //  Copyright © 2020 Viktor. All rights reserved.
 //
 

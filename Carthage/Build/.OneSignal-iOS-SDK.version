@@ -12,7 +12,7 @@
   "iOS" : [
     {
       "name" : "OneSignal",
-      "hash" : "a7c19cad664ebd4141a3b68429e884b6a13bf15c7abbc662368b94f835821fdb",
+      "hash" : "664b8abdec10a9ccdc73bd502cd33da8c436d9d5c2cc61a139488bf73fea5534",
       "linking" : "dynamic"
     }
   ]

@@ -293,7 +293,7 @@ class GameViewController: UIViewController {
             scene.scaleMode = .aspectFill
             let skview = self.view as! SKView
             skview.isMultipleTouchEnabled = false
-            skview.showsNodeCount = true
+            skview.showsNodeCount = false
             skview.presentScene(scene)
         }
     }

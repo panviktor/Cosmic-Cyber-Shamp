@@ -373,7 +373,7 @@ class MainScene: SKScene, SKPhysicsContactDelegate {
             self.gameinfo.addCoin(amount: 1)
             destroy(sknode: highNode)
             
-            if self.gameinfo.getCurrentGold() == 10 {
+            if self.gameinfo.getCurrentGold() == 25 || self.gameinfo.getCurrentGold() == 100 {
                 prepareToChangeScene(scene: .WinLevelNode)
             }
         case .None:
