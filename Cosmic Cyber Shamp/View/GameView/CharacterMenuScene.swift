@@ -79,10 +79,13 @@ class CharacterMenuScene: SKScene{
         // update index
         currToonIndex = self.gameinfo.requestCurrentToonIndex()
         
+        
+        
         // Title
         let title = SKSpriteNode(texture: Global.sharedInstance.getMainTexture(main: .Character_Menu_TitleMenu))
-        title.position.y = screenSize.width / 2 * 1.3
-        title.size = CGSize(width: screenSize.width * 0.6, height: screenSize.height * 0.1)
+        title.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        title.position.y = screenSize.size.height / 3.5
+        title.size = CGSize(width: screenSize.width * 0.6, height: screenSize.height * 0.09)
         
         let titleLabel = SKLabelNode(fontNamed: "KohinoorTelugu-Medium")
         titleLabel.text = "Cosmic Cyber Shamp"
@@ -118,7 +121,7 @@ class CharacterMenuScene: SKScene{
         // Character
         charNode.texture = Global.sharedInstance.getMainTexture(main: .Character_Menu_Alpha) // Default
         charNode.anchorPoint = CGPoint(x: 0.5, y: 0.3)
-        charNode.size = CGSize(width: screenSize.width / 1.25, height: screenSize.height / 2.55)
+        charNode.size = CGSize(width: screenSize.width / 1.25, height: screenSize.height / 3)
         charNode.run(SKAction.repeatForever(SKAction.sequence([SKAction.moveBy(x: 0, y: 10, duration: 1), SKAction.moveBy(x: 0, y: -10, duration: 1.2)])))
         self.addChild(charNode)
         

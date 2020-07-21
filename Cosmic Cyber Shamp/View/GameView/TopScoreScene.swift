@@ -49,11 +49,13 @@ class TopScoreScene: SKScene {
         
         // Title
         let title = SKSpriteNode(texture: Global.sharedInstance.getMainTexture(main: .Character_Menu_TitleMenu))
-        title.position.y = screenSize.width / 2 * 1.3
-        title.size = CGSize(width: screenSize.width * 0.6, height: screenSize.height * 0.1)
+        title.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        title.position.y = screenSize.size.height / 3.5
+        title.size = CGSize(width: screenSize.width * 0.6, height: screenSize.height * 0.12)
         
         let titleLabel = SKLabelNode(fontNamed: "KohinoorTelugu-Medium")
         titleLabel.text = "Your Best Score"
+        titleLabel.position.y = -title.size.height / 5.5
         titleLabel.fontColor = SKColor(#colorLiteral(red: 0.1215686277, green: 0.01176470611, blue: 0.4235294163, alpha: 1))
         titleLabel.fontSize = screenSize.width / 15
         title.addChild(titleLabel.shadowNode(nodeName: "titleEffectNodeLabel"))
@@ -70,13 +72,13 @@ class TopScoreScene: SKScene {
         
         // scoreNode
         scoreNode.texture = Global.sharedInstance.getMainTexture(main: .Character_Menu_UpgradeBox)
-        scoreNode.anchorPoint = CGPoint(x: 0.5, y: 0.1)
+        scoreNode.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         scoreNode.size = CGSize(width: screenSize.width/1.5, height: screenSize.height / 4)
         scoreNode.run(SKAction.repeatForever(SKAction.sequence([SKAction.moveBy(x: 0, y: 20, duration: 1),
                                                                 SKAction.moveBy(x: 0, y: -20, duration: 1.2)])))
         
         let goldScore = SKLabelNode(fontNamed: "KohinoorDevanagari-Medium")
-        goldScore.position.y = scoreNode.size.height / 1.55
+        goldScore.position.y = scoreNode.size.height / 4
         goldScore.text = "#1 \(scoreManager?.firstScore ?? 0)"
         goldScore.fontColor = SKColor(red: 254/255, green: 189/255, blue: 62/255, alpha: 1)
         goldScore.fontSize = screenSize.width / 15
@@ -84,7 +86,7 @@ class TopScoreScene: SKScene {
         
         
         let silverScore = SKLabelNode(fontNamed: "KohinoorDevanagari-Medium")
-        silverScore.position.y = scoreNode.size.height / 2.5
+        silverScore.position.y = scoreNode.size.height / 40
         silverScore.text = "#2 \(scoreManager?.secondScore ?? 0)"
         silverScore.fontColor = SKColor(red: 254/255, green: 189/255, blue: 62/255, alpha: 1)
         silverScore.fontSize = screenSize.width / 17
@@ -92,7 +94,8 @@ class TopScoreScene: SKScene {
         
         
         let bronzeScore = SKLabelNode(fontNamed: "KohinoorDevanagari-Medium")
-        bronzeScore.position.y = scoreNode.size.height / 8
+        bronzeScore.position.y = -scoreNode.size.height / 4
+
         bronzeScore.text = "#3 \(scoreManager?.thirdScore ?? 0)"
         bronzeScore.fontColor = SKColor(red: 254/255, green: 189/255, blue: 62/255, alpha: 1)
         bronzeScore.fontSize = screenSize.width / 17

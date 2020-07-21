@@ -50,11 +50,13 @@ class GameSettingsScene: SKScene{
         
         // Title
         let title = SKSpriteNode(texture: Global.sharedInstance.getMainTexture(main: .Character_Menu_TitleMenu))
-        title.position.y = screenSize.width / 1.45
-        title.size = CGSize(width: screenSize.width * 0.6, height: screenSize.height * 0.1)
+        title.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        title.position.y = screenSize.size.height / 3.5
+        title.size = CGSize(width: screenSize.width * 0.6, height: screenSize.height * 0.12)
         
         let titleLabel = SKLabelNode(fontNamed: "KohinoorTelugu-Medium")
         titleLabel.text = "Settings"
+        titleLabel.position.y = -title.size.height / 5.5
         titleLabel.fontColor = SKColor(#colorLiteral(red: 0.1215686277, green: 0.01176470611, blue: 0.4235294163, alpha: 1))
         titleLabel.fontSize = screenSize.width / 15
         title.addChild(titleLabel.shadowNode(nodeName: "titleEffectNodeLabel"))
@@ -71,7 +73,7 @@ class GameSettingsScene: SKScene{
         
         // settingsNode
         settingsNode.texture = Global.sharedInstance.getMainTexture(main: .Character_Menu_UpgradeBox)
-        settingsNode.anchorPoint = CGPoint(x: 0.5, y: 0.0)
+        settingsNode.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         settingsNode.size = CGSize(width: screenSize.width/1.25, height: screenSize.height / 3.8)
         settingsNode.run(SKAction.repeatForever(SKAction.sequence([SKAction.moveBy(x: 0, y: 15, duration: 1),
                                                                 SKAction.moveBy(x: 0, y: -15, duration: 3)])))
@@ -79,16 +81,16 @@ class GameSettingsScene: SKScene{
         //vibro button
         let vibroButton = SKSpriteNode(texture: Global.sharedInstance.getMainTexture(main: .VibroButton))
         vibroButton.name = "vibroToggle"
-        vibroButton.anchorPoint = CGPoint(x: 0.5, y: -1.75)
-        vibroButton.size = CGSize(width: settingsNode.size.width / 3.25, height: settingsNode.size.height / 3)
+        vibroButton.anchorPoint = CGPoint(x: 0.5, y: 0.2)
+        vibroButton.position.y = settingsNode.size.height / 6
+        vibroButton.size = CGSize(width: settingsNode.size.width / 3.25, height: settingsNode.size.height / 2.75)
         settingsNode.addChild(vibroButton)
         
         //sound button
         let musicButton = SKSpriteNode(texture: Global.sharedInstance.getMainTexture(main: .SoundButton))
         musicButton.name = "musicToogle"
-        musicButton.anchorPoint = CGPoint(x: 0.5, y: -0.25)
-        
-        musicButton.size = CGSize(width: settingsNode.size.width / 3.25, height: settingsNode.size.height / 3)
+        musicButton.anchorPoint = CGPoint(x: 0.5, y: 0.95)
+        musicButton.size = CGSize(width: settingsNode.size.width / 3.25, height: settingsNode.size.height / 2.75)
         settingsNode.addChild(musicButton)
         
         self.addChild(settingsNode)

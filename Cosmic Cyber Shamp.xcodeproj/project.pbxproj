@@ -7,11 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1408BD2224C6CC8800278252 /* OneSignal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1408BD2124C6CC8800278252 /* OneSignal.framework */; };
-		1408BD2324C6CC8800278252 /* OneSignal.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1408BD2124C6CC8800278252 /* OneSignal.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		06DD477ACD74C535EE58FC14 /* Pods_Cosmic_Cyber_Shamp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EF474F274C9D2913CE3C249 /* Pods_Cosmic_Cyber_Shamp.framework */; };
 		1408BD2524C6CC9D00278252 /* OneSignal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1408BD2124C6CC8800278252 /* OneSignal.framework */; };
-		1408BD2624C6CC9D00278252 /* OneSignal.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1408BD2124C6CC8800278252 /* OneSignal.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		1408BD2824C6D47500278252 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146F01C124BC404900402CB4 /* AppDelegate.swift */; };
+		1408BD3224C6E00900278252 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1408BD3124C6E00900278252 /* NotificationService.swift */; };
+		1408BD3624C6E00900278252 /* OneSignalNotificationServiceExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 1408BD2F24C6E00900278252 /* OneSignalNotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		144B9DCF24C5DE7500F3E7F1 /* PlayNow.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 144B9DCE24C5DE7500F3E7F1 /* PlayNow.jpg */; };
 		144B9DD324C5E49500F3E7F1 /* YouWin.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 144B9DD224C5E49500F3E7F1 /* YouWin.jpg */; };
 		1451C66324BD8F9C007B915F /* WinLevelNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1451C66224BD8F9C007B915F /* WinLevelNode.swift */; };
@@ -70,8 +69,6 @@
 		146F024D24BC63F500402CB4 /* BulletMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146F023A24BC63F500402CB4 /* BulletMaker.swift */; };
 		146F024E24BC63F500402CB4 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146F023B24BC63F500402CB4 /* Map.swift */; };
 		146F024F24BC63F500402CB4 /* AccountInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146F023C24BC63F500402CB4 /* AccountInfo.swift */; };
-		14B580A824C6CAF900010408 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B580A724C6CAF900010408 /* NotificationService.swift */; };
-		14B580AC24C6CAF900010408 /* OneSignalNotificationServiceExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 14B580A524C6CAF900010408 /* OneSignalNotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		14D3527224C04B2A00D8D8F1 /* initial_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 14D3527124C04B2A00D8D8F1 /* initial_bg.png */; };
 		14DE010524BF274E008472C7 /* SceneMeneger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DE010424BF274E008472C7 /* SceneMeneger.swift */; };
 		14DE010B24BF3220008472C7 /* Reachability in Frameworks */ = {isa = PBXBuildFile; productRef = 14DE010A24BF3220008472C7 /* Reachability */; };
@@ -94,48 +91,27 @@
 		14F3064024C09224002A893C /* FacebookCore in Frameworks */ = {isa = PBXBuildFile; productRef = 14F3063F24C09224002A893C /* FacebookCore */; };
 		14F3064224C093CD002A893C /* no-internet-connection.json in Resources */ = {isa = PBXBuildFile; fileRef = 14F3064124C093CD002A893C /* no-internet-connection.json */; };
 		14F3064424C09430002A893C /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F3064324C09430002A893C /* WelcomeViewController.swift */; };
+		74B7E690A039244CB571EC91 /* Pods_OneSignalNotificationServiceExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5AC4235FCBF8D3DBF453A91 /* Pods_OneSignalNotificationServiceExtension.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		14B580AA24C6CAF900010408 /* PBXContainerItemProxy */ = {
+		1408BD3424C6E00900278252 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 146F01B624BC404900402CB4 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 14B580A424C6CAF900010408;
+			remoteGlobalIDString = 1408BD2E24C6E00900278252;
 			remoteInfo = OneSignalNotificationServiceExtension;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		1408BD2424C6CC8800278252 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				1408BD2324C6CC8800278252 /* OneSignal.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1494B16F24C61CA400F9B4E2 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				1408BD2624C6CC9D00278252 /* OneSignal.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		14F3061324C08AF2002A893C /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				14B580AC24C6CAF900010408 /* OneSignalNotificationServiceExtension.appex in Embed App Extensions */,
+				1408BD3624C6E00900278252 /* OneSignalNotificationServiceExtension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -143,8 +119,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		03640412516678741DF35E9B /* Pods-OneSignalNotificationServiceExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneSignalNotificationServiceExtension.debug.xcconfig"; path = "Target Support Files/Pods-OneSignalNotificationServiceExtension/Pods-OneSignalNotificationServiceExtension.debug.xcconfig"; sourceTree = "<group>"; };
+		0C9E662CA55FCB4296B2CCB9 /* Pods-Cosmic Cyber Shamp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cosmic Cyber Shamp.release.xcconfig"; path = "Target Support Files/Pods-Cosmic Cyber Shamp/Pods-Cosmic Cyber Shamp.release.xcconfig"; sourceTree = "<group>"; };
 		1408BD2124C6CC8800278252 /* OneSignal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OneSignal.framework; path = Carthage/Build/iOS/OneSignal.framework; sourceTree = "<group>"; };
-		1408BD2724C6CD3B00278252 /* OneSignalNotificationServiceExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OneSignalNotificationServiceExtension.entitlements; sourceTree = "<group>"; };
+		1408BD2F24C6E00900278252 /* OneSignalNotificationServiceExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OneSignalNotificationServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		1408BD3124C6E00900278252 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		1408BD3324C6E00900278252 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		144B9DCE24C5DE7500F3E7F1 /* PlayNow.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = PlayNow.jpg; sourceTree = "<group>"; };
 		144B9DD224C5E49500F3E7F1 /* YouWin.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = YouWin.jpg; sourceTree = "<group>"; };
 		1451C66224BD8F9C007B915F /* WinLevelNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinLevelNode.swift; sourceTree = "<group>"; };
@@ -205,13 +185,9 @@
 		146F023A24BC63F500402CB4 /* BulletMaker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BulletMaker.swift; sourceTree = "<group>"; };
 		146F023B24BC63F500402CB4 /* Map.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
 		146F023C24BC63F500402CB4 /* AccountInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountInfo.swift; sourceTree = "<group>"; };
-		14B580A524C6CAF900010408 /* OneSignalNotificationServiceExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OneSignalNotificationServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		14B580A724C6CAF900010408 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
-		14B580A924C6CAF900010408 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		14D3527124C04B2A00D8D8F1 /* initial_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = initial_bg.png; sourceTree = "<group>"; };
 		14DE010424BF274E008472C7 /* SceneMeneger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneMeneger.swift; sourceTree = "<group>"; };
 		14DE010F24BF440E008472C7 /* initial_main_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = initial_main_bg.png; sourceTree = "<group>"; };
-		14F3061724C08BAC002A893C /* Cosmic Cyber Shamp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Cosmic Cyber Shamp.entitlements"; sourceTree = "<group>"; };
 		14F3061824C090EE002A893C /* ReachabilityObserverDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReachabilityObserverDelegate.swift; sourceTree = "<group>"; };
 		14F3061924C090EE002A893C /* DifferentServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DifferentServices.swift; sourceTree = "<group>"; };
 		14F3061C24C09104002A893C /* Extension+URL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension+URL.swift"; sourceTree = "<group>"; };
@@ -228,9 +204,21 @@
 		14F3063524C091BD002A893C /* SecondNoInternetViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SecondNoInternetViewController.xib; sourceTree = "<group>"; };
 		14F3064124C093CD002A893C /* no-internet-connection.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "no-internet-connection.json"; sourceTree = "<group>"; };
 		14F3064324C09430002A893C /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		5EF474F274C9D2913CE3C249 /* Pods_Cosmic_Cyber_Shamp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cosmic_Cyber_Shamp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5AC4235FCBF8D3DBF453A91 /* Pods_OneSignalNotificationServiceExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OneSignalNotificationServiceExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F83EB0F1538AAB62D6CD6F02 /* Pods-Cosmic Cyber Shamp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cosmic Cyber Shamp.debug.xcconfig"; path = "Target Support Files/Pods-Cosmic Cyber Shamp/Pods-Cosmic Cyber Shamp.debug.xcconfig"; sourceTree = "<group>"; };
+		FCAB523A5A69CBCE6FA1F146 /* Pods-OneSignalNotificationServiceExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneSignalNotificationServiceExtension.release.xcconfig"; path = "Target Support Files/Pods-OneSignalNotificationServiceExtension/Pods-OneSignalNotificationServiceExtension.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		1408BD2C24C6E00900278252 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				74B7E690A039244CB571EC91 /* Pods_OneSignalNotificationServiceExtension.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		146F01BB24BC404900402CB4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -239,27 +227,30 @@
 				14DE010E24BF3244008472C7 /* Lottie in Frameworks */,
 				14F3064024C09224002A893C /* FacebookCore in Frameworks */,
 				1408BD2524C6CC9D00278252 /* OneSignal.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		14B580A224C6CAF900010408 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1408BD2224C6CC8800278252 /* OneSignal.framework in Frameworks */,
+				06DD477ACD74C535EE58FC14 /* Pods_Cosmic_Cyber_Shamp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1408BD3024C6E00900278252 /* OneSignalNotificationServiceExtension */ = {
+			isa = PBXGroup;
+			children = (
+				1408BD3124C6E00900278252 /* NotificationService.swift */,
+				1408BD3324C6E00900278252 /* Info.plist */,
+			);
+			path = OneSignalNotificationServiceExtension;
+			sourceTree = "<group>";
+		};
 		146F01B524BC404900402CB4 = {
 			isa = PBXGroup;
 			children = (
 				146F01C024BC404900402CB4 /* Cosmic Cyber Shamp */,
-				14B580A624C6CAF900010408 /* OneSignalNotificationServiceExtension */,
+				1408BD3024C6E00900278252 /* OneSignalNotificationServiceExtension */,
 				146F01BF24BC404900402CB4 /* Products */,
 				1485EE8524C0842B00FD72AC /* Frameworks */,
+				409E45F97E4E18D799BCF599 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -267,7 +258,7 @@
 			isa = PBXGroup;
 			children = (
 				146F01BE24BC404900402CB4 /* Cosmic Cyber Shamp.app */,
-				14B580A524C6CAF900010408 /* OneSignalNotificationServiceExtension.appex */,
+				1408BD2F24C6E00900278252 /* OneSignalNotificationServiceExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -275,7 +266,6 @@
 		146F01C024BC404900402CB4 /* Cosmic Cyber Shamp */ = {
 			isa = PBXGroup;
 			children = (
-				14F3061724C08BAC002A893C /* Cosmic Cyber Shamp.entitlements */,
 				146F01CF24BC404A00402CB4 /* Info.plist */,
 				146F01D524BC40B500402CB4 /* App */,
 				146F01D624BC40EC00402CB4 /* Model */,
@@ -526,18 +516,10 @@
 			isa = PBXGroup;
 			children = (
 				1408BD2124C6CC8800278252 /* OneSignal.framework */,
+				5EF474F274C9D2913CE3C249 /* Pods_Cosmic_Cyber_Shamp.framework */,
+				B5AC4235FCBF8D3DBF453A91 /* Pods_OneSignalNotificationServiceExtension.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		14B580A624C6CAF900010408 /* OneSignalNotificationServiceExtension */ = {
-			isa = PBXGroup;
-			children = (
-				1408BD2724C6CD3B00278252 /* OneSignalNotificationServiceExtension.entitlements */,
-				14B580A724C6CAF900010408 /* NotificationService.swift */,
-				14B580A924C6CAF900010408 /* Info.plist */,
-			);
-			path = OneSignalNotificationServiceExtension;
 			sourceTree = "<group>";
 		};
 		14F3063024C0917A002A893C /* Web */ = {
@@ -568,24 +550,52 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
+		409E45F97E4E18D799BCF599 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F83EB0F1538AAB62D6CD6F02 /* Pods-Cosmic Cyber Shamp.debug.xcconfig */,
+				0C9E662CA55FCB4296B2CCB9 /* Pods-Cosmic Cyber Shamp.release.xcconfig */,
+				03640412516678741DF35E9B /* Pods-OneSignalNotificationServiceExtension.debug.xcconfig */,
+				FCAB523A5A69CBCE6FA1F146 /* Pods-OneSignalNotificationServiceExtension.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		146F01BD24BC404900402CB4 /* Cosmic Cyber Shamp */ = {
+		1408BD2E24C6E00900278252 /* OneSignalNotificationServiceExtension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 146F01D224BC404A00402CB4 /* Build configuration list for PBXNativeTarget "Cosmic Cyber Shamp" */;
+			buildConfigurationList = 1408BD3924C6E00900278252 /* Build configuration list for PBXNativeTarget "OneSignalNotificationServiceExtension" */;
 			buildPhases = (
-				146F01BA24BC404900402CB4 /* Sources */,
-				146F01BB24BC404900402CB4 /* Frameworks */,
-				146F01BC24BC404900402CB4 /* Resources */,
-				1485EE8A24C085B700FD72AC /* ShellScript */,
-				14F3061324C08AF2002A893C /* Embed App Extensions */,
-				1494B16F24C61CA400F9B4E2 /* Embed Frameworks */,
+				A49D279B67BD5335AD13C516 /* [CP] Check Pods Manifest.lock */,
+				1408BD2B24C6E00900278252 /* Sources */,
+				1408BD2C24C6E00900278252 /* Frameworks */,
+				1408BD2D24C6E00900278252 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				14B580AB24C6CAF900010408 /* PBXTargetDependency */,
+			);
+			name = OneSignalNotificationServiceExtension;
+			productName = OneSignalNotificationServiceExtension;
+			productReference = 1408BD2F24C6E00900278252 /* OneSignalNotificationServiceExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		146F01BD24BC404900402CB4 /* Cosmic Cyber Shamp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 146F01D224BC404A00402CB4 /* Build configuration list for PBXNativeTarget "Cosmic Cyber Shamp" */;
+			buildPhases = (
+				C90FECB5CBEE90CA385E8AEE /* [CP] Check Pods Manifest.lock */,
+				146F01BA24BC404900402CB4 /* Sources */,
+				146F01BB24BC404900402CB4 /* Frameworks */,
+				146F01BC24BC404900402CB4 /* Resources */,
+				14F3061324C08AF2002A893C /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1408BD3524C6E00900278252 /* PBXTargetDependency */,
 			);
 			name = "Cosmic Cyber Shamp";
 			packageProductDependencies = (
@@ -597,24 +607,6 @@
 			productReference = 146F01BE24BC404900402CB4 /* Cosmic Cyber Shamp.app */;
 			productType = "com.apple.product-type.application";
 		};
-		14B580A424C6CAF900010408 /* OneSignalNotificationServiceExtension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 14B580AD24C6CAF900010408 /* Build configuration list for PBXNativeTarget "OneSignalNotificationServiceExtension" */;
-			buildPhases = (
-				14B580A124C6CAF900010408 /* Sources */,
-				14B580A224C6CAF900010408 /* Frameworks */,
-				14B580A324C6CAF900010408 /* Resources */,
-				1408BD2424C6CC8800278252 /* Embed Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = OneSignalNotificationServiceExtension;
-			productName = OneSignalNotificationServiceExtension;
-			productReference = 14B580A524C6CAF900010408 /* OneSignalNotificationServiceExtension.appex */;
-			productType = "com.apple.product-type.app-extension";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -625,11 +617,11 @@
 				LastUpgradeCheck = 1150;
 				ORGANIZATIONNAME = Viktor;
 				TargetAttributes = {
+					1408BD2E24C6E00900278252 = {
+						CreatedOnToolsVersion = 11.6;
+					};
 					146F01BD24BC404900402CB4 = {
 						CreatedOnToolsVersion = 11.5;
-					};
-					14B580A424C6CAF900010408 = {
-						CreatedOnToolsVersion = 11.6;
 					};
 				};
 			};
@@ -652,12 +644,19 @@
 			projectRoot = "";
 			targets = (
 				146F01BD24BC404900402CB4 /* Cosmic Cyber Shamp */,
-				14B580A424C6CAF900010408 /* OneSignalNotificationServiceExtension */,
+				1408BD2E24C6E00900278252 /* OneSignalNotificationServiceExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		1408BD2D24C6E00900278252 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		146F01BC24BC404900402CB4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -701,17 +700,10 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		14B580A324C6CAF900010408 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1485EE8A24C085B700FD72AC /* ShellScript */ = {
+		A49D279B67BD5335AD13C516 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -719,19 +711,53 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/OneSignal.framework",
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
+			name = "[CP] Check Pods Manifest.lock";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OneSignalNotificationServiceExtension-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/zsh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C90FECB5CBEE90CA385E8AEE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Cosmic Cyber Shamp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		1408BD2B24C6E00900278252 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1408BD3224C6E00900278252 /* NotificationService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		146F01BA24BC404900402CB4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -780,22 +806,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		14B580A124C6CAF900010408 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1408BD2824C6D47500278252 /* AppDelegate.swift in Sources */,
-				14B580A824C6CAF900010408 /* NotificationService.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		14B580AB24C6CAF900010408 /* PBXTargetDependency */ = {
+		1408BD3524C6E00900278252 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 14B580A424C6CAF900010408 /* OneSignalNotificationServiceExtension */;
-			targetProxy = 14B580AA24C6CAF900010408 /* PBXContainerItemProxy */;
+			target = 1408BD2E24C6E00900278252 /* OneSignalNotificationServiceExtension */;
+			targetProxy = 1408BD3424C6E00900278252 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -811,6 +828,54 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		1408BD3724C6E00900278252 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 03640412516678741DF35E9B /* Pods-OneSignalNotificationServiceExtension.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 4;
+				DEVELOPMENT_TEAM = 2335GSPY5N;
+				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.2;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.crown.Cosmic-Cyber-Shamp.OneSignalNotificationServiceExtension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1408BD3824C6E00900278252 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FCAB523A5A69CBCE6FA1F146 /* Pods-OneSignalNotificationServiceExtension.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 4;
+				DEVELOPMENT_TEAM = 2335GSPY5N;
+				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.2;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.crown.Cosmic-Cyber-Shamp.OneSignalNotificationServiceExtension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		146F01D024BC404A00402CB4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -927,11 +992,13 @@
 		};
 		146F01D324BC404A00402CB4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F83EB0F1538AAB62D6CD6F02 /* Pods-Cosmic Cyber Shamp.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				APPLICATION_EXTENSION_API_ONLY = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Cosmic Cyber Shamp/Cosmic Cyber Shamp.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = 2335GSPY5N;
@@ -948,19 +1015,22 @@
 				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.crown.Cosmic-Cyber-Shamp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				"Texture Atlas Maximum Size" = 4096x4096;
 			};
 			name = Debug;
 		};
 		146F01D424BC404A00402CB4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0C9E662CA55FCB4296B2CCB9 /* Pods-Cosmic Cyber Shamp.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				APPLICATION_EXTENSION_API_ONLY = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Cosmic Cyber Shamp/Cosmic Cyber Shamp.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = 2335GSPY5N;
@@ -977,65 +1047,25 @@
 				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.crown.Cosmic-Cyber-Shamp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				"Texture Atlas Maximum Size" = 4096x4096;
-			};
-			name = Release;
-		};
-		14B580AE24C6CAF900010408 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = OneSignalNotificationServiceExtension/OneSignalNotificationServiceExtension.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2335GSPY5N;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
-				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.crown.Cosmic-Cyber-Shamp.OneSignalNotificationServiceExtension";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-			};
-			name = Debug;
-		};
-		14B580AF24C6CAF900010408 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = OneSignalNotificationServiceExtension/OneSignalNotificationServiceExtension.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2335GSPY5N;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
-				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.crown.Cosmic-Cyber-Shamp.OneSignalNotificationServiceExtension";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		1408BD3924C6E00900278252 /* Build configuration list for PBXNativeTarget "OneSignalNotificationServiceExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1408BD3724C6E00900278252 /* Debug */,
+				1408BD3824C6E00900278252 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		146F01B924BC404900402CB4 /* Build configuration list for PBXProject "Cosmic Cyber Shamp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1050,15 +1080,6 @@
 			buildConfigurations = (
 				146F01D324BC404A00402CB4 /* Debug */,
 				146F01D424BC404A00402CB4 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		14B580AD24C6CAF900010408 /* Build configuration list for PBXNativeTarget "OneSignalNotificationServiceExtension" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				14B580AE24C6CAF900010408 /* Debug */,
-				14B580AF24C6CAF900010408 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
