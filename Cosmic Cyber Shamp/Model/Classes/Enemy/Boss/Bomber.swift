@@ -41,7 +41,7 @@ class Bomber: Enemy {
         // Set up Animation of Boss
         self.run(SKAction.repeatForever(SKAction.animate(with: actionsStandBy, timePerFrame: 0.77)))
         // Set initial alpha
-        self.physicsBody = SKPhysicsBody(texture: Global.sharedInstance.getMainTexture(main: .Boss_1), size: self.size)
+        self.physicsBody =  SKPhysicsBody(circleOfRadius: self.size.width/2)
         self.physicsBody!.isDynamic = true // allow physic simulation to move it
         self.physicsBody!.categoryBitMask = PhysicsCategory.Imune // None at beginning
         self.physicsBody!.affectedByGravity = false
