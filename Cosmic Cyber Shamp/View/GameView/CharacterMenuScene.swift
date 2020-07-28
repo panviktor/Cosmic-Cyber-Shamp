@@ -8,7 +8,7 @@
 
 import SpriteKit
 
-class CharacterMenuScene: SKScene{
+class CharacterMenuScene: SKScene {
     private enum CurrToon: Int {
         case Jupiter_2 = 0
         case Normandy = 1

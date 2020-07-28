@@ -54,7 +54,7 @@ class MainScene: SKScene, SKPhysicsContactDelegate {
         
         let cloud2 = SKSpriteNode()
         cloud2.texture = Global.sharedInstance.getMainTexture(main: .Main_Menu_Background_3)
-        cloud2.position = CGPoint(x: -20 + screenSize.width/2, y: 0)
+        cloud2.position = CGPoint(x: -20 + screenSize.width / 2, y: 0)
         cloud2.size = CGSize(width: screenSize.width + 100, height: screenSize.height/2)
         cloud2.zPosition = -8
         cloud2.name = Global.Main.Main_Menu_Background_3.rawValue
@@ -201,17 +201,32 @@ class MainScene: SKScene, SKPhysicsContactDelegate {
         return button
     }
     
+    private func resumeGame() {
+        self.physicsWorld.speed = 1.0
+        self.scene?.isPaused = false
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        var pos:CGPoint!
+        var pos: CGPoint!
         for touch in touches{
             pos = touch.location(in: self)
         }
         
-        if isPlayerMoved{
-            // If player has swiped, it will not trigger this function
-            return
-        }
         let childs = self.nodes(at: pos)
+        
+        if isPlayerMoved {
+            let childs = self.nodes(at: pos)
+            for c in childs {
+                if c.name == "WINNODE" {
+                    let nodeToRemove = childNode(withName: "WINNODE")
+                    nodeToRemove?.removeFromParent()
+                    resumeGame()
+                } else {
+                    return
+                }
+            }
+        }
+        
         for c in childs {
             if c.name == "character_building_button"{
                 prepareToChangeScene(scene: .CharacterMenuScene)
@@ -219,6 +234,8 @@ class MainScene: SKScene, SKPhysicsContactDelegate {
                 prepareToChangeScene(scene: .TopScoreScene)
             } else if c.name == "building_3_button" {
                 prepareToChangeScene(scene: .GameSettingsScene)
+            } else if c.name == "WINNODE" {
+                print("ANFJKDBJKFBKJMBSKMDB@W!!!!!!!")
             }
         }
     }
@@ -373,7 +390,7 @@ class MainScene: SKScene, SKPhysicsContactDelegate {
             self.gameinfo.addCoin(amount: 1)
             destroy(sknode: highNode)
             
-            if self.gameinfo.getCurrentGold() == 25 || self.gameinfo.getCurrentGold() == 100 {
+            if self.gameinfo.getCurrentGold() == 5 || self.gameinfo.getCurrentGold() == 100 {
                 prepareToChangeScene(scene: .WinLevelNode)
             }
         case .None:
@@ -399,11 +416,11 @@ class MainScene: SKScene, SKPhysicsContactDelegate {
         case .EndScene:
             self.physicsWorld.speed = 0.4
             self.run(SKAction.sequence([SKAction.wait(forDuration: 4), SKAction.run {
-            self.gameinfo.prepareToChangeScene()
-            self.recursiveRemovingSKActions(sknodes: self.children)
-            self.removeAllChildren()
-            self.removeAllActions()
-            let scene = EndGameScene(size: self.size)
+                self.gameinfo.prepareToChangeScene()
+                self.recursiveRemovingSKActions(sknodes: self.children)
+                self.removeAllChildren()
+                self.removeAllActions()
+                let scene = EndGameScene(size: self.size)
                 scene.collectedCoins = self.gameinfo.getCurrentGold()
                 self.view?.presentScene(scene)
                 }]))
@@ -417,12 +434,16 @@ class MainScene: SKScene, SKPhysicsContactDelegate {
             self.view?.presentScene(newScene)
             
         case .WinLevelNode:
-                let transition = SKTransition.doorway(withDuration: 0.5)
-                let winLevel = WinLevelNode(size: self.size)
-                winLevel.scaleMode = .aspectFill
-                sceneManager.gameScene = self
-                self.scene?.isPaused = true
-                self.scene!.view?.presentScene(winLevel, transition: transition)
+            let winNode = SKSpriteNode()
+            winNode.texture = SKTexture(imageNamed: "win2.png")
+            winNode.size = CGSize(width: screenSize.width, height: screenSize.height)
+            winNode.anchorPoint = CGPoint(x: 0, y: 0)
+            winNode.position = CGPoint(x: 0, y: 0)
+            winNode.name = "WINNODE"
+            winNode.alpha = 1
+            self.physicsWorld.speed = 0.000001
+            self.scene?.isPaused = true
+            self.addChild(winNode)
             
         case .TopScoreScene:
             self.gameinfo.prepareToChangeScene()

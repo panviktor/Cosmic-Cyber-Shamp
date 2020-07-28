@@ -13,7 +13,6 @@
 		1408BD3624C6E00900278252 /* OneSignalNotificationServiceExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 1408BD2F24C6E00900278252 /* OneSignalNotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		144B9DCF24C5DE7500F3E7F1 /* PlayNow.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 144B9DCE24C5DE7500F3E7F1 /* PlayNow.jpg */; };
 		144B9DD324C5E49500F3E7F1 /* YouWin.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 144B9DD224C5E49500F3E7F1 /* YouWin.jpg */; };
-		1451C66324BD8F9C007B915F /* WinLevelNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1451C66224BD8F9C007B915F /* WinLevelNode.swift */; };
 		1451C66524BD902F007B915F /* TopScoreScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1451C66424BD902F007B915F /* TopScoreScene.swift */; };
 		1451C66724BD9070007B915F /* GameSettingsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1451C66624BD9070007B915F /* GameSettingsScene.swift */; };
 		145E7BC324BE053C00C0039A /* ScoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145E7BC224BE053C00C0039A /* ScoreManager.swift */; };
@@ -127,7 +126,6 @@
 		1408BD3324C6E00900278252 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		144B9DCE24C5DE7500F3E7F1 /* PlayNow.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = PlayNow.jpg; sourceTree = "<group>"; };
 		144B9DD224C5E49500F3E7F1 /* YouWin.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = YouWin.jpg; sourceTree = "<group>"; };
-		1451C66224BD8F9C007B915F /* WinLevelNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinLevelNode.swift; sourceTree = "<group>"; };
 		1451C66424BD902F007B915F /* TopScoreScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopScoreScene.swift; sourceTree = "<group>"; };
 		1451C66624BD9070007B915F /* GameSettingsScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSettingsScene.swift; sourceTree = "<group>"; };
 		145E7BC224BE053C00C0039A /* ScoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreManager.swift; sourceTree = "<group>"; };
@@ -346,7 +344,6 @@
 				146F01DF24BC63BB00402CB4 /* MainScene.swift */,
 				146F01E024BC63BB00402CB4 /* CharacterMenuScene.swift */,
 				146F01DE24BC63BB00402CB4 /* EndGameScene.swift */,
-				1451C66224BD8F9C007B915F /* WinLevelNode.swift */,
 				1451C66424BD902F007B915F /* TopScoreScene.swift */,
 				1451C66624BD9070007B915F /* GameSettingsScene.swift */,
 			);
@@ -762,7 +759,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1451C66324BD8F9C007B915F /* WinLevelNode.swift in Sources */,
 				14F3062624C09104002A893C /* Extension+Collection.swift in Sources */,
 				146F01C624BC404900402CB4 /* GameViewController.swift in Sources */,
 				146F024224BC63F500402CB4 /* Projectile.swift in Sources */,
@@ -834,7 +830,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = 2335GSPY5N;
 				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -843,7 +839,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.2.1;
+				MARKETING_VERSION = 1.2.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.crown.Cosmic-Cyber-Shamp.OneSignalNotificationServiceExtension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -858,7 +854,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = 2335GSPY5N;
 				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -867,7 +863,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.2.1;
+				MARKETING_VERSION = 1.2.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.crown.Cosmic-Cyber-Shamp.OneSignalNotificationServiceExtension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1000,7 +996,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Cosmic Cyber Shamp/Cosmic Cyber Shamp.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = 2335GSPY5N;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1012,7 +1008,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.1;
+				MARKETING_VERSION = 1.2.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.crown.Cosmic-Cyber-Shamp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1032,7 +1028,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Cosmic Cyber Shamp/Cosmic Cyber Shamp.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = 2335GSPY5N;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1044,7 +1040,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.1;
+				MARKETING_VERSION = 1.2.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.crown.Cosmic-Cyber-Shamp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
