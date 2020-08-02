@@ -91,6 +91,7 @@
 		14F3064224C093CD002A893C /* no-internet-connection.json in Resources */ = {isa = PBXBuildFile; fileRef = 14F3064124C093CD002A893C /* no-internet-connection.json */; };
 		14F3064424C09430002A893C /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F3064324C09430002A893C /* WelcomeViewController.swift */; };
 		74B7E690A039244CB571EC91 /* Pods_OneSignalNotificationServiceExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5AC4235FCBF8D3DBF453A91 /* Pods_OneSignalNotificationServiceExtension.framework */; };
+		77B4012324D6EE93000C554D /* Rain.sks in Resources */ = {isa = PBXBuildFile; fileRef = 77B4012224D6EE93000C554D /* Rain.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -203,6 +204,7 @@
 		14F3064124C093CD002A893C /* no-internet-connection.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "no-internet-connection.json"; sourceTree = "<group>"; };
 		14F3064324C09430002A893C /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		5EF474F274C9D2913CE3C249 /* Pods_Cosmic_Cyber_Shamp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cosmic_Cyber_Shamp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		77B4012224D6EE93000C554D /* Rain.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Rain.sks; sourceTree = "<group>"; };
 		B5AC4235FCBF8D3DBF453A91 /* Pods_OneSignalNotificationServiceExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OneSignalNotificationServiceExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F83EB0F1538AAB62D6CD6F02 /* Pods-Cosmic Cyber Shamp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cosmic Cyber Shamp.debug.xcconfig"; path = "Target Support Files/Pods-Cosmic Cyber Shamp/Pods-Cosmic Cyber Shamp.debug.xcconfig"; sourceTree = "<group>"; };
 		FCAB523A5A69CBCE6FA1F146 /* Pods-OneSignalNotificationServiceExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneSignalNotificationServiceExtension.release.xcconfig"; path = "Target Support Files/Pods-OneSignalNotificationServiceExtension/Pods-OneSignalNotificationServiceExtension.release.xcconfig"; sourceTree = "<group>"; };
@@ -317,6 +319,7 @@
 		146F01D924BC410100402CB4 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				77B4012224D6EE93000C554D /* Rain.sks */,
 				14F3064124C093CD002A893C /* no-internet-connection.json */,
 				146F01E524BC63E400402CB4 /* Resources */,
 				146F01CA24BC404A00402CB4 /* Assets.xcassets */,
@@ -660,6 +663,7 @@
 			files = (
 				14F3063A24C091BD002A893C /* GIFViewController.xib in Resources */,
 				146F021824BC63E400402CB4 /* HUD.atlas in Resources */,
+				77B4012324D6EE93000C554D /* Rain.sks in Resources */,
 				146F021524BC63E400402CB4 /* Map.atlas in Resources */,
 				146F022424BC63E400402CB4 /* puff.m4a in Resources */,
 				146F01CE24BC404A00402CB4 /* LaunchScreen.storyboard in Resources */,
@@ -830,7 +834,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = 2335GSPY5N;
 				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -839,7 +843,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.2.2;
+				MARKETING_VERSION = 1.2.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.crown.Cosmic-Cyber-Shamp.OneSignalNotificationServiceExtension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -854,7 +858,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = 2335GSPY5N;
 				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -863,7 +867,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.2.2;
+				MARKETING_VERSION = 1.2.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.crown.Cosmic-Cyber-Shamp.OneSignalNotificationServiceExtension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -996,7 +1000,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Cosmic Cyber Shamp/Cosmic Cyber Shamp.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = 2335GSPY5N;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1008,7 +1012,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.2;
+				MARKETING_VERSION = 1.2.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.crown.Cosmic-Cyber-Shamp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1028,7 +1032,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Cosmic Cyber Shamp/Cosmic Cyber Shamp.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = 2335GSPY5N;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1040,7 +1044,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.2;
+				MARKETING_VERSION = 1.2.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.crown.Cosmic-Cyber-Shamp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

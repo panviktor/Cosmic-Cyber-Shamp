@@ -760,3 +760,16 @@ class Global {
         }
     }
 }
+
+enum Layers {
+    static let background: CGFloat  = 0
+    static let gem: CGFloat         = 1
+    static let emitter: CGFloat     = 2
+}
+
+
+enum Emitter {
+    static let rain = "Rain"
+    static let dust = "Dust"
+    static let gem  = "Gem"
+}
