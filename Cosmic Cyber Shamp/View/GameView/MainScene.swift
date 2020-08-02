@@ -7,6 +7,7 @@ class MainScene: SKScene, SKPhysicsContactDelegate {
         case CharacterMenuScene
         case EndGameScene
         case WinLevelNode
+        case BonusNode
         case TopScoreScene
         case GameSettingsScene
     }
@@ -218,6 +219,11 @@ class MainScene: SKScene, SKPhysicsContactDelegate {
                     let nodeToRemove = childNode(withName: "WINNODE")
                     nodeToRemove?.removeFromParent()
                     resumeGame()
+                } else if
+                    c.name == "BONUSNODE" {
+                    let nodeToRemove = childNode(withName: "BONUSNODE")
+                    nodeToRemove?.removeFromParent()
+                    resumeGame()
                 } else {
                     return
                 }
@@ -387,7 +393,9 @@ class MainScene: SKScene, SKPhysicsContactDelegate {
             self.gameinfo.addCoin(amount: 1)
             destroy(sknode: highNode)
             
-            if self.gameinfo.getCurrentGold() == 20 || self.gameinfo.getCurrentGold() == 100 {
+            if self.gameinfo.getCurrentGold() == 15 || self.gameinfo.getCurrentGold() == 35 {
+                 prepareToChangeScene(scene: .BonusNode)
+            } else if self.gameinfo.getCurrentGold() == 25 || self.gameinfo.getCurrentGold() == 100 {
                 prepareToChangeScene(scene: .WinLevelNode)
             }
         case .None:
@@ -437,11 +445,21 @@ class MainScene: SKScene, SKPhysicsContactDelegate {
             winNode.anchorPoint = CGPoint(x: 0, y: 0)
             winNode.position = CGPoint(x: 0, y: 0)
             winNode.name = "WINNODE"
-            winNode.alpha = 1
+            winNode.alpha = 0.98
             self.physicsWorld.speed = 0.000001
             self.scene?.isPaused = true
             self.addChild(winNode)
-            
+        case .BonusNode:
+            let bonusNode = SKSpriteNode()
+            bonusNode.texture = SKTexture(imageNamed: "win2.png")
+            bonusNode.size = CGSize(width: screenSize.width, height: screenSize.height)
+            bonusNode.anchorPoint = CGPoint(x: 0, y: 0)
+            bonusNode.position = CGPoint(x: 0, y: 0)
+            bonusNode.name = "BONUSNODE"
+            bonusNode.alpha = 0.95
+            self.physicsWorld.speed = 0.000001
+            self.scene?.isPaused = true
+            self.addChild(bonusNode)
         case .TopScoreScene:
             self.gameinfo.prepareToChangeScene()
             self.recursiveRemovingSKActions(sknodes: self.children)
