@@ -451,6 +451,7 @@ class MainScene: SKScene, SKPhysicsContactDelegate {
             self.addChild(winNode)
         case .BonusNode:
             let bonusNode = SKSpriteNode()
+            //FIXME: - Add bonus text
             bonusNode.texture = SKTexture(imageNamed: "win2.png")
             bonusNode.size = CGSize(width: screenSize.width, height: screenSize.height)
             bonusNode.anchorPoint = CGPoint(x: 0, y: 0)
