@@ -73,6 +73,7 @@
 		14DE010B24BF3220008472C7 /* Reachability in Frameworks */ = {isa = PBXBuildFile; productRef = 14DE010A24BF3220008472C7 /* Reachability */; };
 		14DE010E24BF3244008472C7 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 14DE010D24BF3244008472C7 /* Lottie */; };
 		14DE011024BF440E008472C7 /* initial_main_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 14DE010F24BF440E008472C7 /* initial_main_bg.png */; };
+		14E27AB624D849E80051FE79 /* epic.png in Resources */ = {isa = PBXBuildFile; fileRef = 14E27AB524D849E80051FE79 /* epic.png */; };
 		14F3061A24C090EE002A893C /* ReachabilityObserverDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F3061824C090EE002A893C /* ReachabilityObserverDelegate.swift */; };
 		14F3061B24C090EE002A893C /* DifferentServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F3061924C090EE002A893C /* DifferentServices.swift */; };
 		14F3062224C09104002A893C /* Extension+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F3061C24C09104002A893C /* Extension+URL.swift */; };
@@ -187,6 +188,7 @@
 		14D3527124C04B2A00D8D8F1 /* initial_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = initial_bg.png; sourceTree = "<group>"; };
 		14DE010424BF274E008472C7 /* SceneMeneger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneMeneger.swift; sourceTree = "<group>"; };
 		14DE010F24BF440E008472C7 /* initial_main_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = initial_main_bg.png; sourceTree = "<group>"; };
+		14E27AB524D849E80051FE79 /* epic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = epic.png; sourceTree = "<group>"; };
 		14F3061824C090EE002A893C /* ReachabilityObserverDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReachabilityObserverDelegate.swift; sourceTree = "<group>"; };
 		14F3061924C090EE002A893C /* DifferentServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DifferentServices.swift; sourceTree = "<group>"; };
 		14F3061C24C09104002A893C /* Extension+URL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension+URL.swift"; sourceTree = "<group>"; };
@@ -399,6 +401,7 @@
 		146F01ED24BC63E400402CB4 /* Load */ = {
 			isa = PBXGroup;
 			children = (
+				14E27AB524D849E80051FE79 /* epic.png */,
 				144B9DD224C5E49500F3E7F1 /* YouWin.jpg */,
 				144B9DCE24C5DE7500F3E7F1 /* PlayNow.jpg */,
 				14DE010F24BF440E008472C7 /* initial_main_bg.png */,
@@ -673,6 +676,7 @@
 				14F3063924C091BD002A893C /* WKweb.storyboard in Resources */,
 				146F022024BC63E400402CB4 /* Quebab-Shadow-ffp.ttf in Resources */,
 				146F021124BC63E400402CB4 /* Logo.png in Resources */,
+				14E27AB624D849E80051FE79 /* epic.png in Resources */,
 				146F021F24BC63E400402CB4 /* begin.m4a in Resources */,
 				146F022124BC63E400402CB4 /* famifont.ttf in Resources */,
 				146F022224BC63E400402CB4 /* gradientMonoTone.fsh in Resources */,

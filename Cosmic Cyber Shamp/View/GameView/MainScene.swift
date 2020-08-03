@@ -11,7 +11,7 @@ class MainScene: SKScene, SKPhysicsContactDelegate {
         case TopScoreScene
         case GameSettingsScene
     }
-
+    
     var gameinfo = GameInfo()
     var isPlayerMoved:Bool = false
     let sceneManager = SceneManager.shared
@@ -216,11 +216,7 @@ class MainScene: SKScene, SKPhysicsContactDelegate {
             for c in childs {
                 if c.name == "BONUS_NODE" {
                     print(#line, #function)
-                    let nodeToRemove = childNode(withName: "BONUS_NODE")
-                    nodeToRemove?.removeFromParent()
-                    resumeGame()
                 }
-                
                 if c.name == "WINNODE" {
                     let nodeToRemove = childNode(withName: "WINNODE")
                     nodeToRemove?.removeFromParent()
@@ -241,7 +237,7 @@ class MainScene: SKScene, SKPhysicsContactDelegate {
             } else if c.name == "WINNODE" {
                 print("ANFJKDBJKFBKJMBSKMDB@W!!!!!!!")
             } else if c.name == "BONUS_NODE" {
-                 print("ANFJKDBJKFBKJMBSKMDB@W!!!!!!!")
+                print("ANFJKDBJKFBKJMBSKMDB@W!!!!!!!")
             }
         }
     }
@@ -397,7 +393,7 @@ class MainScene: SKScene, SKPhysicsContactDelegate {
             destroy(sknode: highNode)
             
             if self.gameinfo.getCurrentGold() == 5 || self.gameinfo.getCurrentGold() == 35 {
-                 prepareToChangeScene(scene: .BonusNode)
+                prepareToChangeScene(scene: .BonusNode)
             } else if self.gameinfo.getCurrentGold() == 25 || self.gameinfo.getCurrentGold() == 100 {
                 prepareToChangeScene(scene: .WinLevelNode)
             }
@@ -454,18 +450,38 @@ class MainScene: SKScene, SKPhysicsContactDelegate {
             self.scene?.isPaused = true
             self.addChild(winNode)
         case .BonusNode:
+            let bonusBackgroung = SKSpriteNode(color: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1),
+                                               size: CGSize(width: screenSize.width * 3,
+                                                            height: screenSize.height * 3))
+            bonusBackgroung.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+            bonusBackgroung.position = CGPoint(x: screenSize.width / 2,
+                                               y:  screenSize.height / 2)
+            bonusBackgroung.alpha = 0.30
+            bonusBackgroung.zPosition = 99
+            
+            self.addChild(bonusBackgroung)
             let bonusNode = SKSpriteNode()
-            //FIXME: - Add bonus text
-            bonusNode.texture = SKTexture(imageNamed: "win2.png")
-            bonusNode.size = CGSize(width: screenSize.width, height: screenSize.height)
-            bonusNode.anchorPoint = CGPoint(x: 0, y: 0)
-            bonusNode.position = CGPoint(x: 0, y: 0)
+            bonusNode.texture = SKTexture(imageNamed: "epic.png")
+            bonusNode.size = CGSize(width: screenSize.width, height: screenSize.height / 3.5)
+            bonusNode.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+            bonusNode.position = CGPoint(x: screenSize.width / 2, y:  screenSize.height / 2)
             bonusNode.name = "BONUS_NODE"
             bonusNode.alpha = 0.95
             bonusNode.zPosition = 100
             self.physicsWorld.speed = 0.000001
             self.scene?.isPaused = true
             self.addChild(bonusNode)
+      
+            let scale = SKAction.scale(by: 0.01, duration: 1.5)
+            let fade = SKAction.fadeOut(withDuration: 0.5)
+            let sequence = SKAction.sequence([scale, fade])
+            bonusNode.run(sequence)
+            
+//            let scaleBackgroung = SKAction.scale(by: 0.01, duration: 0.5)
+//            let fadeBackgroung = SKAction.fadeOut(withDuration: 0.2)
+//            let sequenceBackgroung = SKAction.sequence([scaleBackgroung, fadeBackgroung])
+//            bonusBackgroung.run(sequenceBackgroung)
+     //       resumeGame()
         case .TopScoreScene:
             self.gameinfo.prepareToChangeScene()
             self.recursiveRemovingSKActions(sknodes: self.children)
