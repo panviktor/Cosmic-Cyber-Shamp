@@ -11,7 +11,7 @@ class MainScene: SKScene, SKPhysicsContactDelegate {
         case TopScoreScene
         case GameSettingsScene
     }
-    
+
     var gameinfo = GameInfo()
     var isPlayerMoved:Bool = false
     let sceneManager = SceneManager.shared
