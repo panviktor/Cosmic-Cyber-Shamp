@@ -211,17 +211,18 @@ class MainScene: SKScene, SKPhysicsContactDelegate {
         }
         
         let childs = self.nodes(at: pos)
-        
         if isPlayerMoved {
             let childs = self.nodes(at: pos)
             for c in childs {
-                if c.name == "WINNODE" {
-                    let nodeToRemove = childNode(withName: "WINNODE")
+                if c.name == "BONUS_NODE" {
+                    print(#line, #function)
+                    let nodeToRemove = childNode(withName: "BONUS_NODE")
                     nodeToRemove?.removeFromParent()
                     resumeGame()
-                } else if
-                    c.name == "BONUSNODE" {
-                    let nodeToRemove = childNode(withName: "BONUSNODE")
+                }
+                
+                if c.name == "WINNODE" {
+                    let nodeToRemove = childNode(withName: "WINNODE")
                     nodeToRemove?.removeFromParent()
                     resumeGame()
                 } else {
@@ -239,6 +240,8 @@ class MainScene: SKScene, SKPhysicsContactDelegate {
                 prepareToChangeScene(scene: .GameSettingsScene)
             } else if c.name == "WINNODE" {
                 print("ANFJKDBJKFBKJMBSKMDB@W!!!!!!!")
+            } else if c.name == "BONUS_NODE" {
+                 print("ANFJKDBJKFBKJMBSKMDB@W!!!!!!!")
             }
         }
     }
@@ -281,7 +284,7 @@ class MainScene: SKScene, SKPhysicsContactDelegate {
         } else if recognizer.state == .ended {
             player.run(SKAction.rotate(toAngle: 0, duration: 0.1))
         }
-        else if recognizer.state == .cancelled{
+        else if recognizer.state == .cancelled {
             print ("FAILED CANCEL")
         }
         else if recognizer.state == .failed{
@@ -393,7 +396,7 @@ class MainScene: SKScene, SKPhysicsContactDelegate {
             self.gameinfo.addCoin(amount: 1)
             destroy(sknode: highNode)
             
-            if self.gameinfo.getCurrentGold() == 15 || self.gameinfo.getCurrentGold() == 35 {
+            if self.gameinfo.getCurrentGold() == 5 || self.gameinfo.getCurrentGold() == 35 {
                  prepareToChangeScene(scene: .BonusNode)
             } else if self.gameinfo.getCurrentGold() == 25 || self.gameinfo.getCurrentGold() == 100 {
                 prepareToChangeScene(scene: .WinLevelNode)
@@ -411,7 +414,7 @@ class MainScene: SKScene, SKPhysicsContactDelegate {
     
     func prepareToChangeScene(scene: Scene){
         // remove all gestures
-        if scene != .WinLevelNode {
+        if scene != .WinLevelNode && scene != .BonusNode {
             for gesture in (view?.gestureRecognizers)!{
                 view?.removeGestureRecognizer(gesture)
             }
@@ -446,6 +449,7 @@ class MainScene: SKScene, SKPhysicsContactDelegate {
             winNode.position = CGPoint(x: 0, y: 0)
             winNode.name = "WINNODE"
             winNode.alpha = 0.98
+            winNode.zPosition = 100
             self.physicsWorld.speed = 0.000001
             self.scene?.isPaused = true
             self.addChild(winNode)
@@ -456,8 +460,9 @@ class MainScene: SKScene, SKPhysicsContactDelegate {
             bonusNode.size = CGSize(width: screenSize.width, height: screenSize.height)
             bonusNode.anchorPoint = CGPoint(x: 0, y: 0)
             bonusNode.position = CGPoint(x: 0, y: 0)
-            bonusNode.name = "BONUSNODE"
+            bonusNode.name = "BONUS_NODE"
             bonusNode.alpha = 0.95
+            bonusNode.zPosition = 100
             self.physicsWorld.speed = 0.000001
             self.scene?.isPaused = true
             self.addChild(bonusNode)
