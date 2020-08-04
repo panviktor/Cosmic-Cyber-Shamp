@@ -462,9 +462,9 @@ class MainScene: SKScene, SKPhysicsContactDelegate {
             self.addChild(bonusBackgroung)
             let bonusNode = SKSpriteNode()
             bonusNode.texture = SKTexture(imageNamed: "epic.png")
-            bonusNode.size = CGSize(width: screenSize.width, height: screenSize.height / 3.5)
+            bonusNode.size = CGSize(width: screenSize.width * 0.98, height: screenSize.height / 3.5)
             bonusNode.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-            bonusNode.position = CGPoint(x: screenSize.width / 2, y:  screenSize.height / 2)
+            bonusNode.position = CGPoint(x: screenSize.width / 2 - 5, y:  screenSize.height / 2)
             bonusNode.name = "BONUS_NODE"
             bonusNode.alpha = 0.95
             bonusNode.zPosition = 100
@@ -477,11 +477,11 @@ class MainScene: SKScene, SKPhysicsContactDelegate {
             let sequence = SKAction.sequence([scale, fade])
             bonusNode.run(sequence)
             
-//            let scaleBackgroung = SKAction.scale(by: 0.01, duration: 0.5)
-//            let fadeBackgroung = SKAction.fadeOut(withDuration: 0.2)
-//            let sequenceBackgroung = SKAction.sequence([scaleBackgroung, fadeBackgroung])
-//            bonusBackgroung.run(sequenceBackgroung)
-     //       resumeGame()
+            let scaleBackgroung = SKAction.scale(by: 0.01, duration: 0.5)
+            let fadeBackgroung = SKAction.fadeOut(withDuration: 0.2)
+            let sequenceBackgroung = SKAction.sequence([scaleBackgroung, fadeBackgroung])
+            bonusBackgroung.run(sequenceBackgroung)
+            resumeGame()
         case .TopScoreScene:
             self.gameinfo.prepareToChangeScene()
             self.recursiveRemovingSKActions(sknodes: self.children)

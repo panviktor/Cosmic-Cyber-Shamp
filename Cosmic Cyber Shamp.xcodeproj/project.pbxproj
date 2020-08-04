@@ -11,6 +11,7 @@
 		1408BD2524C6CC9D00278252 /* OneSignal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1408BD2124C6CC8800278252 /* OneSignal.framework */; };
 		1408BD3224C6E00900278252 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1408BD3124C6E00900278252 /* NotificationService.swift */; };
 		1408BD3624C6E00900278252 /* OneSignalNotificationServiceExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 1408BD2F24C6E00900278252 /* OneSignalNotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		143175E624D8663900D85411 /* epic.png in Resources */ = {isa = PBXBuildFile; fileRef = 143175E524D8663900D85411 /* epic.png */; };
 		144B9DCF24C5DE7500F3E7F1 /* PlayNow.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 144B9DCE24C5DE7500F3E7F1 /* PlayNow.jpg */; };
 		144B9DD324C5E49500F3E7F1 /* YouWin.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 144B9DD224C5E49500F3E7F1 /* YouWin.jpg */; };
 		1451C66524BD902F007B915F /* TopScoreScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1451C66424BD902F007B915F /* TopScoreScene.swift */; };
@@ -73,7 +74,6 @@
 		14DE010B24BF3220008472C7 /* Reachability in Frameworks */ = {isa = PBXBuildFile; productRef = 14DE010A24BF3220008472C7 /* Reachability */; };
 		14DE010E24BF3244008472C7 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 14DE010D24BF3244008472C7 /* Lottie */; };
 		14DE011024BF440E008472C7 /* initial_main_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 14DE010F24BF440E008472C7 /* initial_main_bg.png */; };
-		14E27AB624D849E80051FE79 /* epic.png in Resources */ = {isa = PBXBuildFile; fileRef = 14E27AB524D849E80051FE79 /* epic.png */; };
 		14F3061A24C090EE002A893C /* ReachabilityObserverDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F3061824C090EE002A893C /* ReachabilityObserverDelegate.swift */; };
 		14F3061B24C090EE002A893C /* DifferentServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F3061924C090EE002A893C /* DifferentServices.swift */; };
 		14F3062224C09104002A893C /* Extension+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F3061C24C09104002A893C /* Extension+URL.swift */; };
@@ -126,6 +126,7 @@
 		1408BD2F24C6E00900278252 /* OneSignalNotificationServiceExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OneSignalNotificationServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		1408BD3124C6E00900278252 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		1408BD3324C6E00900278252 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		143175E524D8663900D85411 /* epic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = epic.png; sourceTree = "<group>"; };
 		144B9DCE24C5DE7500F3E7F1 /* PlayNow.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = PlayNow.jpg; sourceTree = "<group>"; };
 		144B9DD224C5E49500F3E7F1 /* YouWin.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = YouWin.jpg; sourceTree = "<group>"; };
 		1451C66424BD902F007B915F /* TopScoreScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopScoreScene.swift; sourceTree = "<group>"; };
@@ -188,7 +189,6 @@
 		14D3527124C04B2A00D8D8F1 /* initial_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = initial_bg.png; sourceTree = "<group>"; };
 		14DE010424BF274E008472C7 /* SceneMeneger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneMeneger.swift; sourceTree = "<group>"; };
 		14DE010F24BF440E008472C7 /* initial_main_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = initial_main_bg.png; sourceTree = "<group>"; };
-		14E27AB524D849E80051FE79 /* epic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = epic.png; sourceTree = "<group>"; };
 		14F3061824C090EE002A893C /* ReachabilityObserverDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReachabilityObserverDelegate.swift; sourceTree = "<group>"; };
 		14F3061924C090EE002A893C /* DifferentServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DifferentServices.swift; sourceTree = "<group>"; };
 		14F3061C24C09104002A893C /* Extension+URL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension+URL.swift"; sourceTree = "<group>"; };
@@ -401,7 +401,7 @@
 		146F01ED24BC63E400402CB4 /* Load */ = {
 			isa = PBXGroup;
 			children = (
-				14E27AB524D849E80051FE79 /* epic.png */,
+				143175E524D8663900D85411 /* epic.png */,
 				144B9DD224C5E49500F3E7F1 /* YouWin.jpg */,
 				144B9DCE24C5DE7500F3E7F1 /* PlayNow.jpg */,
 				14DE010F24BF440E008472C7 /* initial_main_bg.png */,
@@ -676,7 +676,7 @@
 				14F3063924C091BD002A893C /* WKweb.storyboard in Resources */,
 				146F022024BC63E400402CB4 /* Quebab-Shadow-ffp.ttf in Resources */,
 				146F021124BC63E400402CB4 /* Logo.png in Resources */,
-				14E27AB624D849E80051FE79 /* epic.png in Resources */,
+				143175E624D8663900D85411 /* epic.png in Resources */,
 				146F021F24BC63E400402CB4 /* begin.m4a in Resources */,
 				146F022124BC63E400402CB4 /* famifont.ttf in Resources */,
 				146F022224BC63E400402CB4 /* gradientMonoTone.fsh in Resources */,
@@ -838,7 +838,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = 2335GSPY5N;
 				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -862,7 +862,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = 2335GSPY5N;
 				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -1004,7 +1004,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Cosmic Cyber Shamp/Cosmic Cyber Shamp.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = 2335GSPY5N;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1036,7 +1036,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Cosmic Cyber Shamp/Cosmic Cyber Shamp.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = 2335GSPY5N;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
